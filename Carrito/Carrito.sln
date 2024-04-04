@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoClient", "CarritoClient\CarritoClient.csproj", "{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoServices", "CarritoServices\CarritoServices.csproj", "{04046A1B-8844-42FF-8584-4F838A5FC635}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04046A1B-8844-42FF-8584-4F838A5FC635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04046A1B-8844-42FF-8584-4F838A5FC635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04046A1B-8844-42FF-8584-4F838A5FC635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04046A1B-8844-42FF-8584-4F838A5FC635}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
