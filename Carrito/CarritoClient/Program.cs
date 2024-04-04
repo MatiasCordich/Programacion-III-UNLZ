@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clase_02
+namespace CarritoClient
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace Clase_02
+﻿namespace CarritoClient
 {
     partial class Form1
     {

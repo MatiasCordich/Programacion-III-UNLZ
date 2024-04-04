@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Clase_02
+namespace CarritoClient
 {
     public partial class Form1 : Form
     {

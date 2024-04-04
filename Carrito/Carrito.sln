@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clase_02", "Clase_02\Clase_02.csproj", "{A368D2C8-6B3A-4C46-BA63-11E1875AE218}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarritoClient", "CarritoClient\CarritoClient.csproj", "{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A368D2C8-6B3A-4C46-BA63-11E1875AE218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A368D2C8-6B3A-4C46-BA63-11E1875AE218}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A368D2C8-6B3A-4C46-BA63-11E1875AE218}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A368D2C8-6B3A-4C46-BA63-11E1875AE218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C43592E7-A7CC-4113-9CED-2C338A23E201}
+		SolutionGuid = {67819359-AF5D-440D-B8C9-B68380C96D49}
 	EndGlobalSection
 EndGlobal

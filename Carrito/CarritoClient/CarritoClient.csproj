@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A368D2C8-6B3A-4C46-BA63-11E1875AE218}</ProjectGuid>
+    <ProjectGuid>{41B7AD88-7A4F-499D-8593-DF0ABCC26E6E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Clase_02</RootNamespace>
-    <AssemblyName>Clase_02</AssemblyName>
+    <RootNamespace>CarritoClient</RootNamespace>
+    <AssemblyName>CarritoClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Clase_02.Properties
+namespace CarritoClient.Properties
 {
 
 

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Clase_02")]
+[assembly: AssemblyTitle("CarritoClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Clase_02")]
+[assembly: AssemblyProduct("CarritoClient")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("a368d2c8-6b3a-4c46-ba63-11e1875ae218")]
+[assembly: Guid("41b7ad88-7a4f-499d-8593-df0abcc26e6e")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
