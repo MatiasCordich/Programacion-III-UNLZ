@@ -43,6 +43,19 @@
             Console.WriteLine("El es positivo y no es par")
         End If
 
+        'Switch (Select)'
+
+        Select Case numerito
+            Case 1
+                Console.WriteLine("El número es 1")
+            Case 2
+                Console.WriteLine("El número es 2")
+            Case 3
+                Console.WriteLine("El número es 3")
+            Case Else
+                Console.WriteLine("El número no es 1, 2 o 3")
+        End Select
+
         'Vector'
 
         Dim vecty(5) As String
