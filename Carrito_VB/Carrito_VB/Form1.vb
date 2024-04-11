@@ -1,7 +1,7 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Agregar un registro al dataGridView cuando se carge el Form'
-        Me.gridProductos.Rows.Add("Hola", "0")
+        Me.gridProductos.Rows.Add("Hola", 0)
     End Sub
 
     'Funcion para agregar el producto a la lista, sumar y mostrar el total'
