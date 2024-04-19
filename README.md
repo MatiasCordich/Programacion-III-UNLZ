@@ -9,4 +9,9 @@
 </div>
 
 # Clases
-[Clase 1](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Calculadora).
+- Clase 1: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Calculadora)
+- Clase 2: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Carrito)
+- Clase 3: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Carrito_VB)
+  - Sintaxis Visual Basic: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/ConsolaApp)
+- Clase 4: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Pokepedia)
+
