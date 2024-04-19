@@ -18,7 +18,7 @@ Public Class FormPokedex
             'Tomamos los valores de los textBox y el comboBox'
             Dim numero As Long = txtNumero.Text
             Dim nombre As String = txtNombre.Text
-            Dim tipo As New TipoPokemon("Fuego")
+            Dim tipo As New TipoPokemon(comboBoxTipo.Text)
 
             'Creamos el pokemon con los valores obtenidos'
             Dim nuevoPokemon = New Pokemon(numero, nombre, tipo)
@@ -31,9 +31,10 @@ Public Class FormPokedex
                 'Si se agrego muestroun mensaje'
                 MessageBox.Show("Pokemon agregado correctamente")
 
-                'Borro los valores de los textBox'
+                'Borro los valores de los textBox y el comboBox'
                 txtNombre.Text = ""
                 txtNumero.Text = ""
+                comboBoxTipo.Text = ""
 
                 'Actualizo la grilla'
                 Me.actualizarGrilla()
