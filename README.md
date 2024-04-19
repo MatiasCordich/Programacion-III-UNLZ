@@ -15,3 +15,5 @@
   - Sintaxis Visual Basic: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/ConsolaApp)
 - Clase 4: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Pokepedia)
 
+# Notion
+Para más información de los temás de forma teórica dejo el [Notion](https://matitips.notion.site/C-y-NET-a1e88ab1ded1499ca18d23e2b95df8ac?pvs=74a)
