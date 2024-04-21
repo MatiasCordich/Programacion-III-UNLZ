@@ -7,7 +7,7 @@ Public Class FormPokedex
     Private pokedex As New Pokedex
 
     'Actualizo la grilla'
-    Private Sub actualizarGrilla()
+    Private Sub ActualizarGrilla()
         gridPokemones.DataSource = Me.pokedex.getPokemones()
     End Sub
 
@@ -28,7 +28,7 @@ Public Class FormPokedex
 
             'Valido si se agrego o no'
             If seAgrego Then
-                'Si se agrego muestroun mensaje'
+                'Si se agrego muestro un mensaje'
                 MessageBox.Show("Pokemon agregado correctamente")
 
                 'Borro los valores de los textBox y el comboBox'
@@ -37,14 +37,14 @@ Public Class FormPokedex
                 comboBoxTipo.Text = ""
 
                 'Actualizo la grilla'
-                Me.actualizarGrilla()
+                Me.ActualizarGrilla()
             Else
                 MessageBox.Show("El ID esta repetido")
             End If
             'Tomamos los valores de los textBox y el comboBox'
         Catch ex As Exception
             'Manejamos el error si ponemos un string en el textBox de txtNuemero en vez de un numero'
-            MessageBox.Show("Error, no puedes poner letras en ID")
+            MessageBox.Show("Error, no puedes poner letras en el ID")
         End Try
     End Sub
 End Class
