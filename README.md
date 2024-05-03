@@ -14,6 +14,7 @@
 - Clase 3: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Carrito_VB)
   - Sintaxis Visual Basic: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/ConsolaApp)
 - Clase 4: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Pokepedia)
+- Clase 5: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/SQL/CLASE_05)
 
 # Notion
 Para más información de los temás de forma teórica dejo el [Notion](https://matitips.notion.site/C-y-NET-a1e88ab1ded1499ca18d23e2b95df8ac?pvs=74a)
