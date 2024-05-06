@@ -16,5 +16,8 @@
 - Clase 4: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/Pokepedia)
 - Clase 5: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/SQL/CLASE_05)
 
+# Clases
+- Ejercicio SQL: [Repositorio](https://github.com/MatiasCordich/Programacion-III-UNLZ/tree/main/SQL/Ejercicio_01)
+
 # Notion
 Para más información de los temás de forma teórica dejo el [Notion](https://matitips.notion.site/C-y-NET-a1e88ab1ded1499ca18d23e2b95df8ac?pvs=74a)
