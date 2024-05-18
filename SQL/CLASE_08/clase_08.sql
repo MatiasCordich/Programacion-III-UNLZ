@@ -6,13 +6,27 @@ CREATE TABLE ANIMALES(
 
 SELECT * FROM ANIMALES
 
+-- Insertamos registros
+INSERT INTO ANIMALES VALUES 
+(1, 'Kitty'),
+(2, 'Cinammoroll'),
+(3, 'Pompompurin'),
+(4, 'MyMelody'),
+(5, 'Kuromi'),
+(6, 'Pochacco'),
+(7, 'Keroppi'),
+(8, 'Chococat'),
+(9, 'Badz Maru'),
+(10, 'Tuxedosam')
+
+
 -- Modificamos la tabla para agregarle el campo ESPECIE
 -- Tiene que ser NO NULO 
 -- Los registros previos, donde su valor es NULO, su default Perro
 ALTER TABLE ANIMALES 
 ADD ESPECIE VARCHAR(20) NOT NULL DEFAULT 'Perro'
 
--- Nuevos registros ahora con el valor ESPECIE
+-- Nuevos registros ahora con el valor ESPECIE (Los registros anteriores los eliminamos y escribimos nuevos con las nuevas reglas)
 INSERT INTO ANIMALES VALUES 
 (1, 'Kitty', 'Gato'),
 (2, 'Cinammoroll', 'Perro'),
@@ -31,12 +45,23 @@ INSERT INTO ANIMALES VALUES
 ALTER TABLE ANIMALES 
 ADD EDAD INT NOT NULL DEFAULT 0
 
--- Todo lo que agregemos ahora debe tener edad 
+-- Todo lo que agregemos ahora DEBE tener edad (Los registros anteriores los eliminamos y escribimos nuevos con las nuevas reglas)
 INSERT INTO ANIMALES VALUES 
+(1, 'Kitty', 'Gato', 28),
+(2, 'Cinammoroll', 'Perro', 23),
+(3, 'Pompompurin', 'Perro', 27),
+(4, 'MyMelody', 'Conejo', 19),
+(5, 'Kuromi', 'Conejo', 18),
+(6, 'Pochacco', 'Perro', 32),
+(7, 'Keroppi', 'Rana', 31),
+(8, 'Chococat', 'Gato', 15),
+(9, 'Badz Maru', 'Pajaro', 31),
+(10, 'Tuxedosam', 'Pajaro', 25),
 (11, 'Pirulina', 'Marmota', 20),
 (12, 'Trotsky', 'Gato', 10),
 (13, 'Shamoun', 'Ballena', 35),
 (14, 'Keiko', 'Ballena', 40)
+
 
 -- Agrupame por ESPECIE
 -- De cada grupo que muestre: el mas viejo y con el ID mas bajo
@@ -66,7 +91,9 @@ GROUP BY ESPECIE
 ORDER BY CANTIDAD DESC; 
 
 -- Mostrame un TOP 3 de la especie gato que son mas viejos
-SELECT TOP 3 * FROM ANIMALES WHERE ESPECIE = 'GATO'
+SELECT TOP 3 * 
+FROM ANIMALES 
+WHERE ESPECIE = 'GATO'
 ORDER BY EDAD DESC
 
 -- Muestra los primeros 3 nombres de la tabla animales
