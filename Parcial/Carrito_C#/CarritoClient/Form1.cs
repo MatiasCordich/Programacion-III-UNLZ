@@ -15,6 +15,7 @@ namespace CarritoClient
     {
         private readonly DataTable dtArticulos;
         private double totalPrecio;
+        private double totalPrecioR;
         private long nextId;
         public Form1()
         {
@@ -29,15 +30,17 @@ namespace CarritoClient
 
             // Inicializar el total de precios
             this.totalPrecio = 0.0;
+            this.totalPrecioR = 0.0;
+
+            // Inicializar el ID en 1
             this.nextId = 1;
-            ActualizarLabelTotal();
-
-
 
         }
 
+        // Funcion para inicializar la DataTable con sus CAMPOS
         private void InicialiarDataTable()
         {
+            
             // Agregamos columnas
             this.dtArticulos.Columns.Add("ID", typeof(long));
             this.dtArticulos.Columns.Add("Nombre", typeof(string));
@@ -45,6 +48,7 @@ namespace CarritoClient
 
         }
 
+        // Funcion para guardar el producto y sumar el total
         private void btn_GuardarProducto_Click(object sender, EventArgs e)
         {
             // Tomamos los valores del los TextBox
@@ -61,25 +65,54 @@ namespace CarritoClient
             // Agregamos el nuevo articulo a la DataTable
             dtArticulos.Rows.Add(nuevoArticulo.id, nuevoArticulo.description, nuevoArticulo.price);
 
+            // Calculamos el total 
+            this.CalcularTotal();
+
+            // Calculamos el total de los productos con R
+            this.CalcularTotalR();
+
             // Limpiamos los TextBox
             txt_descripcion.Clear();
             txt_precio.Clear();
 
         }
 
+
+        // Funcion que recorre el DataTable y suma el total
         private void CalcularTotal()
         {
-            this.totalPrecio = 0;
 
-            foreach (DataRow renglon in dtArticulos.Rows)
+            foreach (DataRow renglon in this.dtArticulos.Rows)
             {
-                totalPrecio += Convert.ToDouble(renglon["Precio"]);
+                this.totalPrecio += Convert.ToDouble(renglon["Precio"]);
+                ActualizarLabelTotal();
+
+
             }
         }
 
+        private void CalcularTotalR()
+        {
+            foreach (DataRow renglon in this.dtArticulos.Rows)
+            {
+
+                if (renglon["Nombre"].ToString().StartsWith("R"))
+                {
+                    this.totalPrecioR += Convert.ToDouble(renglon["Precio"]);
+                    ActuAlizarLabelTotalLetraR();
+                }
+            }
+        }
+
+        // Funcion que actualiza el Label del total de productos
         private void ActualizarLabelTotal()
         {
             label_Total.Text = totalPrecio.ToString("#0.00");
+        }
+
+        private void ActuAlizarLabelTotalLetraR()
+        {
+            label_txt_totalR.Text = totalPrecioR.ToString("#0.00");
         }
     }
 }

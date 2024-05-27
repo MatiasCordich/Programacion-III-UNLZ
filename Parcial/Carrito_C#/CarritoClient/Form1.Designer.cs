@@ -35,6 +35,9 @@
             this.btn_GuardarProducto = new System.Windows.Forms.Button();
             this.data_grid_Articulos = new System.Windows.Forms.DataGridView();
             this.label_Total = new System.Windows.Forms.Label();
+            this.label_txt_totalR = new System.Windows.Forms.Label();
+            this.label_txt_total = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.data_grid_Articulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,17 +101,50 @@
             // 
             this.label_Total.AutoSize = true;
             this.label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Total.Location = new System.Drawing.Point(98, 325);
+            this.label_Total.Location = new System.Drawing.Point(231, 334);
             this.label_Total.Name = "label_Total";
             this.label_Total.Size = new System.Drawing.Size(24, 25);
             this.label_Total.TabIndex = 6;
             this.label_Total.Text = "0";
+            // 
+            // label_txt_totalR
+            // 
+            this.label_txt_totalR.AutoSize = true;
+            this.label_txt_totalR.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_txt_totalR.Location = new System.Drawing.Point(272, 374);
+            this.label_txt_totalR.Name = "label_txt_totalR";
+            this.label_txt_totalR.Size = new System.Drawing.Size(24, 25);
+            this.label_txt_totalR.TabIndex = 7;
+            this.label_txt_totalR.Text = "0";
+            // 
+            // label_txt_total
+            // 
+            this.label_txt_total.AutoSize = true;
+            this.label_txt_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_txt_total.Location = new System.Drawing.Point(43, 334);
+            this.label_txt_total.Name = "label_txt_total";
+            this.label_txt_total.Size = new System.Drawing.Size(161, 25);
+            this.label_txt_total.TabIndex = 8;
+            this.label_txt_total.Text = "Total productos";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 374);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(225, 25);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Total Productos con R";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label_txt_total);
+            this.Controls.Add(this.label_txt_totalR);
             this.Controls.Add(this.label_Total);
             this.Controls.Add(this.data_grid_Articulos);
             this.Controls.Add(this.btn_GuardarProducto);
@@ -133,6 +169,9 @@
         private System.Windows.Forms.Button btn_GuardarProducto;
         private System.Windows.Forms.DataGridView data_grid_Articulos;
         private System.Windows.Forms.Label label_Total;
+        private System.Windows.Forms.Label label_txt_totalR;
+        private System.Windows.Forms.Label label_txt_total;
+        private System.Windows.Forms.Label label3;
     }
 }
 
