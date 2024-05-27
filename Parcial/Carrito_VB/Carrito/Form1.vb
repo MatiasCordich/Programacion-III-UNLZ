@@ -105,7 +105,7 @@
         ' - Le define las COLUMNAS a la DataTable
         ' - Llama a la funcion SetDataTableArticulos que hace lo siguiente: 
         '     - Le pasamos nuestra DataTableCreada
-        '     - Le DataTable que creamos como DEPENDENCIA tendra el valor de nuestra DataTableCreada y que le pasamos por parametro
+        '     - La DataTable que creamos como DEPENDENCIA tendra el valor de nuestra DataTable creada y que le pasamos por parametro
         '     - A la DataGrid le asignamos nuestra DataTable creada en nuestro DataSource
         '     - De esta manera nuestra DataTable que creamos como DEPENDENCIA, dtProductos, tiene una DataTable con una estrectura de COLUMNAS y apunta a un DataGridView
         Me.InicializarDataTable()
