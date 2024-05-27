@@ -77,9 +77,13 @@
         'Visualizo los resultados de los promedios'
         lbl_Promedio.Text = promedio.ToString("#0.00")
 
+        'En el caso de ProductosR para evitar la division con 0 creo un condicional'
         If contadorProductosR > 0 Then
+
+            'Si el contador de productos con R es mayor a 0 entonces ahi muestro el promedio'
             lbl_PromedioR.Text = promedioR.ToString("#0.00")
         Else
+            'Si es cero que solo muestre un 0.00'
             lbl_PromedioR.Text = "0.00"
         End If
 
