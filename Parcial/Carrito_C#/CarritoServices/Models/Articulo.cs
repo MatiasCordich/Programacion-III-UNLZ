@@ -9,20 +9,15 @@ namespace CarritoServices.Models
     public class Articulo
     {
         // Atributos
-        public long id { get; private set; }
         public string description { get; set; }
-        public decimal price { get; set; }
+        public double price { get; set; }
 
         // Constructor
-        public Articulo(long id, string description, decimal price)
+        public Articulo(string description, double price)
         {
-            this.id = id;
             this.description = description;
             this.price = price;
         }
-
-        
-
 
     }
 }
