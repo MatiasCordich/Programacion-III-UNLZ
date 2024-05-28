@@ -20,6 +20,23 @@ namespace CarritoClient
         private DataTable dtArticulos;
         #endregion
 
+        // En esta region vamos a Inicializar la DataTable
+        #region Incializar
+     
+        public void InicializarDataTable()
+        {
+            // Creamos un objeto de tipo DataTable
+            DataTable dt = new DataTable();
+
+            // Le creamos las columnas
+            dt.Columns.Add("Nombre", typeof(string));
+            dt.Columns.Add("Precio", typeof(double));
+
+            // La DataTable que creamos se la pasamos por parametro a la funcion setDataTableArticulos
+            this.SetDataTableArticulos(dt);
+        }
+        #endregion
+
         // Simplemente es nuestro Constructor
         #region Constructor
         public Form1()
@@ -37,20 +54,6 @@ namespace CarritoClient
         {
             this.dtArticulos = dt;
             data_grid_Articulos.DataSource = dt;
-        }
-
-        // Esta funcion crea la DataTable con su estructura 
-        public void InicializarDataTable()
-        {
-            // Creamos un objeto de tipo DataTable
-            DataTable dt = new DataTable();
-
-            // Le creamos las columnas
-            dt.Columns.Add("Nombre", typeof(string));
-            dt.Columns.Add("Precio", typeof(double));
-
-            // La DataTable que creamos se la pasamos por parametro a la funcion setDataTableArticulos
-            this.SetDataTableArticulos(dt);
         }
 
         // Esta funcion hace las operaciones del Carrito
@@ -109,6 +112,13 @@ namespace CarritoClient
 
 
         }
+
+        // Esta funcion sirve para borrar lo que se escribio en los TextBoxes
+        public void borrarTextBoxes()
+        {
+            txt_descripcion.Text = "";
+            txt_precio.Text = "";
+        }
         #endregion
 
         // Region para los EVENTOS de cada componente
@@ -117,17 +127,35 @@ namespace CarritoClient
         // Evento click para guardar el producto, sumar los totales y promedios
         private void btn_GuardarProducto_Click(object sender, EventArgs e)
         {
+            // Tomo el valor del TextBox de descripcion y lo guardo en una variable
             string nombre = txt_descripcion.Text;
-            string precioS = txt_precio.Text;
 
-            double precio = Double.Parse(precioS);
+            // Valido que se haya ingresado un numero en el TextBox de precio
+            try
+            {
+                // Tomo el valor del TextBox de precio 
+                string precioS = txt_precio.Text;
 
-            Articulo nuevoArticulo = new Articulo(nombre, precio);
+                // Lo parseo a Double
+                double precio = Double.Parse(precioS);
 
-            this.dtArticulos.Rows.Add(nuevoArticulo.description, nuevoArticulo.price);
+                // Creo el nuevo articulo con los valores dados
+                Articulo nuevoArticulo = new Articulo(nombre, precio);
 
-            this.OperacionesCarrito();
+                // Agrego una FILA nueva a la DataTable, dtArticulos, con los valores del nuevo Articulo
+                this.dtArticulos.Rows.Add(nuevoArticulo.description, nuevoArticulo.price);
 
+                // Realizo las operaciones correspondientes
+                this.OperacionesCarrito();
+
+                // Finalmente, reseteo los TextBox
+                this.borrarTextBoxes();
+            }
+            catch (Exception)
+            {
+                // Si en el TextBox de precio se puso un numero que me muestre un mensaje de Error
+                MessageBox.Show("El precio debe ser un numero");
+            }
         }
 
         // Evento load para inicializar la DataTable 
@@ -145,7 +173,6 @@ namespace CarritoClient
         {
             this.InicializarDataTable();
         }
-
         #endregion
 
 
