@@ -7,19 +7,7 @@
     Private dtProductos As DataTable
 #End Region
 
-    'En esta region estan todas las funcioes para que funcione nuestra aplicacion de windows Forms' 
-#Region "Acciones"
-
-    'Esta funcion lo que hace es que la DataTable de Articulos APUNTE a nuestra DataGrid'
-    Private Sub SetDataTableArticulos(dt As DataTable)
-
-        'Nuestra DataTable (dtProductos) que creamos como dependencia va a recibir un objeto de tipo DataTable'
-        Me.dtProductos = dt
-
-        'A su vez nuestro componente DataGrid_Articulos va a recibir como DataSource nuestra DataTable de dependencia'
-        dataGrid_Articulos.DataSource = dt
-    End Sub
-
+#Region "Inicializar"
     'Esta funcion inicializa la DataTable con las COLUMNAS' 
     Private Sub InicializarDataTable()
 
@@ -33,6 +21,21 @@
         'A nuestra DataTable creada la seteamos con el DataGrid'
         Me.SetDataTableArticulos(dt)
     End Sub
+#End Region
+
+    'En esta region estan todas las funcioes para que funcione nuestra aplicacion de windows Forms' 
+#Region "Acciones"
+
+    'Esta funcion lo que hace es que la DataTable de Articulos APUNTE a nuestra DataGrid'
+    Private Sub SetDataTableArticulos(dt As DataTable)
+
+        'Nuestra DataTable (dtProductos) que creamos como dependencia va a recibir un objeto de tipo DataTable'
+        Me.dtProductos = dt
+
+        'A su vez nuestro componente DataGrid_Articulos va a recibir como DataSource nuestra DataTable de dependencia'
+        dataGrid_Articulos.DataSource = dt
+    End Sub
+
 
     'Esta funcion me suma los productos'
     Private Sub OperacionesCarrito()
