@@ -89,9 +89,12 @@
             'Si es cero que solo muestre un 0.00'
             lbl_PromedioR.Text = "0.00"
         End If
+    End Sub
 
-
-
+    'Resetea y borra lo ingresado en los TextBoxes'
+    Private Sub ResetearTextBox()
+        txt_Nombre.Text = ""
+        txt_Precio.Text = ""
     End Sub
 
 
@@ -118,13 +121,22 @@
 
         'Tomamos el nombre y el precio de nuestros TextBoxes'
         Dim nombre = txt_Nombre.Text
-        Dim precio = Double.Parse(txt_Precio.Text)
 
-        'Agregamos una nueva FILA (Rows) a nuestra DataTable dtProductos con los valores obtenidos'
-        Me.dtProductos.Rows.Add(nombre, precio)
+        'Validamos que se ingrese un numero'
+        Try
+            Dim precio As Double = Double.Parse(txt_Precio.Text)
 
-        'Llamos a la funcion OperacionesCarrito, de la region ACCIONES, que hace las operaciones internas del Programa.'
-        Me.OperacionesCarrito()
+            'Agregamos una nueva FILA (Rows) a nuestra DataTable dtProductos con los valores obtenidos'
+            Me.dtProductos.Rows.Add(nombre, precio)
+
+            'Llamos a la funcion OperacionesCarrito, de la region ACCIONES, que hace las operaciones internas del Programa.'
+            Me.OperacionesCarrito()
+
+            'Borramos lo ingresado en los TextBoxes'
+            Me.ResetearTextBox()
+        Catch ex As Exception
+            MessageBox.Show("El precio debe ser un numero")
+        End Try
     End Sub
 
 
