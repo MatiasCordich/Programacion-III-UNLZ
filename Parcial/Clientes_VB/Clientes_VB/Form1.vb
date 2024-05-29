@@ -75,8 +75,8 @@
     'Funcion para buscar al cliente mas joven'
     Private Sub BuscarClienteMasJoven()
 
-        'Seteo la variable MIN dandole el valor entero mas grande'
-        Dim edadClienteMasJoven As Integer = Integer.MaxValue
+        'Variable MINIMO'
+        Dim edadMinima As Integer = 0
 
         'Vamos a tomar el dni del cliente mas joven y lo vamos a guardar en esta variable'
         Dim dniClienteMasJoven As Long
@@ -88,10 +88,10 @@
             Dim edad As Integer = Convert.ToInt32(renglon("Edad"))
 
             'Comparamos la variable edad con la variable MIN de edadClienteMasJoven'
-            If edad < edadClienteMasJoven Then
+            If edadMinima = 0 Or edadMinima > renglon("Edad") Then
 
-                'Si la edad de turno es mas chica que la edadClienteMasJoven entonces el nuevo valor de la variable MIN sera esa edad de turno'
-                edadClienteMasJoven = edad
+                'Si la edad de turno es mas chica que la edadMinima entonces el nuevo valor de la variable MIN sera esa edad de turno'
+                edadMinima = renglon("Edad")
 
                 'Tomamos el DNI del cliente mas joven del renglon de turno'
                 dniClienteMasJoven = Convert.ToInt64(renglon("DNI"))
@@ -105,8 +105,8 @@
     'Funcion para buscar el cliente mas viejo'
     Private Sub BuscarClienteMasViejo()
 
-        'Seteo la variable MAX dandole el valor del valor entero mas chico'
-        Dim edadClienteMasViejo As Integer = Integer.MinValue
+        'Variable MINIMO'
+        Dim edadMaxima As Integer = 0
 
         'Vamos a tomar el dni del cliente mas joven y lo vamos a guardar en esta variable'
         Dim dniClienteMasViejo As Long
@@ -114,13 +114,11 @@
         'Recorremos la DataTable'
         For Each renglon As DataRow In Me.dtClientes.Rows
 
-            'Por cada renglon tomamos la edad de turno'
-            Dim edad As Integer = Convert.ToInt32(renglon("Edad"))
 
             'Comparamos la variable edad con la variable MAX de edadClienteMasViejo'
-            If edad > edadClienteMasViejo Then
-                'Si la edad de turno es mas grande que la edadClienteMasViejo entonces el nuevo valor de la variable MAX sera esa edad de turno'
-                edadClienteMasViejo = edad
+            If edadMaxima = 0 Or edadMaxima < renglon("Edad") Then
+                'Si la edad de turno es mas grande que la edadMaxima entonces el nuevo valor de la variable MAX sera esa edad de turno'
+                edadMaxima = renglon("Edad")
 
                 'Tomamos el DNI del cliente mas viejo del renglon de turno'
                 dniClienteMasViejo = Convert.ToInt64(renglon("DNI"))
