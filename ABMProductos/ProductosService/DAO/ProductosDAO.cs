@@ -72,7 +72,6 @@ namespace ProductosService.DAO
         }
 
         // GETBY
-
         public Producto GetByID(long id) {
 
             // Hacemos el pase de datos y valores de newP a la QUERY

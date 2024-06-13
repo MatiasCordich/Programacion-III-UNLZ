@@ -92,7 +92,7 @@ Public Class Form1
 
     End Sub
 
-    'Funcio para agregar un producto a la lista'
+    'Funcion para agregar un producto a la lista'
     Private Sub btn_agregarProducto_Click(sender As Object, e As EventArgs) Handles btn_agregarProducto.Click
 
         'Tomamos los valores de los TextBox'
