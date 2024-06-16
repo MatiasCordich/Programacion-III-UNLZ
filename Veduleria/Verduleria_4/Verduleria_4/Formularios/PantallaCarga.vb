@@ -15,7 +15,7 @@
             Dim nuevoValor = ProgressBar1.Value + 10
 
             'Acumulamos el valor de la ProgressBar y con la funcion Min nos aseguramos que no se sobrepase'
-            ProgressBar1.Value += Math.Max(nuevoValor, ProgressBar1.Maximum)
+            ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
 
         End If
     End Sub
