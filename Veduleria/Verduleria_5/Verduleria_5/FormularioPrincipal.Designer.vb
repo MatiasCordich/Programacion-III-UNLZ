@@ -22,6 +22,7 @@ Partial Class FormularioPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MaestrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeVerdurasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,6 +36,7 @@ Partial Class FormularioPrincipal
         Me.btn_login = New System.Windows.Forms.Button()
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -108,7 +110,7 @@ Partial Class FormularioPrincipal
         'lbl_descripcion
         '
         Me.lbl_descripcion.AutoSize = True
-        Me.lbl_descripcion.Location = New System.Drawing.Point(177, 167)
+        Me.lbl_descripcion.Location = New System.Drawing.Point(22, 169)
         Me.lbl_descripcion.Name = "lbl_descripcion"
         Me.lbl_descripcion.Size = New System.Drawing.Size(0, 18)
         Me.lbl_descripcion.TabIndex = 4
@@ -117,6 +119,7 @@ Partial Class FormularioPrincipal
         'ProgressBar1
         '
         Me.ProgressBar1.Location = New System.Drawing.Point(6, 199)
+        Me.ProgressBar1.Maximum = 250
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(400, 23)
         Me.ProgressBar1.TabIndex = 3
@@ -147,6 +150,9 @@ Partial Class FormularioPrincipal
         Me.Label1.Size = New System.Drawing.Size(191, 24)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ingrese contraseña"
+        '
+        'Timer1
+        '
         '
         'FormularioPrincipal
         '
@@ -183,4 +189,5 @@ Partial Class FormularioPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_descripcion As Label
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Timer1 As Timer
 End Class

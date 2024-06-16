@@ -51,7 +51,7 @@
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
 
         'Hacemos una variable mutable'
-        Dim texto = "CONTRASEÑA INCORRECTA: Por favor, ingrese 123"
+        Dim mensaje = "CONTRASEÑA INCORRECTA: Ingrese 123"
 
         'Tomamos el valor del TextBox'
         Dim password = txt_password.Text
@@ -59,19 +59,43 @@
         'Validamos que el valor obtenido sea igual al valor definido'
         If password = "123" Then
 
-            'Si es igual entonces mostramos el MenuStrip'
+            'Activamos el Timer'
+            Timer1.Enabled = True
+
+            'El mensaje del Label lo cambiamos'
+            mensaje = "Cargando..."
+        End If
+
+        'En caso de no pasar la validacion el valor del Label sera el texto por defecto'
+        lbl_descripcion.Text = mensaje
+
+        'Mostramos el Label con el mensaje obtenido'
+        lbl_descripcion.Visible = True
+
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        'Validamos el valor de la ProgressBar'
+        If ProgressBar1.Value = ProgressBar1.Maximum Then
+
+            'Si es igual a su MAXIMO entonces mostramos el MenuStrip'
             MenuStrip1.Visible = True
 
             'Tambien ocultamos el panel de Login'
             Panel1.Visible = False
         Else
-            lbl_descripcion.Text = texto
+
+            'Caso contrario rellenamos (acumulamos) la ProgressBarr hasta llegar a su final'
+
+            'Tomamos el valor de la ProgressBar y le sumamos 10'
+            Dim nuevoValor = ProgressBar1.Value + 10
+
+            'Igualamos el valor de la ProgressBar con la funcion Min, así nos aseguramos que no se sobrepase'
+            ProgressBar1.Value = Math.Min(nuevoValor, ProgressBar1.Maximum)
         End If
-
     End Sub
-
-
-
 
 #End Region
 
