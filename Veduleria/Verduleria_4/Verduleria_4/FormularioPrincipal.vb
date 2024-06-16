@@ -62,15 +62,14 @@
             'Tambien ocultamos el panel de Login'
             Panel1.Visible = False
 
-            'Inicializamos la pantalla de carga'
-            Dim pantalla As New Pantall
+            'Inicializamos nuestra ventana de espera o carga'
+            Dim pantallaLoading As New PantallaCarga
 
+            'Mostramos la pantalla de carga'
+            pantallaLoading.Show()
         End If
 
     End Sub
-
-
-
 
 #End Region
 
