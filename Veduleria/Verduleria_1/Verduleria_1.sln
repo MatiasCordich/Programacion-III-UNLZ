@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Verduleria", "Verduleria\Verduleria.vbproj", "{2822726C-4F9A-4898-ABEE-570F0EB04971}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Verduleria_1", "Verduleria_1\Verduleria_1.vbproj", "{B1A50AA7-944E-4DCB-8D4A-60E5014807B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2822726C-4F9A-4898-ABEE-570F0EB04971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2822726C-4F9A-4898-ABEE-570F0EB04971}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2822726C-4F9A-4898-ABEE-570F0EB04971}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2822726C-4F9A-4898-ABEE-570F0EB04971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A50AA7-944E-4DCB-8D4A-60E5014807B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A50AA7-944E-4DCB-8D4A-60E5014807B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A50AA7-944E-4DCB-8D4A-60E5014807B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A50AA7-944E-4DCB-8D4A-60E5014807B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {69880165-002E-4489-9AEC-4871945F1CA6}
+		SolutionGuid = {93021BBC-0B75-4D39-AEDF-C721D413D8D8}
 	EndGlobalSection
 EndGlobal
