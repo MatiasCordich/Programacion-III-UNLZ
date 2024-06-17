@@ -1,6 +1,7 @@
 ﻿Public Class FormularioPrincipal
 
 
+
 #Region "Dependencias"
 
 
@@ -8,9 +9,10 @@
 
 #Region "Eventos"
 
-    Private Sub btn_salirApp_Click(sender As Object, e As EventArgs) Handles btn_salirApp.Click
+    Private Sub Btn_salirApp_Click(sender As Object, e As EventArgs) Handles Btn_salirApp.Click
         Me.Close()
     End Sub
+
 #End Region
 
 End Class

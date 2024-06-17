@@ -22,7 +22,7 @@ Partial Class FormularioPrincipal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MS_menuFuncionalidades = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +43,7 @@ Partial Class FormularioPrincipal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_salirApp = New System.Windows.Forms.Button()
+        Me.Btn_salirApp = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -52,22 +52,34 @@ Partial Class FormularioPrincipal
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.MenuStrip1.SuspendLayout()
+        Me.P_Login = New System.Windows.Forms.Panel()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.PB_cargaLogin = New System.Windows.Forms.ProgressBar()
+        Me.Lbl_descripcion = New System.Windows.Forms.Label()
+        Me.MS_menuFuncionalidades.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.P_Login.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'MenuStrip1
+        'MS_menuFuncionalidades
         '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.MenuStrip1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.AnimalesToolStripMenuItem, Me.EspeciesToolStripMenuItem, Me.ReportesToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(11, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1105, 29)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MS_menuFuncionalidades.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.MS_menuFuncionalidades.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MS_menuFuncionalidades.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.AnimalesToolStripMenuItem, Me.EspeciesToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MS_menuFuncionalidades.Location = New System.Drawing.Point(0, 0)
+        Me.MS_menuFuncionalidades.Name = "MS_menuFuncionalidades"
+        Me.MS_menuFuncionalidades.Padding = New System.Windows.Forms.Padding(11, 2, 0, 2)
+        Me.MS_menuFuncionalidades.Size = New System.Drawing.Size(1106, 29)
+        Me.MS_menuFuncionalidades.TabIndex = 1
+        Me.MS_menuFuncionalidades.Text = "MenuStrip1"
+        Me.MS_menuFuncionalidades.Visible = False
         '
         'UsuariosToolStripMenuItem
         '
@@ -194,7 +206,7 @@ Partial Class FormularioPrincipal
         Me.PictureBox1.BackgroundImage = Global.VeterinariaClient.My.Resources.Resources.patitas
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(104, 131)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(6, 4, 6, 4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(200, 200)
         Me.PictureBox1.TabIndex = 5
@@ -230,20 +242,21 @@ Partial Class FormularioPrincipal
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "a Patitas Veterinaria"
         '
-        'btn_salirApp
+        'Btn_salirApp
         '
-        Me.btn_salirApp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_salirApp.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.btn_salirApp.FlatAppearance.BorderSize = 0
-        Me.btn_salirApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_salirApp.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_salirApp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.btn_salirApp.Location = New System.Drawing.Point(875, 501)
-        Me.btn_salirApp.Name = "btn_salirApp"
-        Me.btn_salirApp.Size = New System.Drawing.Size(175, 49)
-        Me.btn_salirApp.TabIndex = 9
-        Me.btn_salirApp.Text = "S A L I R"
-        Me.btn_salirApp.UseVisualStyleBackColor = False
+        Me.Btn_salirApp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Btn_salirApp.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.Btn_salirApp.FlatAppearance.BorderSize = 0
+        Me.Btn_salirApp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_salirApp.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_salirApp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Btn_salirApp.Location = New System.Drawing.Point(874, 501)
+        Me.Btn_salirApp.Name = "Btn_salirApp"
+        Me.Btn_salirApp.Size = New System.Drawing.Size(175, 49)
+        Me.Btn_salirApp.TabIndex = 9
+        Me.Btn_salirApp.Text = "S A L I R"
+        Me.Btn_salirApp.UseVisualStyleBackColor = False
+        Me.Btn_salirApp.Visible = False
         '
         'Label5
         '
@@ -347,38 +360,159 @@ Partial Class FormularioPrincipal
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Profesor: "
         '
+        'P_Login
+        '
+        Me.P_Login.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.P_Login.AutoSize = True
+        Me.P_Login.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.P_Login.Controls.Add(Me.GroupBox2)
+        Me.P_Login.Controls.Add(Me.PB_cargaLogin)
+        Me.P_Login.Controls.Add(Me.Lbl_descripcion)
+        Me.P_Login.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.P_Login.Location = New System.Drawing.Point(353, 227)
+        Me.P_Login.MaximumSize = New System.Drawing.Size(900, 300)
+        Me.P_Login.Name = "P_Login"
+        Me.P_Login.Size = New System.Drawing.Size(596, 300)
+        Me.P_Login.TabIndex = 16
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.GroupBox2.Location = New System.Drawing.Point(23, 15)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(549, 193)
+        Me.GroupBox2.TabIndex = 25
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Login"
+        '
+        'Label10
+        '
+        Me.Label10.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(34, 34)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(62, 18)
+        Me.Label10.TabIndex = 23
+        Me.Label10.Text = "Usuario"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.Location = New System.Drawing.Point(105, 30)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(412, 31)
+        Me.TextBox1.TabIndex = 19
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TextBox2.Location = New System.Drawing.Point(105, 67)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(412, 31)
+        Me.TextBox2.TabIndex = 21
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.Location = New System.Drawing.Point(37, 104)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(480, 74)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "INGRESAR"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label12
+        '
+        Me.Label12.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(34, 71)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(52, 18)
+        Me.Label12.TabIndex = 20
+        Me.Label12.Text = "Clave"
+        '
+        'PB_cargaLogin
+        '
+        Me.PB_cargaLogin.Location = New System.Drawing.Point(23, 254)
+        Me.PB_cargaLogin.Maximum = 250
+        Me.PB_cargaLogin.Name = "PB_cargaLogin"
+        Me.PB_cargaLogin.Size = New System.Drawing.Size(549, 43)
+        Me.PB_cargaLogin.TabIndex = 24
+        Me.PB_cargaLogin.Visible = False
+        '
+        'Lbl_descripcion
+        '
+        Me.Lbl_descripcion.AutoSize = True
+        Me.Lbl_descripcion.Location = New System.Drawing.Point(35, 221)
+        Me.Lbl_descripcion.Name = "Lbl_descripcion"
+        Me.Lbl_descripcion.Size = New System.Drawing.Size(0, 20)
+        Me.Lbl_descripcion.TabIndex = 23
+        Me.Lbl_descripcion.Visible = False
+        '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.VeterinariaClient.My.Resources.Resources.background1
-        Me.ClientSize = New System.Drawing.Size(1105, 599)
+        Me.ClientSize = New System.Drawing.Size(1106, 599)
+        Me.Controls.Add(Me.P_Login)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.btn_salirApp)
+        Me.Controls.Add(Me.Btn_salirApp)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.MS_menuFuncionalidades)
         Me.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.MS_menuFuncionalidades
         Me.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.Name = "FormularioPrincipal"
         Me.Text = "Veterinaria"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MS_menuFuncionalidades.ResumeLayout(False)
+        Me.MS_menuFuncionalidades.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.P_Login.ResumeLayout(False)
+        Me.P_Login.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents MS_menuFuncionalidades As MenuStrip
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AnimalesToolStripMenuItem As ToolStripMenuItem
@@ -387,7 +521,7 @@ Partial Class FormularioPrincipal
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents btn_salirApp As Button
+    Friend WithEvents Btn_salirApp As Button
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label3 As Label
@@ -408,4 +542,13 @@ Partial Class FormularioPrincipal
     Friend WithEvents AltaToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents BajaToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents BusquedaToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents P_Login As Panel
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Lbl_descripcion As Label
+    Friend WithEvents PB_cargaLogin As ProgressBar
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label10 As Label
 End Class
