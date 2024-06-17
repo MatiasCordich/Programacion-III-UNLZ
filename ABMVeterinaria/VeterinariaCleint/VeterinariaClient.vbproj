@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{09F7CB16-6023-4F32-8984-2F8C98C3CE00}</ProjectGuid>
+    <ProjectGuid>{65710580-DC5D-45C0-84F0-2FC4949FA5E2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>VeterinariaClient.My.MyApplication</StartupObject>
-    <RootNamespace>VeterinariaClient</RootNamespace>
-    <AssemblyName>VeterinariaClient</AssemblyName>
+    <StartupObject>VeterinariaCleint.My.MyApplication</StartupObject>
+    <RootNamespace>VeterinariaCleint</RootNamespace>
+    <AssemblyName>VeterinariaCleint</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>VeterinariaClient.xml</DocumentationFile>
+    <DocumentationFile>VeterinariaCleint.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>VeterinariaClient.xml</DocumentationFile>
+    <DocumentationFile>VeterinariaCleint.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -80,6 +80,12 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioAlta.Designer.vb">
+      <DependentUpon>FormularioAlta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioAlta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -97,9 +103,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormularioPrincipal.resx">
-      <DependentUpon>FormularioPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -120,11 +123,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\background.jpg" />
+    <Content Include="Assets\background.jpg" />
     <Content Include="Assets\patitas.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

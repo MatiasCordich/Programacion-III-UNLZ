@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB033982-CAE5-4366-818A-1F9C92BB14F1}</ProjectGuid>
+    <ProjectGuid>{F7C35CBE-7F01-4D8E-BD38-C9A4FC15794F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VeterinariaService</RootNamespace>
@@ -43,11 +43,10 @@
   <ItemGroup>
     <Compile Include="DAO\UsuariosDAO.cs" />
     <Compile Include="Modelos\Animal.cs" />
-    <Compile Include="Modelos\Especie.cs" />
     <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Especie.cs" />
     <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
