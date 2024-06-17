@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\UsuariosDAO.cs" />
+    <Compile Include="Modelos\Animal.cs" />
+    <Compile Include="Modelos\Especie.cs" />
+    <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAO\" />
-    <Folder Include="Modelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
