@@ -12,10 +12,10 @@ namespace VeterinariaService.DAO
 
     public class UsuariosDAO
     {
-        // Funcion para prepara la conexion
+        //----------------------------------- PREPARAR CONEXION -----------------------------------
         private IDbConnection PrepararConexion()
         {
-            string conexionURL = "";
+            string conexionURL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
 
             SqlConnection conexion = new SqlConnection(conexionURL);
 
@@ -24,20 +24,61 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
-        // Funciones del DAO de Usuario
+        //----------------------------------- VALIDAR EXISTENCIA USUARIO LOGIN -----------------------------------
+        public Usuario GetUsuarioLogin(string nombre, string clave)
+        {
+
+            // Definimos el Usuario
+            Usuario usuarioEncontrado = null;
+
+            // Hacemos el pase de datos y valores de newP a la QUERY
+            string query = $"SELECT UsuarioID, NombreUsuario, Clave FROM Usuarios WHERE NombreUsuario='{nombre}' AND Clave='{clave}';";
+
+            // Creamos la conexion llamando la funcion creada recientemente
+            IDbConnection conexion = this.PrepararConexion();
+
+            // Creamos el comando 
+            IDbCommand comando = conexion.CreateCommand();
+
+            // Le agregamos el texto al comando
+            comando.CommandText = query;
+
+            // Creamos el LECTOR, va a ejecutar la sentencia que nos va a permitir leer los resultados de la sentencia
+            IDataReader lector = comando.ExecuteReader();
+
+            if (lector.Read())
+            {
+                usuarioEncontrado = new Usuario()
+                {
+                    UsuarioID = lector.GetInt32(0),
+                    NombreUsuario = lector.GetString(1),
+                    Clave = lector.GetString(2),
+                };
+            }
+
+            // Cerramos la conexion
+            conexion.Close();
+
+            // Devolvemos el resultado
+            return usuarioEncontrado;
+        }
+
+        //----------------------------------- FUNCIONES DAO  -----------------------------------
+
+        //--------------- GET ALL --------------- 
         public List<Usuario> GetAll()
         {
             // Creamos la conexion llamando la funcion creada recientemente
-            IDbConnection connection = this.PrepararConexion();
+            IDbConnection conexion = this.PrepararConexion();
 
             // Creamos el comando 
-            IDbCommand command = connection.CreateCommand();
+            IDbCommand comando = conexion.CreateCommand();
 
             // Le agregamos texto al comando
-            command.CommandText = "SELECT ID, NOMBRE FROM usuarios";
+            comando.CommandText = "SELECT UsuarioID, NombreUsuario, Clave FROM Usuarios";
 
             // Creamos el LECTOR, va a ejecutar la sentencia que nos va a permitir leer todo de nuestra tabla
-            IDataReader lector = command.ExecuteReader();
+            IDataReader lector = comando.ExecuteReader();
 
             // Generamos la lista de usuarios
             List<Usuario> listaUsuarios = new List<Usuario>();
@@ -50,6 +91,7 @@ namespace VeterinariaService.DAO
                 {
                     UsuarioID = lector.GetInt32(0),
                     NombreUsuario = lector.GetString(1),
+                    Clave = lector.GetString(2),
                 };
 
                 // Agregamos cada Usuario a la lista
@@ -57,10 +99,35 @@ namespace VeterinariaService.DAO
             }
 
             // Cerramos conexion y devolvemos la lista
-            connection.Close();
+            conexion.Close();
 
             return listaUsuarios;
+        }
 
+        //--------------- INSERT --------------- 
+        public bool Insert(Usuario nuevoU)
+        {
+
+            // Creamos la query
+            string query = $"INSERT INTO Usuarios (NombreUsuario, Clave) VALUES ('{nuevoU.NombreUsuario}', '{nuevoU.Clave}');";
+
+            // Creamos la conexion llamando la funcion creada recientemente
+            IDbConnection conexion = this.PrepararConexion();
+
+            // Creamos el comando 
+            IDbCommand comando = conexion.CreateCommand();
+
+            // Le agregamos el texto al comando
+            comando.CommandText = query;
+
+            // Ejecutamos el comando
+            int filasAfectadas = comando.ExecuteNonQuery();
+
+            // Cerramos la conexion
+            conexion.Close();
+
+            // Retornamos el valor del comando ejecutado
+            return filasAfectadas > 0;
         }
 
     }

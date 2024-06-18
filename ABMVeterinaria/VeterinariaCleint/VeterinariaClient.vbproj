@@ -49,6 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -80,10 +81,10 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormularioAlta.Designer.vb">
-      <DependentUpon>FormularioAlta.vb</DependentUpon>
+    <Compile Include="Formularios\Usuario\FormularioAltaUsuario.Designer.vb">
+      <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormularioAlta.vb">
+    <Compile Include="Formularios\Usuario\FormularioAltaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -106,8 +107,8 @@
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormularioAlta.resx">
-      <DependentUpon>FormularioAlta.vb</DependentUpon>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioAltaUsuario.resx">
+      <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -129,8 +130,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\background.jpg" />
     <Content Include="Assets\patitas.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VeterinariaService\VeterinariaService.csproj">
+      <Project>{f7c35cbe-7f01-4d8e-bd38-c9a4fc15794f}</Project>
+      <Name>VeterinariaService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
