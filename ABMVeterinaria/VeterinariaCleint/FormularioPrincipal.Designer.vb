@@ -348,7 +348,7 @@ Partial Class FormularioPrincipal
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(311, 63)
         Me.Label1.TabIndex = 14
-        Me.Label1.Text = "Bienvendix"
+        Me.Label1.Text = "Bienvenidx"
         '
         'Label2
         '
