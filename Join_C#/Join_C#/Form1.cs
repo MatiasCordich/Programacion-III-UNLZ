@@ -22,7 +22,7 @@ namespace Join_C_
         {
 
             // Generamos la URL de nuestra conexion 
-            string connectionString = "server=MATIAS\\SQLEXPRESS01;Database=vecindario;Integrated Security=true";
+            string connectionString = "server=;Database=;Integrated Security=true";
 
             // Generamos la conexión 
             SqlConnection connection = new SqlConnection(connectionString);
