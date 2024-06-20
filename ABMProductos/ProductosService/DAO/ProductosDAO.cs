@@ -16,7 +16,7 @@ namespace ProductosService.DAO
         private IDbConnection PrepararConexion()
         {
             // Generamos la URL de nuestra conexion 
-            string connectionString = "server=MATIAS\\SQLEXPRESS01;Database=almacen_db;Integrated Security=true";
+            string connectionString = "";
 
             // Generamos la conexión 
             SqlConnection connection = new SqlConnection(connectionString);

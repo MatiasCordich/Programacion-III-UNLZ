@@ -13,7 +13,7 @@ namespace MiPrimeraConexion
         {
 
             // Cremaos la URL para la conexion a la DB
-            string connectionString = "Server=MATIAS\\SQLEXPRESS01;" + "Database=conexiondb;" + "Integrated Security=True;";
+            string connectionString = "Server=;" + "Database=;" + "Integrated Security=True;";
             
             // Establecemos la conexion
             SqlConnection connection = new SqlConnection(connectionString);

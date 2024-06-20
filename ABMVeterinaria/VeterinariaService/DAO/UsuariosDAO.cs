@@ -15,7 +15,7 @@ namespace VeterinariaService.DAO
         //----------------------------------- PREPARAR CONEXION -----------------------------------
         private IDbConnection PrepararConexion()
         {
-            string conexionURL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
+            string conexionURL = "";
 
             SqlConnection conexion = new SqlConnection(conexionURL);
 
