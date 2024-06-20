@@ -53,11 +53,11 @@ Partial Class FormularioAltaUsuario
         'LBL_descripcionAlta
         '
         Me.LBL_descripcionAlta.AutoSize = True
-        Me.LBL_descripcionAlta.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_descripcionAlta.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_descripcionAlta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.LBL_descripcionAlta.Location = New System.Drawing.Point(12, 236)
         Me.LBL_descripcionAlta.Name = "LBL_descripcionAlta"
-        Me.LBL_descripcionAlta.Size = New System.Drawing.Size(0, 21)
+        Me.LBL_descripcionAlta.Size = New System.Drawing.Size(0, 19)
         Me.LBL_descripcionAlta.TabIndex = 2
         Me.LBL_descripcionAlta.Visible = False
         '

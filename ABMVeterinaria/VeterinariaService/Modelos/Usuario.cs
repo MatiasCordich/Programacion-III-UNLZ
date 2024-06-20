@@ -12,6 +12,7 @@ namespace VeterinariaService.Modelos
         public long UsuarioID { get; set; }
         public string NombreUsuario { get; set; }
         public string Clave { get; set; }
+        public string Estado {  get; set; }
 
         // Creamos el constructor de Usuario
         public Usuario(string nombreUsuario, string clave)

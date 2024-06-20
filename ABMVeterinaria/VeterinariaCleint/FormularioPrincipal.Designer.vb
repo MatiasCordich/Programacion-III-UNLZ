@@ -37,9 +37,12 @@ Partial Class FormularioPrincipal
         Me.MS_menuABM = New System.Windows.Forms.MenuStrip()
         Me.AltasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LBL_nombreUsuario = New System.Windows.Forms.Label()
         Me.Btn_salirApp = New System.Windows.Forms.Button()
@@ -159,7 +162,7 @@ Partial Class FormularioPrincipal
         '
         Me.MS_menuABM.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.MS_menuABM.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MS_menuABM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltasToolStripMenuItem, Me.BajasToolStripMenuItem, Me.BusquedaToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MS_menuABM.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltasToolStripMenuItem, Me.BajasToolStripMenuItem, Me.BusquedaToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.InformesToolStripMenuItem})
         Me.MS_menuABM.Location = New System.Drawing.Point(0, 0)
         Me.MS_menuABM.Name = "MS_menuABM"
         Me.MS_menuABM.Size = New System.Drawing.Size(1149, 29)
@@ -169,10 +172,10 @@ Partial Class FormularioPrincipal
         '
         'AltasToolStripMenuItem
         '
-        Me.AltasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeUsuarioToolStripMenuItem})
+        Me.AltasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeUsuarioToolStripMenuItem, Me.BajaDeUsuarioToolStripMenuItem, Me.AToolStripMenuItem})
         Me.AltasToolStripMenuItem.Name = "AltasToolStripMenuItem"
-        Me.AltasToolStripMenuItem.Size = New System.Drawing.Size(62, 25)
-        Me.AltasToolStripMenuItem.Text = "Altas"
+        Me.AltasToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
+        Me.AltasToolStripMenuItem.Text = "Usuarios"
         '
         'AltaDeUsuarioToolStripMenuItem
         '
@@ -181,23 +184,43 @@ Partial Class FormularioPrincipal
         Me.AltaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
         Me.AltaDeUsuarioToolStripMenuItem.Text = "Alta de usuario"
         '
+        'BajaDeUsuarioToolStripMenuItem
+        '
+        Me.BajaDeUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.BajaDeUsuarioToolStripMenuItem.Name = "BajaDeUsuarioToolStripMenuItem"
+        Me.BajaDeUsuarioToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.BajaDeUsuarioToolStripMenuItem.Text = "Baja de usuario"
+        '
+        'AToolStripMenuItem
+        '
+        Me.AToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AToolStripMenuItem.Name = "AToolStripMenuItem"
+        Me.AToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.AToolStripMenuItem.Text = "Acciones"
+        '
         'BajasToolStripMenuItem
         '
         Me.BajasToolStripMenuItem.Name = "BajasToolStripMenuItem"
-        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(62, 25)
-        Me.BajasToolStripMenuItem.Text = "Bajas"
+        Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
+        Me.BajasToolStripMenuItem.Text = "Clientes"
         '
         'BusquedaToolStripMenuItem
         '
         Me.BusquedaToolStripMenuItem.Name = "BusquedaToolStripMenuItem"
-        Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(100, 25)
-        Me.BusquedaToolStripMenuItem.Text = "Busqueda"
+        Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(93, 25)
+        Me.BusquedaToolStripMenuItem.Text = "Animales"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(91, 25)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(87, 25)
+        Me.ReportesToolStripMenuItem.Text = "Especies"
+        '
+        'InformesToolStripMenuItem
+        '
+        Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(88, 25)
+        Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'PictureBox1
         '
@@ -427,4 +450,7 @@ Partial Class FormularioPrincipal
     Friend WithEvents Label8 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
+    Friend WithEvents BajaDeUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
 End Class

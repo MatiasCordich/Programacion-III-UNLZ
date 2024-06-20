@@ -4,6 +4,8 @@ Imports VeterinariaService.DAO
 Public Class FormularioPrincipal
 #Region "Dependencias"
     Private ventanaAlta As FormularioAltaUsuario
+    Private ventanaBaja As FormularioBajaUsuario
+    Private ventanaAcciones As FormularioAccionesUsuario
 #End Region
 
 #Region "Eventos"
@@ -52,26 +54,9 @@ Public Class FormularioPrincipal
 
     End Sub
 
-    '------------------------------ TICK TIMER LOGIN ------------------------------
-    Private Sub T_login_Tick(sender As Object, e As EventArgs) Handles T_login.Tick
-
-        'Evaluamos el valor de la barra de carga'
-        If PB_barraLogin.Value = PB_barraLogin.Maximum Then
-
-            'Si es igual a su MAXIMO entonces que me muestre y oculte ciertos componentes'
-            MS_menuABM.Visible = True
-            Btn_salirApp.Visible = True
-            P_login.Visible = False
-            LBL_nombreUsuario.Visible = True
-        Else
-            'Caso contrario incremento el valor de la barra con los ticks del timer'
-            Dim nuevoValor = PB_barraLogin.Value + 10
-            PB_barraLogin.Value = Math.Min(nuevoValor, PB_barraLogin.Maximum)
-        End If
-    End Sub
-
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------
     Private Sub AltaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeUsuarioToolStripMenuItem.Click
+
         'Validamos que exista la ventana de Alta de usuarios'
         If ventanaAlta Is Nothing Then
 
@@ -90,6 +75,69 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+    '------------------------------ CLICK MOSTRAR FORMULARIO BAJA ------------------------------
+    Private Sub BajaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeUsuarioToolStripMenuItem.Click
+
+        'Validamos que exista la ventana de Baja de usuarios'
+        If ventanaBaja Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaBaja = New FormularioBajaUsuario With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaBaja.FormClosed, AddressOf FormularioBajaUsuario_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaBaja.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ------------------------------
+    Private Sub AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AToolStripMenuItem.Click
+
+        'Validamos que exista la ventana de Baja de usuarios'
+        If ventanaAcciones Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAcciones = New FormularioAccionesUsuario With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAcciones.FormClosed, AddressOf FormularioAccionesUsuario_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAcciones.Show()
+
+        End If
+    End Sub
+
+#End Region
+
+#Region "Timers"
+    '------------------------------ TICK TIMER LOGIN ------------------------------
+    Private Sub T_login_Tick(sender As Object, e As EventArgs) Handles T_login.Tick
+
+        'Evaluamos el valor de la barra de carga'
+        If PB_barraLogin.Value = PB_barraLogin.Maximum Then
+
+            'Si es igual a su MAXIMO entonces que me muestre y oculte ciertos componentes'
+            MS_menuABM.Visible = True
+            Btn_salirApp.Visible = True
+            P_login.Visible = False
+            LBL_nombreUsuario.Visible = True
+        Else
+            'Caso contrario incremento el valor de la barra con los ticks del timer'
+            Dim nuevoValor = PB_barraLogin.Value + 10
+            PB_barraLogin.Value = Math.Min(nuevoValor, PB_barraLogin.Maximum)
+        End If
+    End Sub
+
 #End Region
 
 #Region "Handler"
@@ -97,6 +145,14 @@ Public Class FormularioPrincipal
     '------------------------------ HANDLER ESTADO DE LA DEPENDENCIA VENTANALATA ------------------------------
     Private Sub FormularioAltaUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaAlta = Nothing
+    End Sub
+
+    Private Sub FormularioBajaUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaBaja = Nothing
+    End Sub
+
+    Private Sub FormularioAccionesUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAcciones = Nothing
     End Sub
 
 #End Region

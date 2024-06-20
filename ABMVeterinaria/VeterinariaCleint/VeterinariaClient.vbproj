@@ -81,10 +81,22 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.Designer.vb">
+      <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Usuario\FormularioAltaUsuario.Designer.vb">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Usuario\FormularioAltaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioBajaUsuario.Designer.vb">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioBajaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -107,8 +119,14 @@
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioAccionesUsuario.resx">
+      <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario\FormularioAltaUsuario.resx">
       <DependentUpon>FormularioAltaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioBajaUsuario.resx">
+      <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
