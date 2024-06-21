@@ -40,7 +40,7 @@ Public Class FormularioPrincipal
             Return
         End If
 
-        'Validamos si el usuario ingresado esta activo'
+        'Validamos si el usuario ingresado esta Inactivo'
         If usuario.Estado = "Inactivo" Then
             'Si su estado es Inactivo entonces muestro un mensaje de que no puede ingresar'
             MessageBox.Show("Este usuario esta inactivo, no puede ingresar")
