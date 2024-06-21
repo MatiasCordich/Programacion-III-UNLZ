@@ -2,8 +2,23 @@
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports VeterinariaService.DAO
 
+
 Public Class FormularioAccionesUsuario
 
+#Region "Acciones"
+    Private Sub LimpiarCamposBusquedaID()
+        Txt_idUsuario.Text = ""
+    End Sub
+
+    Private Sub LimpiarCamposEditarUsurios()
+        Txt_editarID.Text = ""
+        Txt_nombreEditar.Text = ""
+        Txt_claveEditar.Text = ""
+    End Sub
+
+#End Region
+
+#Region "Dependencias"
     '---------------------------------- LISTAR ---------------------------------- '
     Private Sub Btn_listarUsuarios_Click(sender As Object, e As EventArgs) Handles Btn_listarUsuarios.Click
 
@@ -62,6 +77,8 @@ Public Class FormularioAccionesUsuario
                     LBL_descripcionEstado.ForeColor = Color.Green
                 End If
 
+                Me.LimpiarCamposBusquedaID()
+
             Else
                 'Caso contrario que se muestre un mensaje de error'
                 MessageBox.Show("El usuario no existe")
@@ -79,7 +96,7 @@ Public Class FormularioAccionesUsuario
         'Tomamos el valor del TextBox'
         Dim idS = Txt_editarID.Text
         Dim nombre = Txt_nombreEditar.Text
-        Dim clave = Txt_editarUsuario.Text
+        Dim clave = Txt_claveEditar.Text
 
         'Validamos que no sea vacio'
         If idS = "" Then
@@ -119,6 +136,7 @@ Public Class FormularioAccionesUsuario
                     Return
                 Else
                     dao.Update(id, nombre, clave)
+                    Me.LimpiarCamposEditarUsurios()
                     MessageBox.Show($"El usuario {usuario.NombreUsuario} ha sido modifcado correctamente")
                     Return
                 End If
@@ -130,6 +148,9 @@ Public Class FormularioAccionesUsuario
             MessageBox.Show("ERROR: No se puedo buscar al usuario")
         End Try
     End Sub
+#End Region
+
+
 
 
 End Class

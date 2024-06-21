@@ -34,10 +34,16 @@ Public Class FormularioPrincipal
         'Validamos si existe el usuario'
         Dim usuario = dao.GetUsuarioLogin(nombre, clave)
 
-
-
+        'Validamos si el usuario existe'
         If usuario Is Nothing Then
             MessageBox.Show("ERROR: Usuario no encontrado, intentelo otra vez")
+            Return
+        End If
+
+        'Validamos si el usuario ingresado esta activo'
+        If usuario.Estado = "Inactivo" Then
+            'Si su estado es Inactivo entonces muestro un mensaje de que no puede ingresar'
+            MessageBox.Show("Este usuario esta inactivo, no puede ingresar")
             Return
         End If
 

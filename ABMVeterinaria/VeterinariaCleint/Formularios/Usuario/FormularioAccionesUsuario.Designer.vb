@@ -38,7 +38,7 @@ Partial Class FormularioAccionesUsuario
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Txt_editarUsuario = New System.Windows.Forms.TextBox()
+        Me.Txt_claveEditar = New System.Windows.Forms.TextBox()
         Me.Btn_editarUsuario = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Txt_nombreEditar = New System.Windows.Forms.TextBox()
@@ -217,7 +217,7 @@ Partial Class FormularioAccionesUsuario
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.Controls.Add(Me.Txt_editarUsuario)
+        Me.GroupBox4.Controls.Add(Me.Txt_claveEditar)
         Me.GroupBox4.Controls.Add(Me.Btn_editarUsuario)
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Controls.Add(Me.Txt_nombreEditar)
@@ -230,12 +230,12 @@ Partial Class FormularioAccionesUsuario
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Campos"
         '
-        'Txt_editarUsuario
+        'Txt_claveEditar
         '
-        Me.Txt_editarUsuario.Location = New System.Drawing.Point(84, 62)
-        Me.Txt_editarUsuario.Name = "Txt_editarUsuario"
-        Me.Txt_editarUsuario.Size = New System.Drawing.Size(149, 26)
-        Me.Txt_editarUsuario.TabIndex = 8
+        Me.Txt_claveEditar.Location = New System.Drawing.Point(84, 62)
+        Me.Txt_claveEditar.Name = "Txt_claveEditar"
+        Me.Txt_claveEditar.Size = New System.Drawing.Size(149, 26)
+        Me.Txt_claveEditar.TabIndex = 8
         '
         'Btn_editarUsuario
         '
@@ -355,7 +355,7 @@ Partial Class FormularioAccionesUsuario
     Friend WithEvents Txt_editarID As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Txt_nombreEditar As TextBox
-    Friend WithEvents Txt_editarUsuario As TextBox
+    Friend WithEvents Txt_claveEditar As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Btn_listarUsuarios As Button
     Friend WithEvents LBL_descripcionEstado As Label

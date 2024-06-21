@@ -84,10 +84,10 @@ Partial Class FormularioPrincipal
         'LBL_cargaBarra
         '
         Me.LBL_cargaBarra.AutoSize = True
-        Me.LBL_cargaBarra.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_cargaBarra.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_cargaBarra.Location = New System.Drawing.Point(21, 206)
         Me.LBL_cargaBarra.Name = "LBL_cargaBarra"
-        Me.LBL_cargaBarra.Size = New System.Drawing.Size(0, 20)
+        Me.LBL_cargaBarra.Size = New System.Drawing.Size(0, 18)
         Me.LBL_cargaBarra.TabIndex = 9
         '
         'PB_barraLogin
@@ -130,6 +130,7 @@ Partial Class FormularioPrincipal
         '
         Me.Txt_claveLogin.Location = New System.Drawing.Point(125, 74)
         Me.Txt_claveLogin.Name = "Txt_claveLogin"
+        Me.Txt_claveLogin.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Txt_claveLogin.Size = New System.Drawing.Size(305, 31)
         Me.Txt_claveLogin.TabIndex = 3
         '
@@ -240,7 +241,7 @@ Partial Class FormularioPrincipal
         Me.LBL_nombreUsuario.AutoSize = True
         Me.LBL_nombreUsuario.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBL_nombreUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.LBL_nombreUsuario.Location = New System.Drawing.Point(469, 60)
+        Me.LBL_nombreUsuario.Location = New System.Drawing.Point(463, 60)
         Me.LBL_nombreUsuario.Name = "LBL_nombreUsuario"
         Me.LBL_nombreUsuario.Size = New System.Drawing.Size(0, 63)
         Me.LBL_nombreUsuario.TabIndex = 11
