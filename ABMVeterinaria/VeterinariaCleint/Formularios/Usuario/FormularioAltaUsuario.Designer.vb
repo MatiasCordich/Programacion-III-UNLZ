@@ -146,7 +146,7 @@ Partial Class FormularioAltaUsuario
         Me.MinimumSize = New System.Drawing.Size(816, 489)
         Me.Name = "FormularioAltaUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Alta de usuario"
+        Me.Text = "Alta - Usuario"
         Me.P_altaUsuario.ResumeLayout(False)
         Me.P_altaUsuario.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

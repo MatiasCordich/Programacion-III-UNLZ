@@ -99,6 +99,12 @@
     <Compile Include="Formularios\Usuario\FormularioBajaUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Usuario\FormularioReactivarUsuario.Designer.vb">
+      <DependentUpon>FormularioReactivarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Usuario\FormularioReactivarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario\FormularioBajaUsuario.resx">
       <DependentUpon>FormularioBajaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Usuario\FormularioReactivarUsuario.resx">
+      <DependentUpon>FormularioReactivarUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

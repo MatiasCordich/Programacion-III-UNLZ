@@ -316,7 +316,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Baja Usuario</value>
+    <value>Baja - Usuario</value>
   </data>
   <data name="&gt;&gt;T_Baja.Name" xml:space="preserve">
     <value>T_Baja</value>

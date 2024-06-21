@@ -98,13 +98,13 @@ Public Class FormularioAccionesUsuario
         Dim nombre = Txt_nombreEditar.Text
         Dim clave = Txt_claveEditar.Text
 
-        'Validamos que no sea vacio'
-        If idS = "" Then
-            MessageBox.Show("ERROR: El campo ID no puede estar vacio")
+        'Validamos que los campos ID, NOMBRE y CLAVE no sean nulos'
+        If idS = "" Or nombre = "" Or clave = "" Then
+            MessageBox.Show("ERROR: Los campos ID, NOMBRE y CLAVE no pueden estar vacios")
             Return
         End If
 
-        'Validamos que sea un numero'
+        'Validamos que ID sea un numero'
         Dim id As Integer
 
         If Not Integer.TryParse(idS, id) Then
@@ -112,7 +112,7 @@ Public Class FormularioAccionesUsuario
             Return
         End If
 
-        'Validamos que el id no sea negativo'
+        'Validamos que el ID no sea negativo'
         If id < 0 Then
             MessageBox.Show("ERROR: El numero de ID no puede ser negativo")
             Return

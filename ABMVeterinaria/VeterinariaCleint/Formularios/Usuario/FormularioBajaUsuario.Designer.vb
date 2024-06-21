@@ -84,6 +84,9 @@ Partial Class FormularioBajaUsuario
         Me.LBL_descripcionBaja.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.LBL_descripcionBaja.Name = "LBL_descripcionBaja"
         '
+        'T_Baja
+        '
+        '
         'FormularioBajaUsuario
         '
         resources.ApplyResources(Me, "$this")

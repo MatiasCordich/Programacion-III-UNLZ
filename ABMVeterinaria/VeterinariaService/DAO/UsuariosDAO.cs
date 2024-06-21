@@ -64,6 +64,33 @@ namespace VeterinariaService.DAO
             return usuarioEncontrado;
         }
 
+        //----------------------------------- REACTIVAR USUARIO -----------------------------------
+        public bool ReactivarUsuario(long id)
+        {
+            // Definimos la consulta SQL para hacer un SOFT DELETE
+
+            // Hacemoes el pase de datos y valores que recibimos por parametros a la QUERY
+            string query = $"UPDATE Usuarios SET Estado = 'Activo' WHERE UsuarioID = {id}";
+
+            // Creamos la conexion llamando la funcion creada recientemente
+            IDbConnection connection = this.PrepararConexion();
+
+            // Creamos el comando 
+            IDbCommand command = connection.CreateCommand();
+
+            // Le agregamos el texto al comando
+            command.CommandText = query;
+
+            // Ejecutamos la sentencia 
+            int rowsAffected = command.ExecuteNonQuery();
+
+            // Cerramos la conexion
+            connection.Close();
+
+            // Retornamos true si hubo cambios en las filas, false en caso contrario
+            return rowsAffected > 0;
+        }
+
         //----------------------------------- FUNCIONES DAO  -----------------------------------
 
         //--------------- GET ALL --------------- 

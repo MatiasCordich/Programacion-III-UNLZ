@@ -6,6 +6,7 @@ Public Class FormularioPrincipal
     Private ventanaAlta As FormularioAltaUsuario
     Private ventanaBaja As FormularioBajaUsuario
     Private ventanaAcciones As FormularioAccionesUsuario
+    Private ventanaReactivar As FormularioReactivarUsuario
 #End Region
 
 #Region "Eventos"
@@ -123,6 +124,27 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+    '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR USUARIO ------------------------------
+    Private Sub ReactivarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReactivarUsuarioToolStripMenuItem.Click
+
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaReactivar Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaReactivar = New FormularioReactivarUsuario With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaReactivar.FormClosed, AddressOf FormularioReactivarUsuario_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaReactivar.Show()
+
+        End If
+    End Sub
+
 #End Region
 
 #Region "Timers"
@@ -159,6 +181,10 @@ Public Class FormularioPrincipal
 
     Private Sub FormularioAccionesUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaAcciones = Nothing
+    End Sub
+
+    Private Sub FormularioReactivarUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaReactivar = Nothing
     End Sub
 
 #End Region
