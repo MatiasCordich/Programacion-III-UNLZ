@@ -16,7 +16,7 @@ Public Class FormularioAltaUsuario
     Private Sub Btn_alta_Click(sender As Object, e As EventArgs) Handles Btn_alta.Click
 
         'Tomamos los valores de los TextBox'
-        Dim nombre = Txt_nombreAlta.Text
+        Dim nombre = Txt_nombreAlta.Text.ToLower
         Dim clave = Txt_claveAlta.Text
 
         If nombre = "" Or clave = "" Then
@@ -31,7 +31,7 @@ Public Class FormularioAltaUsuario
         Dim listaUsuarios = dao.GetAll
 
         For Each usuario As Usuario In listaUsuarios
-            If usuario.NombreUsuario.ToUpper = nombre.ToUpper Then
+            If usuario.NombreUsuario.ToLower = nombre Then
                 'Que me muestre un mensaje de error'
                 MessageBox.Show("ERROR: El NOMBRE de usuario ya existe, intente otro")
                 Return

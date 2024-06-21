@@ -20,7 +20,7 @@ Public Class FormularioPrincipal
     Private Sub Btn_Login_Click(sender As Object, e As EventArgs) Handles Btn_Login.Click
 
         'Tomamos los valores '
-        Dim nombre = Txt_nombreLogin.Text
+        Dim nombre = Txt_nombreLogin.Text.ToLower
         Dim clave = Txt_claveLogin.Text
 
         'Validamos que no haya campos vacios en los TextBox'
