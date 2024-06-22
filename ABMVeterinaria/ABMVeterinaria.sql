@@ -14,12 +14,12 @@ ADD CONSTRAINT CHK_Estado CHECK (Estado IN ('Activo', 'Inactivo'));
 CREATE TABLE Clientes (
     ClienteID INT PRIMARY KEY IDENTITY,
     Nombre VARCHAR(255) NOT NULL,
-    DNI VARCHAR(255) NOT NULL,
+    DNI INT NOT NULL,
     Estado VARCHAR(10) NOT NULL DEFAULT 'Activo'
 
 -- Aseguramos que Estado de Clientes solo acepte 'Activo' o 'Inactivo'
 ALTER TABLE Clientes
-ADD CONSTRAINT CHK_Estado CHECK (Estado IN ('Activo', 'Inactivo'));
+ADD CONSTRAINT CHK_EstadoCliente CHECK (Estado IN ('Activo', 'Inactivo'));
 
 CREATE TABLE Animales (
     AnimalID INT PRIMARY KEY IDENTITY,
@@ -35,17 +35,25 @@ CREATE TABLE Animales (
 
 -- Aseguramos que Estado de Animales solo acepte 'Vivo' o 'Difunto'
 ALTER TABLE Animales 
-ADD CONSTRAINT CHK_Estado CHECK (Estado IN ('Vivo', 'Difunto'));
+ADD CONSTRAINT CHK_EstadoAnimal CHECK (Estado IN ('Vivo', 'Difunto'));
 
 CREATE TABLE Especies (
     EspecieID INT PRIMARY KEY IDENTITY,
-    NombreEspecie VARCHAR(255) NOT NULL,
-    EdadMadurez INT,
-	PesoPromedio  DECIMAL(5,2),
+    Nombre VARCHAR(255) NOT NULL,
+    EdadMadurez INT NOT NULL,
+	PesoPromedio  DECIMAL(5,2) NOT NULL,
 );
+
+select * from Especies
 
 -- Usuario inicial 
 INSERT INTO Usuarios (NombreUsuario, Clave)
 VALUES ('pepe', '1234');
-S
 
+-- Cliente inicial
+INSERT INTO Clientes (Nombre, DNI)
+VALUES ('kali uchis', 38545676);
+
+-- Especie inicial
+INSERT INTO Especies(Nombre, EdadMadurez, PesoPromedio)
+VALUES ('canino', 4, 15);
