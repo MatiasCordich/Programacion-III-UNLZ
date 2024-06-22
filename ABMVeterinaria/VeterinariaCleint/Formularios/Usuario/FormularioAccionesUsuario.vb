@@ -18,7 +18,7 @@ Public Class FormularioAccionesUsuario
 
 #End Region
 
-#Region "Dependencias"
+#Region "Eventos"
     '---------------------------------- LISTAR ---------------------------------- '
     Private Sub Btn_listarUsuarios_Click(sender As Object, e As EventArgs) Handles Btn_listarUsuarios.Click
 
@@ -149,8 +149,5 @@ Public Class FormularioAccionesUsuario
         End Try
     End Sub
 #End Region
-
-
-
 
 End Class

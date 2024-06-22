@@ -81,6 +81,18 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Especie\FormularioAccionesEspecie.Designer.vb">
+      <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAccionesEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAltaEspecie.Designer.vb">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Especie\FormularioAltaEspecie.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.Designer.vb">
       <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
     </Compile>
@@ -124,6 +136,12 @@
   <ItemGroup>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Especie\FormularioAccionesEspecie.resx">
+      <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Especie\FormularioAltaEspecie.resx">
+      <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario\FormularioAccionesUsuario.resx">
       <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>

@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ClientesDAO.cs" />
+    <Compile Include="DAO\EspeciesDAO.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
     <Compile Include="Modelos\Animal.cs" />
     <Compile Include="Modelos\Cliente.cs" />

@@ -39,9 +39,12 @@ Partial Class FormularioPrincipal
         Me.AltaDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaDeUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReactivarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaDeEspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LBL_nombreUsuario = New System.Windows.Forms.Label()
@@ -57,7 +60,6 @@ Partial Class FormularioPrincipal
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ReactivarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
@@ -200,6 +202,13 @@ Partial Class FormularioPrincipal
         Me.AToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
         Me.AToolStripMenuItem.Text = "Acciones"
         '
+        'ReactivarUsuarioToolStripMenuItem
+        '
+        Me.ReactivarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReactivarUsuarioToolStripMenuItem.Name = "ReactivarUsuarioToolStripMenuItem"
+        Me.ReactivarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
+        Me.ReactivarUsuarioToolStripMenuItem.Text = "Reactivar Usuario"
+        '
         'BajasToolStripMenuItem
         '
         Me.BajasToolStripMenuItem.Name = "BajasToolStripMenuItem"
@@ -214,9 +223,24 @@ Partial Class FormularioPrincipal
         '
         'ReportesToolStripMenuItem
         '
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeEspecieToolStripMenuItem, Me.AccionesToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(87, 25)
         Me.ReportesToolStripMenuItem.Text = "Especies"
+        '
+        'AltaDeEspecieToolStripMenuItem
+        '
+        Me.AltaDeEspecieToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AltaDeEspecieToolStripMenuItem.Name = "AltaDeEspecieToolStripMenuItem"
+        Me.AltaDeEspecieToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.AltaDeEspecieToolStripMenuItem.Text = "Alta de Especie"
+        '
+        'AccionesToolStripMenuItem
+        '
+        Me.AccionesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AccionesToolStripMenuItem.Name = "AccionesToolStripMenuItem"
+        Me.AccionesToolStripMenuItem.Size = New System.Drawing.Size(202, 26)
+        Me.AccionesToolStripMenuItem.Text = "Acciones"
         '
         'InformesToolStripMenuItem
         '
@@ -386,13 +410,6 @@ Partial Class FormularioPrincipal
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "a Patitas Veterinaria"
         '
-        'ReactivarUsuarioToolStripMenuItem
-        '
-        Me.ReactivarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.ReactivarUsuarioToolStripMenuItem.Name = "ReactivarUsuarioToolStripMenuItem"
-        Me.ReactivarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(217, 26)
-        Me.ReactivarUsuarioToolStripMenuItem.Text = "Reactivar Usuario"
-        '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -463,4 +480,6 @@ Partial Class FormularioPrincipal
     Friend WithEvents AToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InformesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReactivarUsuarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaDeEspecieToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccionesToolStripMenuItem As ToolStripMenuItem
 End Class

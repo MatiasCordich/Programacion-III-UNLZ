@@ -7,6 +7,9 @@ Public Class FormularioPrincipal
     Private ventanaBaja As FormularioBajaUsuario
     Private ventanaAcciones As FormularioAccionesUsuario
     Private ventanaReactivar As FormularioReactivarUsuario
+
+    Private ventanaAltaEspecies As FormularioAltaEspecie
+    Private ventanaAccionesEspecie As FormularioAccionesEspecie
 #End Region
 
 #Region "Eventos"
@@ -145,6 +148,49 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ESPECIES ------------------------------
+    Private Sub AltaDeEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeEspecieToolStripMenuItem.Click
+
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaAltaEspecies Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAltaEspecies = New FormularioAltaEspecie With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAltaEspecies.FormClosed, AddressOf FormularioAltaEspecie_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAltaEspecies.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ESPECIES ------------------------------
+    Private Sub AccionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccionesToolStripMenuItem.Click
+
+
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaAccionesEspecie Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAccionesEspecie = New FormularioAccionesEspecie With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAccionesEspecie.FormClosed, AddressOf FormularioAccionesEspecie_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAccionesEspecie.Show()
+
+        End If
+    End Sub
+
 #End Region
 
 #Region "Timers"
@@ -185,6 +231,13 @@ Public Class FormularioPrincipal
 
     Private Sub FormularioReactivarUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaReactivar = Nothing
+    End Sub
+    Private Sub FormularioAltaEspecie_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAltaEspecies = Nothing
+    End Sub
+
+    Private Sub FormularioAccionesEspecie_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAccionesEspecie = Nothing
     End Sub
 
 #End Region
