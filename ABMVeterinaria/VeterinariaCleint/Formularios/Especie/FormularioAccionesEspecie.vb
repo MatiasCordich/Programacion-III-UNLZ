@@ -22,9 +22,9 @@ Public Class FormularioAccionesEspecie
     Private Sub Btn_listarEspecies_Click(sender As Object, e As EventArgs) Handles Btn_listarEspecies.Click
         Dim dao As New EspeciesDAO
 
-        Dim listaUsuarios = dao.GetAll
+        Dim listaEspecies = dao.GetAll
 
-        DGV_listaEspecies.DataSource = listaUsuarios
+        DGV_listaEspecies.DataSource = listaEspecies
     End Sub
 
     '---------------------------------- BUSCAR ESPECIE POR ID ---------------------------------- '
@@ -70,18 +70,9 @@ Public Class FormularioAccionesEspecie
 
                 LBL_idEspecie.Text = especie.EspecieID.ToString("#0")
                 LBL_nombreEspecie.Text = especie.NombreEspecie.ToString
+                LBL_edadEspecie.Text = especie.EdadMadurez.ToString("#0")
+                LBL_pesoEspecie.Text = especie.PesoPromedio.ToString("#0.00")
 
-                If especie.EdadMadurez.ToString = "NULL" Then
-                    LBL_edadEspecie.Text = texto
-                Else
-                    LBL_edadEspecie.Text = especie.EdadMadurez.ToString("#0")
-                End If
-
-                If especie.PesoPromedio.ToString = "NULL" Then
-                    LBL_pesoEspecie.Text = texto
-                Else
-                    LBL_pesoEspecie.Text = especie.PesoPromedio.ToString("#0")
-                End If
                 Me.LimpiarCamposBusquedaID()
 
             Else
@@ -100,7 +91,7 @@ Public Class FormularioAccionesEspecie
 
         'Tomamos el valor del TextBox'
         Dim idS = Txt_editarID.Text
-        Dim nombre = Txt_nombreEspecie.Text
+        Dim nombre = Txt_nombreEspecie.Text.ToLower
         Dim edadS = Txt_edadEspecie.Text
         Dim pesoS = Txt_pesoEspecie.Text
 

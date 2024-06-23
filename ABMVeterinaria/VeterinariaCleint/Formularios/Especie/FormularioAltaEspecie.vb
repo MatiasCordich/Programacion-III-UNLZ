@@ -14,6 +14,7 @@ Public Class FormularioAltaEspecie
 
     '----------------------------------- CLICK ALTA ESPECIE -----------------------------------'
     Private Sub Btn_altaEspecie_Click(sender As Object, e As EventArgs) Handles Btn_altaEspecie.Click
+
         'Tomamos los valores de los TextBox'
         Dim nombre = Txt_nombreEspecieAlta.Text.ToLower
         Dim edadS = Txt_EdadEspecieAlta.Text

@@ -88,6 +88,7 @@ Partial Class FormularioPrincipal
         '
         Me.LBL_cargaBarra.AutoSize = True
         Me.LBL_cargaBarra.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_cargaBarra.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.LBL_cargaBarra.Location = New System.Drawing.Point(21, 206)
         Me.LBL_cargaBarra.Name = "LBL_cargaBarra"
         Me.LBL_cargaBarra.Size = New System.Drawing.Size(0, 18)
