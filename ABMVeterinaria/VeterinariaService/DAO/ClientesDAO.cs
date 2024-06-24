@@ -23,6 +23,33 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
+        //----------------------------------- REACTIVAR CLIENTE -----------------------------------//
+        public bool ReactivarUsuario(long ID)
+        {
+            // Definimos la consulta SQL para hacer un SOFT DELETE
+
+            // Hacemoes el pase de datos y valores que recibimos por parametros a la QUERY
+            string query = $"UPDATE Clientes SET Estado = 'Activo' WHERE ClienteID = {ID}";
+
+            // Creamos la conexion llamando la funcion creada recientemente
+            IDbConnection connection = this.PrepararConexion();
+
+            // Creamos el comando 
+            IDbCommand command = connection.CreateCommand();
+
+            // Le agregamos el texto al comando
+            command.CommandText = query;
+
+            // Ejecutamos la sentencia 
+            int rowsAffected = command.ExecuteNonQuery();
+
+            // Cerramos la conexion
+            connection.Close();
+
+            // Retornamos true si hubo cambios en las filas, false en caso contrario
+            return rowsAffected > 0;
+        }
+
         //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
         //--------------- GET ALL ---------------// 
@@ -70,7 +97,8 @@ namespace VeterinariaService.DAO
         //--------------- GET BY ID ---------------//
         public Cliente GetByID(long ID)
         {
-            //pasaje de datos y valores a la query//
+
+            //Pasaje de datos y valores a la query//
             string query = $"SELECT ClienteID, Nombre, DNI, Estado FROM Clientes WHERE ClienteID={ID}";
 
             // preparamos la conexion //
@@ -130,11 +158,11 @@ namespace VeterinariaService.DAO
         }
 
         //--------------- UPDATE ---------------//
-        public void Update(long ID, string Nombre, long DNI)
+        public void Update(long ID, string Nombre)
         {
             //pasaje de datos y valores a la query//
 
-            string query = $"UPDATE Clientes SET Nombre = '{Nombre}', DNI = {DNI} WHERE ClienteID = {ID} AND Estado ='Activo';";
+            string query = $"UPDATE Clientes SET Nombre = '{Nombre}' WHERE ClienteID = {ID} AND Estado ='Activo';";
 
             //preparamos la conexion//
             IDbConnection conexion = this.PrepararConexion();
