@@ -8,13 +8,13 @@ namespace VeterinariaService.Modelos
 {
     public class Especie
     {
-        // Atributos
+        //--------------- ATRIBUTOS ---------------//
         public long EspecieID { get; set; }
         public string NombreEspecie { get; set; }
         public int EdadMadurez { get; set; }
         public decimal PesoPromedio { get; set; }
 
-        // Creamos el constructor de Especie
+        //--------------- CONSTRUCTOR ESPECIE ---------------//
         public Especie(string nombreEspecie, int edadMadurez, decimal pesoPromedio)
         {
             NombreEspecie = nombreEspecie;
@@ -22,7 +22,7 @@ namespace VeterinariaService.Modelos
             PesoPromedio = pesoPromedio;
         }
 
-        // Constructor vacio para dar de alta una Especie desde DB
+        //--------------- CONSTRUCTOR VACIO PARA LA DDBB ---------------//
         public Especie()
         {
 

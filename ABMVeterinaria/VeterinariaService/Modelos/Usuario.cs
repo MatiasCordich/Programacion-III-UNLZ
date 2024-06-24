@@ -8,20 +8,20 @@ namespace VeterinariaService.Modelos
 {
     public class Usuario
     {
-        // Atributos
+        //--------------- ATRIBUTOS ---------------//
         public long UsuarioID { get; set; }
         public string NombreUsuario { get; set; }
         public string Clave { get; set; }
         public string Estado {  get; set; }
 
-        // Creamos el constructor de Usuario
+        //--------------- CONSTRUCTOR USUARIO ---------------//
         public Usuario(string nombreUsuario, string clave)
         {
             NombreUsuario = nombreUsuario;
             Clave = clave;
         }
 
-        // Constructor vacio para dar de alta un usuario en la DB
+        //--------------- CONSTRUCTOR VACIO PARA LA DDBB ---------------//
         public Usuario()
         {
 

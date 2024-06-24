@@ -8,7 +8,7 @@ namespace VeterinariaService.Modelos
 {
     public class Animal
     {
-        // Atributos
+        //--------------- ATRIBUTOS ---------------//
         public long AnimalID { get; set; }
         public string Nombre { get; set; }
         public decimal Peso { get; set; }
@@ -17,7 +17,7 @@ namespace VeterinariaService.Modelos
         public long EspecieID { get; set; }
 
 
-        //creamos el constructor de Animal//
+        //--------------- CONSTRUCTOR ANIMAL ---------------//
         public Animal(string nombre, decimal peso, int edad, long clienteID, long especieID)
         {
             Nombre = nombre;
@@ -27,7 +27,7 @@ namespace VeterinariaService.Modelos
             EspecieID = especieID;
         }
 
-        //constructor vacio para dar de alta un Animal desde DB//
+        //--------------- CONSTRUCTOR VACIO PARA LA DDBB ---------------//
         public Animal()
         {
 

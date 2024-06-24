@@ -11,7 +11,7 @@ namespace VeterinariaService.DAO
 {
     public class ClientesDAO
     {
-        //----------------------------------- PREPARAR CONEXION -----------------------------------
+        //----------------------------------- PREPARAR CONEXION -----------------------------------//
         private IDbConnection PrepararConexion()
         {
             string conexionURL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
@@ -23,9 +23,9 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
-        //----------------------------------- FUNCIONES DAO  -----------------------------------
+        //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
-        //--------------- GET ALL --------------- 
+        //--------------- GET ALL ---------------// 
         public List<Cliente> GetAll()
         {
             //creamos conexion llamando a la funcion de preparar//
@@ -67,7 +67,7 @@ namespace VeterinariaService.DAO
         }
 
 
-        //--------------- GET BY ID ---------------
+        //--------------- GET BY ID ---------------//
         public Cliente GetByID(long ID)
         {
             //pasaje de datos y valores a la query//
@@ -105,7 +105,7 @@ namespace VeterinariaService.DAO
         }
 
 
-        //--------------- INSERT --------------- 
+        //--------------- INSERT ---------------// 
         public bool Insert(Cliente nuevoC)
         {
             //creamos Query//
@@ -129,7 +129,7 @@ namespace VeterinariaService.DAO
 
         }
 
-        //--------------- UPDATE ---------------
+        //--------------- UPDATE ---------------//
         public void Update(long ID, string Nombre, long DNI)
         {
             //pasaje de datos y valores a la query//
@@ -151,7 +151,7 @@ namespace VeterinariaService.DAO
 
         }
 
-        //--------------- DELETE ---------------
+        //--------------- DELETE ---------------//
         public bool Delete(long ID)
         {
             //Con la consulta SQL hacemos un soft delete mediante un UPDATE//

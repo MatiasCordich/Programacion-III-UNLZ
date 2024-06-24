@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VeterinariaService.Modelos;
+using System.Threading;
 
 namespace VeterinariaService.DAO
 {
 
     public class UsuariosDAO
     {
-        //----------------------------------- PREPARAR CONEXION -----------------------------------
+        //----------------------------------- PREPARAR CONEXION -----------------------------------//
         private IDbConnection PrepararConexion()
         {
             string conexionURL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
@@ -24,7 +25,7 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
-        //----------------------------------- VALIDAR EXISTENCIA USUARIO LOGIN -----------------------------------
+        //----------------------------------- VALIDAR EXISTENCIA USUARIO LOGIN -----------------------------------//
         public Usuario GetUsuarioLogin(string nombre, string clave)
         {
 
@@ -64,7 +65,7 @@ namespace VeterinariaService.DAO
             return usuarioEncontrado;
         }
 
-        //----------------------------------- REACTIVAR USUARIO -----------------------------------
+        //----------------------------------- REACTIVAR USUARIO -----------------------------------//
         public bool ReactivarUsuario(long id)
         {
             // Definimos la consulta SQL para hacer un SOFT DELETE
@@ -91,9 +92,9 @@ namespace VeterinariaService.DAO
             return rowsAffected > 0;
         }
 
-        //----------------------------------- FUNCIONES DAO  -----------------------------------
+        //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
-        //--------------- GET ALL --------------- 
+        //--------------- GET ALL ---------------// 
         public List<Usuario> GetAll()
         {
             // Creamos la conexion llamando la funcion creada recientemente
@@ -133,7 +134,7 @@ namespace VeterinariaService.DAO
             return listaUsuarios;
         }
 
-        //--------------- GET BY ID --------------- 
+        //--------------- GET BY ID ---------------// 
         public Usuario GetByID(long id)
         {
             // Hacemos el pase de datos y valores de newP a la QUERY
@@ -172,7 +173,7 @@ namespace VeterinariaService.DAO
             return usuarioEncontrado;
         }
 
-        //--------------- INSERT --------------- 
+        //--------------- INSERT ---------------// 
         public bool Insert(Usuario nuevoU)
         {
 
@@ -198,7 +199,7 @@ namespace VeterinariaService.DAO
             return filasAfectadas > 0;
         }
 
-        //--------------- UPDATE ---------------
+        //--------------- UPDATE ---------------//
         public bool Update(long id, string nombre, string clave)
         {
 
@@ -225,7 +226,7 @@ namespace VeterinariaService.DAO
 
         }
 
-        //--------------- DELETE ---------------
+        //--------------- DELETE ---------------//
         public bool Delete(long id)
         {
 

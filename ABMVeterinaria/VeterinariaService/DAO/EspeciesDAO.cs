@@ -11,7 +11,7 @@ namespace VeterinariaService.DAO
 {
     public class EspeciesDAO
     {
-        //----------------------------------- PREPARAR CONEXION -----------------------------------
+        //----------------------------------- PREPARAR CONEXION -----------------------------------//
         private IDbConnection PrepararConexion()
         {
             string conexionURL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
@@ -23,9 +23,9 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
-        //----------------------------------- FUNCIONES DAO  -----------------------------------
+        //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
-        //--------------- GET ALL ---------------
+        //--------------- GET ALL ---------------//
         public List<Especie> GetAll()
         {
             // Creamos la conexion llamando la funcion creada recientemente
@@ -66,7 +66,7 @@ namespace VeterinariaService.DAO
 
         }
 
-        //--------------- GET BY ID --------------- 
+        //--------------- GET BY ID ---------------// 
         public Especie GetByID(long id)
         {
             // Hacemos el pase de datos y valores de newP a la QUERY
@@ -105,7 +105,7 @@ namespace VeterinariaService.DAO
             return especieEncontrada;
         }
 
-        //--------------- INSERT --------------- 
+        //--------------- INSERT ---------------// 
         public bool Insert(Especie nuevaE)
         {
             //Creamos la query
@@ -130,7 +130,7 @@ namespace VeterinariaService.DAO
 
         }
 
-        //--------------- UPDATE ---------------
+        //--------------- UPDATE ---------------//
         public void Update(long id, string nombre, int edad, decimal peso)
         {
 
@@ -156,7 +156,7 @@ namespace VeterinariaService.DAO
             conexion.Close();
 
         }
-        //--------------- DELETE ---------------
+        //--------------- DELETE ---------------//
         public void Delete(long id)
         {
             // Hacemoes el pase de datos y valores que recibimos por parametros a la QUERY

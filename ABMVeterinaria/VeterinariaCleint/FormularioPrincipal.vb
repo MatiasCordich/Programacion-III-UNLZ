@@ -14,12 +14,12 @@ Public Class FormularioPrincipal
 
 #Region "Eventos"
 
-    '------------------------------ CLICK SALIR DE LA APP ------------------------------ 
+    '------------------------------ CLICK SALIR DE LA APP ------------------------------' 
     Private Sub Btn_salirApp_Click(sender As Object, e As EventArgs) Handles Btn_salirApp.Click
         Me.Close()
     End Sub
 
-    '------------------------------ CLICK LOGIN ------------------------------
+    '------------------------------ CLICK LOGIN ------------------------------'
     Private Sub Btn_Login_Click(sender As Object, e As EventArgs) Handles Btn_Login.Click
 
         'Tomamos los valores '
@@ -64,7 +64,7 @@ Public Class FormularioPrincipal
 
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------'
     Private Sub AltaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeUsuarioToolStripMenuItem.Click
 
         'Validamos que exista la ventana de Alta de usuarios'
@@ -85,7 +85,7 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO BAJA ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO BAJA ------------------------------'
     Private Sub BajaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeUsuarioToolStripMenuItem.Click
 
         'Validamos que exista la ventana de Baja de usuarios'
@@ -106,7 +106,7 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ------------------------------'
     Private Sub AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AToolStripMenuItem.Click
 
         'Validamos que exista la ventana de Baja de usuarios'
@@ -127,7 +127,7 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR USUARIO ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR USUARIO ------------------------------'
     Private Sub ReactivarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReactivarUsuarioToolStripMenuItem.Click
 
         'Validamos que exista la ventana de Reactivar de usuarios'
@@ -148,7 +148,7 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ESPECIES ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ESPECIES ------------------------------'
     Private Sub AltaDeEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeEspecieToolStripMenuItem.Click
 
         'Validamos que exista la ventana de Reactivar de usuarios'
@@ -169,7 +169,7 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
-    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ESPECIES ------------------------------
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ESPECIES ------------------------------'
     Private Sub AccionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccionesToolStripMenuItem.Click
 
 
@@ -216,7 +216,7 @@ Public Class FormularioPrincipal
 
 #Region "Handler"
 
-    '------------------------------ HANDLER ESTADO DE LA DEPENDENCIA VENTANALATA ------------------------------
+    '------------------------------ HANDLER ESTADO DE LA DEPENDENCIA VENTANALATA ------------------------------'
     Private Sub FormularioAltaUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaAlta = Nothing
     End Sub

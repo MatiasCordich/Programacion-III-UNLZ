@@ -8,20 +8,20 @@ namespace VeterinariaService.Modelos
 {
     public class Cliente
     {
-        // Atributos
+        //--------------- ATRIBUTOS ---------------//
         public long ClienteID { get; set; }
         public string Nombre { get; set; }
         public long DNI { get; set; }
         public string Estado { get; set; }
 
-        // Creamos el constructor de Cliente
+        //--------------- CONSTRUCTOR CLIENTE ---------------//
         public Cliente(string nombre, long dni)
         {
             Nombre = nombre;
             DNI = dni;
         }
 
-        // Constructor vacio para dar de alta un Cliente desde DB
+        //--------------- CONSTRUCTOR VACIO PARA LA DDBB ---------------//
         public Cliente()
         {
 
