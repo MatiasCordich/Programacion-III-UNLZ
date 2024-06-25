@@ -15,6 +15,7 @@ namespace VeterinariaService.Modelos
         public int Edad { get; set; }
         public long ClienteID { get; set; }
         public long EspecieID { get; set; }
+        public string Estado { get; set; }
 
 
         //--------------- CONSTRUCTOR ANIMAL ---------------//

@@ -64,6 +64,9 @@ Partial Class FormularioPrincipal
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.AltaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccionesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
@@ -251,6 +254,7 @@ Partial Class FormularioPrincipal
         '
         'BusquedaToolStripMenuItem
         '
+        Me.BusquedaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeAnimalToolStripMenuItem, Me.BajaDeAnimalToolStripMenuItem, Me.AccionesToolStripMenuItem1})
         Me.BusquedaToolStripMenuItem.Name = "BusquedaToolStripMenuItem"
         Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(93, 25)
         Me.BusquedaToolStripMenuItem.Text = "Animales"
@@ -444,6 +448,27 @@ Partial Class FormularioPrincipal
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "a Patitas Veterinaria"
         '
+        'AltaDeAnimalToolStripMenuItem
+        '
+        Me.AltaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AltaDeAnimalToolStripMenuItem.Name = "AltaDeAnimalToolStripMenuItem"
+        Me.AltaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.AltaDeAnimalToolStripMenuItem.Text = "Alta de animal"
+        '
+        'BajaDeAnimalToolStripMenuItem
+        '
+        Me.BajaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.BajaDeAnimalToolStripMenuItem.Name = "BajaDeAnimalToolStripMenuItem"
+        Me.BajaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.BajaDeAnimalToolStripMenuItem.Text = "Baja de animal"
+        '
+        'AccionesToolStripMenuItem1
+        '
+        Me.AccionesToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AccionesToolStripMenuItem1.Name = "AccionesToolStripMenuItem1"
+        Me.AccionesToolStripMenuItem1.Size = New System.Drawing.Size(196, 26)
+        Me.AccionesToolStripMenuItem1.Text = "Acciones"
+        '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -520,4 +545,7 @@ Partial Class FormularioPrincipal
     Friend WithEvents BajaDeClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AccionesClientesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReactivarClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaDeAnimalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BajaDeAnimalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccionesToolStripMenuItem1 As ToolStripMenuItem
 End Class

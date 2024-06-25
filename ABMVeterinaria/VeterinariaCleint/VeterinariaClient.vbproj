@@ -81,6 +81,24 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Animal\FormularioAccionesAnimal.Designer.vb">
+      <DependentUpon>FormularioAccionesAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAccionesAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAltaAnimal.Designer.vb">
+      <DependentUpon>FormularioAltaAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioAltaAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioBajaAnimal.Designer.vb">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Animal\FormularioBajaAnimal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Cliente\FormularioAccionesCliente.Designer.vb">
       <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>
     </Compile>
@@ -160,6 +178,15 @@
   <ItemGroup>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioAccionesAnimal.resx">
+      <DependentUpon>FormularioAccionesAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioAltaAnimal.resx">
+      <DependentUpon>FormularioAltaAnimal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Animal\FormularioBajaAnimal.resx">
+      <DependentUpon>FormularioBajaAnimal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cliente\FormularioAccionesCliente.resx">
       <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>

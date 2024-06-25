@@ -16,6 +16,11 @@ Public Class FormularioPrincipal
     Private ventanaAccionesCliente As FormularioAccionesCliente
     Private ventanaReactivarCliente As FormularioReactivarCliente
 
+    '--------------- ANIMAL ---------------'
+    Private ventanaAltaAnimal As FormularioAltaAnimal
+    Private ventanaBajaAnimal As FormularioBajaAnimal
+    Private ventanaAccionesAnimal As FormularioAccionesAnimal
+
 
     '--------------- ESPECIE ---------------'
     Private ventanaAltaEspecies As FormularioAltaEspecie
@@ -77,7 +82,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------'
     Private Sub AltaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeUsuarioToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Alta de usuarios'
+        'Validamos que exista la ventana'
         If ventanaAlta Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -98,7 +103,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO BAJA ------------------------------'
     Private Sub BajaDeUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeUsuarioToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Baja de usuarios'
+        'Validamos que exista la ventana'
         If ventanaBaja Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -119,7 +124,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ------------------------------'
     Private Sub AToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Baja de usuarios'
+        'Validamos que exista la ventana'
         If ventanaAcciones Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -140,7 +145,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR USUARIO ------------------------------'
     Private Sub ReactivarUsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReactivarUsuarioToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Reactivar de usuarios'
+        'Validamos que exista la ventana'
         If ventanaReactivar Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -160,7 +165,8 @@ Public Class FormularioPrincipal
 
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA CLIENTE ------------------------------'
     Private Sub AltaDeClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeClienteToolStripMenuItem.Click
-        'Validamos que exista la ventana de Reactivar de usuarios'
+
+        'Validamos que exista la ventana'
         If ventanaAltaCliente Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -180,7 +186,8 @@ Public Class FormularioPrincipal
 
     '------------------------------ CLICK MOSTRAR FORMULARIO BAJA CLIENTE ------------------------------'
     Private Sub BajaDeClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeClienteToolStripMenuItem.Click
-        'Validamos que exista la ventana de Reactivar de usuarios'
+
+        'Validamos que exista la ventana'
         If ventanaBajaCliente Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -200,7 +207,8 @@ Public Class FormularioPrincipal
 
     '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES CLIENTE ------------------------------'
     Private Sub AccionesClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccionesClientesToolStripMenuItem.Click
-        'Validamos que exista la ventana de Reactivar de usuarios'
+
+        'Validamos que exista la ventana'
         If ventanaAccionesCliente Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -221,7 +229,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR CLIENTE ------------------------------'
     Private Sub ReactivarClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReactivarClienteToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Reactivar de usuarios'
+        'Validamos que exista la ventana'
         If ventanaReactivarCliente Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -242,7 +250,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ESPECIES ------------------------------'
     Private Sub AltaDeEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeEspecieToolStripMenuItem.Click
 
-        'Validamos que exista la ventana de Reactivar de usuarios'
+        'Validamos que exista la ventana'
         If ventanaAltaEspecies Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -263,8 +271,7 @@ Public Class FormularioPrincipal
     '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ESPECIES ------------------------------'
     Private Sub AccionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccionesToolStripMenuItem.Click
 
-
-        'Validamos que exista la ventana de Reactivar de usuarios'
+        'Validamos que exista la ventana'
         If ventanaAccionesEspecie Is Nothing Then
 
             'Creamos la nueva ventana'
@@ -278,6 +285,69 @@ Public Class FormularioPrincipal
 
             'Mostramos el formulario de alta de usuario'
             ventanaAccionesEspecie.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ANIMAL ------------------------------'
+    Private Sub AltaDeAnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeAnimalToolStripMenuItem.Click
+
+        'Validamos que exista la ventana'
+        If ventanaAltaAnimal Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAltaAnimal = New FormularioAltaAnimal With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAltaAnimal.FormClosed, AddressOf FormularioAltaAnimal_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAltaAnimal.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO BAJA ANIMAL ------------------------------'
+    Private Sub BajaDeAnimalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeAnimalToolStripMenuItem.Click
+
+        'Validamos que exista la ventana'
+        If ventanaBajaAnimal Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaBajaAnimal = New FormularioBajaAnimal With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaBajaAnimal.FormClosed, AddressOf FormularioBajaAnimal_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaBajaAnimal.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES ANIMAL ------------------------------'
+    Private Sub AccionesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AccionesToolStripMenuItem1.Click
+
+        'Validamos que exista la ventana'
+        If ventanaAccionesAnimal Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAccionesAnimal = New FormularioAccionesAnimal With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAccionesAnimal.FormClosed, AddressOf FormularioAccionesAnimal_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAccionesAnimal.Show()
 
         End If
     End Sub
@@ -349,9 +419,17 @@ Public Class FormularioPrincipal
         ventanaAccionesEspecie = Nothing
     End Sub
 
+    Private Sub FormularioAltaAnimal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAltaAnimal = Nothing
+    End Sub
 
+    Private Sub FormularioBajaAnimal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaBajaAnimal = Nothing
+    End Sub
 
-
+    Private Sub FormularioAccionesAnimal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAccionesAnimal = Nothing
+    End Sub
 
 #End Region
 

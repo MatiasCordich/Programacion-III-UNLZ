@@ -3,51 +3,42 @@ CREATE TABLE Usuarios (
     UsuarioID INT PRIMARY KEY IDENTITY,
     NombreUsuario VARCHAR(255) NOT NULL,
     Clave VARCHAR(255) NOT NULL,
-    Estado VARCHAR(10) NOT NULL DEFAULT 'Activo'
+    Estado VARCHAR(10) NOT NULL DEFAULT 'Activo',
+    CHECK (Estado IN ('Activo', 'Inactivo'))
 );
 
--- Aseguramos que Estado de Usuarios solo acepte 'Activo' o 'Inactivo'
-ALTER TABLE Usuarios
-ADD CONSTRAINT CHK_Estado CHECK (Estado IN ('Activo', 'Inactivo'));
-
--- Demas tablas
+-- Tabla Clientes
 CREATE TABLE Clientes (
     ClienteID INT PRIMARY KEY IDENTITY,
     Nombre VARCHAR(255) NOT NULL,
-    DNI INT NOT NULL,
-    Estado VARCHAR(10) NOT NULL DEFAULT 'Activo'
-)
+    DNI INT NOT NULL UNIQUE,
+    Estado VARCHAR(10) NOT NULL DEFAULT 'Activo',
+    CHECK (Estado IN ('Activo', 'Inactivo'))
+);
 
--- Modificacion de la Tabla Clientes para que DNI sea UNICO
-ALTER TABLE Clientes
-ADD CONSTRAINT UC_DNI UNIQUE (DNI);
+-- Tabla Especies
+CREATE TABLE Especies (
+    EspecieID INT PRIMARY KEY IDENTITY,
+    Nombre VARCHAR(255) NOT NULL,
+    EdadMadurez INT NOT NULL,
+    PesoPromedio DECIMAL(5,2) NOT NULL
+);
 
--- Aseguramos que Estado de Clientes solo acepte 'Activo' o 'Inactivo'
-ALTER TABLE Clientes
-ADD CONSTRAINT CHK_EstadoCliente CHECK (Estado IN ('Activo', 'Inactivo'));
-
+-- Tabla Animales
 CREATE TABLE Animales (
     AnimalID INT PRIMARY KEY IDENTITY,
     Nombre VARCHAR(100) NOT NULL,
     Peso DECIMAL(5,2) NOT NULL,
     Edad INT NOT NULL,
-    ClienteID INT, 
-    EspecieID INT NULL,  -- Permitir valores nulos
+    ClienteID INT NOT NULL, 
+    EspecieID INT NOT NULL,
     FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
     FOREIGN KEY (EspecieID) REFERENCES Especies(EspecieID),
-    Estado VARCHAR(10) NOT NULL DEFAULT 'Vivo'
+    Estado VARCHAR(10) NOT NULL DEFAULT 'Vivo',
+    CHECK (Estado IN ('Vivo', 'Difunto'))
 );
 
--- Aseguramos que Estado de Animales solo acepte 'Vivo' o 'Difunto'
-ALTER TABLE Animales 
-ADD CONSTRAINT CHK_EstadoAnimal CHECK (Estado IN ('Vivo', 'Difunto'));
-
-CREATE TABLE Especies (
-    EspecieID INT PRIMARY KEY IDENTITY,
-    Nombre VARCHAR(255) NOT NULL,
-    EdadMadurez INT NOT NULL,
-	PesoPromedio  DECIMAL(5,2) NOT NULL,
-);
+-- Valores Iniciales 
 
 -- Usuario inicial 
 INSERT INTO Usuarios (NombreUsuario, Clave)
@@ -59,9 +50,4 @@ VALUES ('kali uchis', 38545676);
 
 -- Especie inicial
 INSERT INTO Especies(Nombre, EdadMadurez, PesoPromedio)
-VALUES ('canino', 4, 15);
-
-SELECT * FROM Usuarios
-SELECT * FROM Clientes
-SELECT * FROM Animales
-SELECT * FROM Especies
+VALUES ('Sin especificar', 0.00, 0);
