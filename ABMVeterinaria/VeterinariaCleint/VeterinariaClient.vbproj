@@ -81,6 +81,30 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAccionesCliente.Designer.vb">
+      <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAccionesCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAltaCliente.Designer.vb">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioAltaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioBajaCliente.Designer.vb">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioBajaCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioReactivarCliente.Designer.vb">
+      <DependentUpon>FormularioReactivarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Cliente\FormularioReactivarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Especie\FormularioAccionesEspecie.Designer.vb">
       <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>
     </Compile>
@@ -136,6 +160,18 @@
   <ItemGroup>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioAccionesCliente.resx">
+      <DependentUpon>FormularioAccionesCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioAltaCliente.resx">
+      <DependentUpon>FormularioAltaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioBajaCliente.resx">
+      <DependentUpon>FormularioBajaCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Cliente\FormularioReactivarCliente.resx">
+      <DependentUpon>FormularioReactivarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Especie\FormularioAccionesEspecie.resx">
       <DependentUpon>FormularioAccionesEspecie.vb</DependentUpon>

@@ -41,6 +41,10 @@ Partial Class FormularioPrincipal
         Me.AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReactivarUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaDeClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaDeClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccionesClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReactivarClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeEspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -212,9 +216,38 @@ Partial Class FormularioPrincipal
         '
         'BajasToolStripMenuItem
         '
+        Me.BajasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeClienteToolStripMenuItem, Me.BajaDeClienteToolStripMenuItem, Me.AccionesClientesToolStripMenuItem, Me.ReactivarClienteToolStripMenuItem})
         Me.BajasToolStripMenuItem.Name = "BajasToolStripMenuItem"
         Me.BajasToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
         Me.BajasToolStripMenuItem.Text = "Clientes"
+        '
+        'AltaDeClienteToolStripMenuItem
+        '
+        Me.AltaDeClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AltaDeClienteToolStripMenuItem.Name = "AltaDeClienteToolStripMenuItem"
+        Me.AltaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.AltaDeClienteToolStripMenuItem.Text = "Alta de cliente"
+        '
+        'BajaDeClienteToolStripMenuItem
+        '
+        Me.BajaDeClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.BajaDeClienteToolStripMenuItem.Name = "BajaDeClienteToolStripMenuItem"
+        Me.BajaDeClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.BajaDeClienteToolStripMenuItem.Text = "Baja de cliente"
+        '
+        'AccionesClientesToolStripMenuItem
+        '
+        Me.AccionesClientesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AccionesClientesToolStripMenuItem.Name = "AccionesClientesToolStripMenuItem"
+        Me.AccionesClientesToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.AccionesClientesToolStripMenuItem.Text = "Acciones"
+        '
+        'ReactivarClienteToolStripMenuItem
+        '
+        Me.ReactivarClienteToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReactivarClienteToolStripMenuItem.Name = "ReactivarClienteToolStripMenuItem"
+        Me.ReactivarClienteToolStripMenuItem.Size = New System.Drawing.Size(214, 26)
+        Me.ReactivarClienteToolStripMenuItem.Text = "Reactivar cliente"
         '
         'BusquedaToolStripMenuItem
         '
@@ -483,4 +516,8 @@ Partial Class FormularioPrincipal
     Friend WithEvents ReactivarUsuarioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AltaDeEspecieToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AccionesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AltaDeClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BajaDeClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AccionesClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReactivarClienteToolStripMenuItem As ToolStripMenuItem
 End Class

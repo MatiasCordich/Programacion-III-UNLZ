@@ -23,32 +23,7 @@ namespace VeterinariaService.DAO
             return conexion;
         }
 
-        //----------------------------------- REACTIVAR CLIENTE -----------------------------------//
-        public bool ReactivarUsuario(long ID)
-        {
-            // Definimos la consulta SQL para hacer un SOFT DELETE
-
-            // Hacemoes el pase de datos y valores que recibimos por parametros a la QUERY
-            string query = $"UPDATE Clientes SET Estado = 'Activo' WHERE ClienteID = {ID}";
-
-            // Creamos la conexion llamando la funcion creada recientemente
-            IDbConnection connection = this.PrepararConexion();
-
-            // Creamos el comando 
-            IDbCommand command = connection.CreateCommand();
-
-            // Le agregamos el texto al comando
-            command.CommandText = query;
-
-            // Ejecutamos la sentencia 
-            int rowsAffected = command.ExecuteNonQuery();
-
-            // Cerramos la conexion
-            connection.Close();
-
-            // Retornamos true si hubo cambios en las filas, false en caso contrario
-            return rowsAffected > 0;
-        }
+       
 
         //----------------------------------- FUNCIONES DAO  -----------------------------------//
 
@@ -203,6 +178,33 @@ namespace VeterinariaService.DAO
             conexion.Close();
             return filasAfectadas > 0;
 
+        }
+
+        //----------------------------------- REACTIVAR CLIENTE -----------------------------------//
+        public bool ReactivarUsuario(long ID)
+        {
+            // Definimos la consulta SQL para hacer un SOFT DELETE
+
+            // Hacemoes el pase de datos y valores que recibimos por parametros a la QUERY
+            string query = $"UPDATE Clientes SET Estado = 'Activo' WHERE ClienteID = {ID}";
+
+            // Creamos la conexion llamando la funcion creada recientemente
+            IDbConnection connection = this.PrepararConexion();
+
+            // Creamos el comando 
+            IDbCommand command = connection.CreateCommand();
+
+            // Le agregamos el texto al comando
+            command.CommandText = query;
+
+            // Ejecutamos la sentencia 
+            int rowsAffected = command.ExecuteNonQuery();
+
+            // Cerramos la conexion
+            connection.Close();
+
+            // Retornamos true si hubo cambios en las filas, false en caso contrario
+            return rowsAffected > 0;
         }
     }
 }

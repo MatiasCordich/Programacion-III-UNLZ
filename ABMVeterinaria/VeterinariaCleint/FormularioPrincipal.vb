@@ -3,11 +3,21 @@ Imports VeterinariaService.DAO
 
 Public Class FormularioPrincipal
 #Region "Dependencias"
+
+    '--------------- USUARIO ---------------'
     Private ventanaAlta As FormularioAltaUsuario
     Private ventanaBaja As FormularioBajaUsuario
     Private ventanaAcciones As FormularioAccionesUsuario
     Private ventanaReactivar As FormularioReactivarUsuario
 
+    '--------------- CLIENTE ---------------'
+    Private ventanaAltaCliente As FormularioAltaCliente
+    Private ventanaBajaCliente As FormularioBajaCliente
+    Private ventanaAccionesCliente As FormularioAccionesCliente
+    Private ventanaReactivarCliente As FormularioReactivarCliente
+
+
+    '--------------- ESPECIE ---------------'
     Private ventanaAltaEspecies As FormularioAltaEspecie
     Private ventanaAccionesEspecie As FormularioAccionesEspecie
 #End Region
@@ -148,6 +158,87 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+    '------------------------------ CLICK MOSTRAR FORMULARIO ALTA CLIENTE ------------------------------'
+    Private Sub AltaDeClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeClienteToolStripMenuItem.Click
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaAltaCliente Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAltaCliente = New FormularioAltaCliente With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAltaCliente.FormClosed, AddressOf FormularioAltaCliente_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAltaCliente.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO BAJA CLIENTE ------------------------------'
+    Private Sub BajaDeClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeClienteToolStripMenuItem.Click
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaBajaCliente Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaBajaCliente = New FormularioBajaCliente With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaBajaCliente.FormClosed, AddressOf FormularioBajaCliente_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaBajaCliente.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO ACCIONES CLIENTE ------------------------------'
+    Private Sub AccionesClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccionesClientesToolStripMenuItem.Click
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaAccionesCliente Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaAccionesCliente = New FormularioAccionesCliente With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaAccionesCliente.FormClosed, AddressOf FormularioAccionesCliente_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaAccionesCliente.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO REACTIVAR CLIENTE ------------------------------'
+    Private Sub ReactivarClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReactivarClienteToolStripMenuItem.Click
+
+        'Validamos que exista la ventana de Reactivar de usuarios'
+        If ventanaReactivarCliente Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaReactivarCliente = New FormularioReactivarCliente With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaReactivarCliente.FormClosed, AddressOf FormularioReactivarCliente_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaReactivarCliente.Show()
+
+        End If
+    End Sub
+
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ESPECIES ------------------------------'
     Private Sub AltaDeEspecieToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AltaDeEspecieToolStripMenuItem.Click
 
@@ -191,6 +282,8 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+
+
 #End Region
 
 #Region "Timers"
@@ -232,6 +325,22 @@ Public Class FormularioPrincipal
     Private Sub FormularioReactivarUsuario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaReactivar = Nothing
     End Sub
+
+    Private Sub FormularioAltaCliente_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAltaCliente = Nothing
+    End Sub
+
+    Private Sub FormularioBajaCliente_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaBajaCliente = Nothing
+    End Sub
+
+    Private Sub FormularioAccionesCliente_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaAccionesCliente = Nothing
+    End Sub
+
+    Private Sub FormularioReactivarCliente_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaReactivarCliente = Nothing
+    End Sub
     Private Sub FormularioAltaEspecie_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaAltaEspecies = Nothing
     End Sub
@@ -239,6 +348,10 @@ Public Class FormularioPrincipal
     Private Sub FormularioAccionesEspecie_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaAccionesEspecie = Nothing
     End Sub
+
+
+
+
 
 #End Region
 

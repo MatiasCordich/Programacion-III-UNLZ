@@ -1,10 +1,13 @@
 ﻿Public Class Form1
 
 #Region "Dependencias"
+    '----------------------- LA DATATABLE CON LA QUE VAMOS A TRABAJR -----------------------'
     Private dtPinturas As New DataTable
 #End Region
 
 #Region "Inicializar"
+
+    '----------------------- FUNCION PARA CREAR LA DATATABLE -----------------------'
     Private Sub InicializarDataTable()
         Dim dt As New DataTable
 
@@ -17,11 +20,14 @@
 #End Region
 
 #Region "Acciones"
+
+    '----------------------- FUNCION PARA SETEAR LA DATATABLE CON LA QUE VAMOS A TRABAJAR CON EL DATAGRID -----------------------'
     Private Sub SetDataTable(dt As DataTable)
         Me.dtPinturas = dt
         dtgrid_Pinturas.DataSource = dt
     End Sub
 
+    '----------------------- FUNCION CALCULAR TOTAL LITROS ROJO -----------------------'
     Private Sub CalcularTotalLitrosPinturaRoja()
         Dim acumuladorLitrosRojo As Double = 0
 
@@ -36,6 +42,7 @@
         lbl_litrosRojo.Text = acumuladorLitrosRojo.ToString("#0.00")
     End Sub
 
+    '----------------------- FUNCION CALCULAR PROMEDIO LITROS AZUL -----------------------'
     Private Sub CalcularPromedioLitrosPinturaAzul()
         Dim acumuladorLitrosAzul As Double = 0
         Dim contadorPinturaAzul As Integer = 0
@@ -60,6 +67,7 @@
 
     End Sub
 
+    '----------------------- FUNCION LIMIPIAR TEXTBOX -----------------------'
     Private Sub LimparTextBox()
         txt_codigo.Text = ""
         txt_color.Text = ""
@@ -68,10 +76,13 @@
 #End Region
 
 #Region "Eventos"
+
+    '----------------------- EVENTO LOAD CARGAR FORMULARIO -----------------------'
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.InicializarDataTable()
     End Sub
 
+    '----------------------- EVENTO CLICK AGREGAR PINTURA -----------------------'
     Private Sub btn_agregarPintura_Click(sender As Object, e As EventArgs) Handles btn_agregarPintura.Click
 
         'Primero tomo los valores de los TextBoxes'
@@ -80,52 +91,42 @@
         Dim litrosS = txt_litros.Text
 
         'PRIMERA VALIDACION: QUE NO HAYA CAMPOS VACIOS'
-        'La primera validacion es asegurarnos que no se haya ingresado ningun dato vacio en los TextBoxes'
         If codigoS = "" Or color = "" Or litrosS = "" Then
             MessageBox.Show("ERROR: Algunos campos estan vacios")
             Return
         End If
 
-        'Si todos los TextBoxes tienen algun valor ahora hago la SEGUNDA validacion'
+        'SEGUNDA VALIDACION: QUE CODIGO Y LITROS SEAN VALORES NUMERICOS'
+        Dim codigo As Integer
+        Dim litros As Double
 
-        'SEGUNDA VALIDACION: TIPOS DE DATOS NUMERICOS'
-        'Valido que tanto CODIGO como LITROS tengan un valor numerico'
-        Try
+        If Not Integer.TryParse(codigoS, codigo) Or Not Double.TryParse(litrosS, litros) Then
+            MessageBox.Show("ERROR: Los valores de CODIGO o LITROS deben ser NUMÉRICOS")
+            Return
+        End If
 
-            Dim codigo As Integer = Integer.Parse(codigoS)
-            Dim litros As Double = Double.Parse(litrosS)
+        'TERCERA VALIDACION: QUE CODIGO Y LITROS SEAN POSITIVOS'
+        If codigo < 0 Or litros < 0 Then
+            MessageBox.Show("ERROR: Número negativo, por favor ingrese valores POSITIVOS")
+            Return
+        End If
 
-            'Si pasa la segunda validacion ahora hago la TERCERA validacion'
-
-            'TERCERA VALIDACION: CODIGO UNICO'
-            'Valido que el CODIGO no este repetido'
-            For Each renglon As DataRow In Me.dtPinturas.Rows
-                If renglon("CODIGO") = codigo Then
-                    MessageBox.Show("ERROR: Codigo repetido, por favor ingrese uno diferente")
-                    Return
-                End If
-            Next
-
-            'Si paso la tercera validacion ahora hago la CUARTA validacion'
-
-            'CUARTA VALIDACION: NUMEROS NEGATIVOS'
-            'Valido que tanto CODIGO como LITROS no sean numeros negativos'
-            If codigo < 0 Or litros < 0 Then
-                MessageBox.Show("ERROR: Numero negativo, por favor ingrese valores POSITIVOS")
+        'CUARTA VALIDACION: QUE NO HAYA CODIGO REPETIDO'
+        For Each renglon As DataRow In Me.dtPinturas.Rows
+            If renglon("CODIGO") = codigo Then
+                MessageBox.Show("ERROR: Código repetido, por favor ingrese uno diferente")
                 Return
             End If
+        Next
 
-            'Si pasaron todas las validaciones agrego una nueva fila a la DataTable con los valores de los TextBox'
-            Me.dtPinturas.Rows.Add(codigo, color, litros)
+        'Si pasaron todas las validaciones agrego una nueva fila a la DataTable con los valores de los TextBox'
+        Me.dtPinturas.Rows.Add(codigo, color, litros)
 
-            'Ejecuto las funciones dem i region Acciones'
-            Me.CalcularTotalLitrosPinturaRoja()
-            Me.CalcularPromedioLitrosPinturaAzul()
-            Me.LimparTextBox()
+        'Ejecuto las funciones dem i region Acciones'
+        Me.CalcularTotalLitrosPinturaRoja()
+        Me.CalcularPromedioLitrosPinturaAzul()
+        Me.LimparTextBox()
 
-        Catch ex As Exception
-            MessageBox.Show("ERROR: Los valores de CODIGO o LITROS deben ser NUMERICOS")
-        End Try
     End Sub
 #End Region
 
