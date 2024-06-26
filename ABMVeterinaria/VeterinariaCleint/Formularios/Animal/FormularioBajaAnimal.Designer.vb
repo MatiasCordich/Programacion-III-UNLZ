@@ -110,9 +110,6 @@ Partial Class FormularioBajaAnimal
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Animal ID:"
         '
-        'T_BajaAnimal
-        '
-        '
         'FormularioBajaAnimal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)

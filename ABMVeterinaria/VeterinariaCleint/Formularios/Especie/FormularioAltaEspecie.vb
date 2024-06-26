@@ -53,6 +53,9 @@ Public Class FormularioAltaEspecie
             LBL_descripcionAltaEspecie.Visible = True
             LBL_descripcionAltaEspecie.Text = "Cargando..."
             MessageBox.Show("Especie cargada correctamente")
+
+            'Limpiamos los Textbox y sacamos la barra de carga'
+            Me.LimpiarCampos()
         End If
     End Sub
 
@@ -63,18 +66,11 @@ Public Class FormularioAltaEspecie
 #Region "Timers"
     Private Sub T_AltaEspecie_Tick(sender As Object, e As EventArgs) Handles T_AltaEspecie.Tick
 
-        'Evaluamos el valor de la barra de carga'
+        'Validacion - Valor de la PB'
         If PB_cargaAltaEspecie.Value = PB_cargaAltaEspecie.Maximum Then
-
-            'Si es igual a su MAXIMO'
-
-            'Limpiamos los Textbox y sacamos la barra de carga'
-            Me.LimpiarCampos()
             PB_cargaAltaEspecie.Visible = False
             LBL_descripcionAltaEspecie.Visible = False
         Else
-
-            'Caso contrario incrementamos el valor del a barra de carga'
             Dim nuevoValor = PB_cargaAltaEspecie.Value + 10
             PB_cargaAltaEspecie.Value = Math.Min(nuevoValor, PB_cargaAltaEspecie.Maximum)
         End If

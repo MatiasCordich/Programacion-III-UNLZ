@@ -3,23 +3,13 @@ Imports VeterinariaService.Modelos
 
 Public Class FormularioAltaAnimal
 
-#Region "Acciones"
-    Private Sub LimpiarCampos()
-        Txt_nombreAltaAnimal.Text = ""
-        Txt_pesoAltaAnimal.Text = ""
-        Txt_edadAltaAnimal.Text = ""
-        Txt_clienteIDAltaAnimal.Text = ""
-        Txt_especieIDAltaAnimal.Text = ""
-    End Sub
-#End Region
-
 #Region "Eventos"
 
     '----------------------------------- CLICK ALTA ANIMAL -----------------------------------'
     Private Sub Btn_altaAnimal_Click(sender As Object, e As EventArgs) Handles Btn_altaAnimal.Click
 
         'Tomamos los valores de los TextBox'
-        Dim nombre = Txt_nombreAltaAnimal.Text
+        Dim nombre = Txt_nombreAltaAnimal.Text.ToLower
         Dim pesoS = Txt_pesoAltaAnimal.Text
         Dim edadS = Txt_edadAltaAnimal.Text
         Dim clienteIDs = Txt_clienteIDAltaAnimal.Text
@@ -71,11 +61,43 @@ Public Class FormularioAltaAnimal
 
         'Valido la accion'
         If dao.Insert(nuevoAnimal) Then
+
+            T_altaAnimal.Enabled = True
             PB_cargaAltaAnimal.Visible = True
 
             LBL_descripcionAltaAnimal.Visible = True
             LBL_descripcionAltaAnimal.Text = "Cargando..."
-            MessageBox.Show("Usuario cargado correctamente")
+            MessageBox.Show("Mascota cargada correctamente")
+
+            Txt_nombreAltaAnimal.Text = ""
+            Txt_pesoAltaAnimal.Text = ""
+            Txt_edadAltaAnimal.Text = ""
+            Txt_clienteIDAltaAnimal.Text = ""
+            Txt_especieIDAltaAnimal.Text = ""
+
+
+        End If
+    End Sub
+
+
+#End Region
+
+#Region "Timers"
+    Private Sub T_altaAnimal_Tick(sender As Object, e As EventArgs) Handles T_altaAnimal.Tick
+
+        'Evaluamos el valor de la barra de carga'
+        If PB_cargaAltaAnimal.Value = PB_cargaAltaAnimal.Maximum Then
+
+            'Si es igual a su MAXIMO'
+
+            'Limpiamos los Textbox y sacamos la barra de carga'
+            PB_cargaAltaAnimal.Visible = False
+            LBL_descripcionAltaAnimal.Visible = False
+        Else
+
+            'Caso contrario incrementamos el valor del a barra de carga'
+            Dim nuevoValor = PB_cargaAltaAnimal.Value + 10
+            PB_cargaAltaAnimal.Value = Math.Min(nuevoValor, PB_cargaAltaAnimal.Maximum)
         End If
     End Sub
 #End Region

@@ -117,7 +117,7 @@ namespace VeterinariaService.DAO
         {
 
             // Si no se proporciona el EspecieID lo ajustamos al valor por defecto
-            if(nuevoA.EspecieID == 1)
+            if (nuevoA.EspecieID == 1)
             {
                 nuevoA.EspecieID = 1;
             }
@@ -144,7 +144,7 @@ namespace VeterinariaService.DAO
         }
 
         //--------------- UPDATE ---------------//
-        public void Update(long ID, string nombre, decimal peso, int edad, long clienteID, long especieID )
+        public void Update(long ID, string nombre, decimal peso, int edad, long clienteID, long especieID)
         {
             //pasaje de datos y valores a la query//
 
@@ -190,6 +190,8 @@ namespace VeterinariaService.DAO
             return filasAfectadas > 0;
 
         }
-        
+
+
+
     }
 }

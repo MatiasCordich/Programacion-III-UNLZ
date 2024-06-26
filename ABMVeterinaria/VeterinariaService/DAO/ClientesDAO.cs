@@ -133,11 +133,11 @@ namespace VeterinariaService.DAO
         }
 
         //--------------- UPDATE ---------------//
-        public void Update(long ID, string Nombre)
+        public void Update(long ID, string Nombre, long DNI)
         {
             //pasaje de datos y valores a la query//
 
-            string query = $"UPDATE Clientes SET Nombre = '{Nombre}' WHERE ClienteID = {ID} AND Estado ='Activo';";
+            string query = $"UPDATE Clientes SET Nombre = '{Nombre}', DNI = {DNI} WHERE ClienteID = {ID} AND Estado ='Activo';";
 
             //preparamos la conexion//
             IDbConnection conexion = this.PrepararConexion();
@@ -181,7 +181,7 @@ namespace VeterinariaService.DAO
         }
 
         //----------------------------------- REACTIVAR CLIENTE -----------------------------------//
-        public bool ReactivarUsuario(long ID)
+        public bool ReactivarCliente(long ID)
         {
             // Definimos la consulta SQL para hacer un SOFT DELETE
 

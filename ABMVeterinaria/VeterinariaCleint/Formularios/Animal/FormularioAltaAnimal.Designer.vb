@@ -22,6 +22,7 @@ Partial Class FormularioAltaAnimal
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.P_altaUsuario = New System.Windows.Forms.Panel()
         Me.LBL_descripcionAltaAnimal = New System.Windows.Forms.Label()
         Me.PB_cargaAltaAnimal = New System.Windows.Forms.ProgressBar()
@@ -37,6 +38,7 @@ Partial Class FormularioAltaAnimal
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Txt_nombreAltaAnimal = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.T_altaAnimal = New System.Windows.Forms.Timer(Me.components)
         Me.P_altaUsuario.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -189,6 +191,9 @@ Partial Class FormularioAltaAnimal
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nombre"
         '
+        'T_altaAnimal
+        '
+        '
         'FormularioAltaAnimal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -225,4 +230,5 @@ Partial Class FormularioAltaAnimal
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_edadAltaAnimal As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents T_altaAnimal As Timer
 End Class

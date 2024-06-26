@@ -1,21 +1,21 @@
 ﻿Imports VeterinariaService.DAO
 
 Public Class FormularioBajaAnimal
-
 #Region "Eventos"
 
-    '----------------------------------- EVENTO CLICK BAJA DE MASCOTA -----------------------------------'
+    '----------------------------------- Funcion - CLICK BAJA DE MASCOTA -----------------------------------'
     Private Sub Btn_bajaAnimal_Click(sender As Object, e As EventArgs) Handles Btn_bajaAnimal.Click
-        'Tomamos el valor del TextBox'
+
+        'Obtencion- Valor TextBox ID'
         Dim idS = Txt_idBajaAnimal.Text
 
-        'Valido que no haya campo vacios'
+        'Validacion - Campo vacio'
         If idS = "" Then
             MessageBox.Show("ERROR: Por favor, ingrese un numero")
             Return
         End If
 
-        'Validamos que el valor del TextBox sea numerico'
+        'Validacion - TextBox numerico'
         Dim id As Integer
 
         If Not Integer.TryParse(idS, id) Then
@@ -29,6 +29,7 @@ Public Class FormularioBajaAnimal
             Return
         End If
 
+        '--------------- Creacion - TRY CATCH & DAO ---------------'
         Try
 
             'Creamos el DAO'
@@ -42,28 +43,28 @@ Public Class FormularioBajaAnimal
                 'Validamos el ESTADO del usuario'
                 If mascota.Estado = "Difunto" Then
 
-                    'Si esta INACTIVO entonces muestro un mensaje'
+                    'Alerta - Animal baja previa'
                     MessageBox.Show($"La mascota {mascota.Nombre} ya fue dada de baja.")
                     Return
                 End If
 
-                'Realizo el Delete'
+                'Relacion - DAO DELETE'
                 dao.Delete(id)
 
-                'Muestros los componentes de carga'
+                'Muestreo - Componentes de carga'
                 T_BajaAnimal.Enabled = True
                 LBL_descripcionBajaAnimal.Text = "Cargando..."
                 LBL_descripcionBajaAnimal.Visible = True
                 PB_cargaBajaAnimal.Visible = True
 
-                'Mostramos un mensaje de exito y vaciamos el Textbox'
+                'Mensaje - Caso exitoso'
                 MessageBox.Show($"La mascota {mascota.Nombre} fue dada de baja correctamente")
 
                 'Limpiamos el TextBox'
                 Txt_idBajaAnimal.Text = ""
                 Return
             Else
-                'Caso contrario, mostramos un mensaje de error'
+                'Mensaje - Caso fallido'
                 MessageBox.Show("No se encontro la mascota para dar de baja")
                 Return
             End If
@@ -78,10 +79,10 @@ Public Class FormularioBajaAnimal
 
 #Region "Timers"
 
-    '----------------------------------- TICK TIMER BAJA USUARIO -----------------------------------'
+    '----------------------------------- TICK TIMER BAJA ANIMAL -----------------------------------'
     Private Sub T_BajaAnimal_Tick(sender As Object, e As EventArgs) Handles T_BajaAnimal.Tick
 
-        'Valido el valor del componenete de barra de carga'
+        'Validacion - Valor PB'
         If PB_cargaBajaAnimal.Value = PB_cargaBajaAnimal.Maximum Then
             LBL_descripcionBajaAnimal.Visible = False
             PB_cargaBajaAnimal.Visible = False

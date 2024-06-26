@@ -16,10 +16,10 @@ Public Class FormularioAltaCliente
 
 #Region "Eventos"
 
-    '----------Funcion ALTA CLIENTES----------------'
+    '----------------------------------- Funcion - ALTA CLIENTES -----------------------------------'
     Private Sub Btn_altaCliente_Click(sender As Object, e As EventArgs) Handles Btn_altaCliente.Click
-        'Tomamos valores txtboxes'
 
+        'Tomamos los valores de los TextBox'
         Dim nombre = Txt_nombreClienteAlta.Text.ToLower
         Dim dniS = Txt_DNIClienteAlta.Text
 
@@ -46,7 +46,7 @@ Public Class FormularioAltaCliente
         'Inicio DAO'
         Dim dao As New ClientesDAO
 
-        'Validadcion- NO nombre duplicado'
+        'Validadcion- NO DNI duplicado'
         Dim listaClientes = dao.GetAll()
 
         For Each cliente As Cliente In listaClientes
@@ -60,11 +60,16 @@ Public Class FormularioAltaCliente
         Dim nuevoCliente As New Cliente(nombre, dni)
 
         If dao.Insert(nuevoCliente) Then
+
+            'Muestreo - Componentes de carga'
             PB_cargaAltaCliente.Visible = True
-            T_AltaCliente.Enabled = True
+            T_altaCliente.Enabled = True
             LBL_descripcionAltaCliente.Visible = True
             LBL_descripcionAltaCliente.Text = "Cargando..."
             MessageBox.Show("Cliente cargado correctamente")
+
+            'Limpieza - Limpio los campos de los TextBox'
+            Me.LimpiezaCampos()
         End If
     End Sub
 
@@ -72,19 +77,19 @@ Public Class FormularioAltaCliente
 #End Region
 
 #Region "Timers"
+
+    '----------------------- Funcion TIMER ALTA CLIENTE -----------------------'
     Private Sub T_altaCliente_Tick(sender As Object, e As EventArgs) Handles T_altaCliente.Tick
-        'Evaluamos el valor de la barra de carga'
+
+        ' 'Validacion - Valor de la PB'
         If PB_cargaAltaCliente.Value = PB_cargaAltaCliente.Maximum Then
 
-            'Si es igual a su MAXIMO'
-
-            'Limpiamos los Textbox y sacamos la barra de carga'
-            Me.LimpiezaCampos()
+            'Limpieza - Ocultamos Texbox y PB de carga'
             PB_cargaAltaCliente.Visible = False
             LBL_descripcionAltaCliente.Visible = False
         Else
 
-            'Caso contrario incrementamos el valor del a barra de carga'
+            'Caso contrario - Incrementamos el valor de la PB'
             Dim nuevoValor = PB_cargaAltaCliente.Value + 10
             PB_cargaAltaCliente.Value = Math.Min(nuevoValor, PB_cargaAltaCliente.Maximum)
         End If

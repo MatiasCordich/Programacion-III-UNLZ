@@ -33,12 +33,12 @@ Partial Class FormularioAccionesAnimal
         Me.Txt_pesoEditar = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Txt_edadEditar = New System.Windows.Forms.TextBox()
-        Me.Btn_editarAnimal = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Txt_nombreEditar = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Txt_editarAnimalID = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Btn_editarAnimal = New System.Windows.Forms.Button()
         Me.DGV_listaAnimales = New System.Windows.Forms.DataGridView()
         Me.P_altaUsuario = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -186,20 +186,6 @@ Partial Class FormularioAccionesAnimal
         Me.Txt_edadEditar.Size = New System.Drawing.Size(137, 26)
         Me.Txt_edadEditar.TabIndex = 8
         '
-        'Btn_editarAnimal
-        '
-        Me.Btn_editarAnimal.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.Btn_editarAnimal.FlatAppearance.BorderSize = 0
-        Me.Btn_editarAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_editarAnimal.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_editarAnimal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Btn_editarAnimal.Location = New System.Drawing.Point(271, 25)
-        Me.Btn_editarAnimal.Name = "Btn_editarAnimal"
-        Me.Btn_editarAnimal.Size = New System.Drawing.Size(224, 47)
-        Me.Btn_editarAnimal.TabIndex = 4
-        Me.Btn_editarAnimal.Text = "Editar"
-        Me.Btn_editarAnimal.UseVisualStyleBackColor = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -240,6 +226,20 @@ Partial Class FormularioAccionesAnimal
         Me.Label8.Size = New System.Drawing.Size(83, 18)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Animal ID:"
+        '
+        'Btn_editarAnimal
+        '
+        Me.Btn_editarAnimal.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.Btn_editarAnimal.FlatAppearance.BorderSize = 0
+        Me.Btn_editarAnimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_editarAnimal.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_editarAnimal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.Btn_editarAnimal.Location = New System.Drawing.Point(271, 25)
+        Me.Btn_editarAnimal.Name = "Btn_editarAnimal"
+        Me.Btn_editarAnimal.Size = New System.Drawing.Size(224, 47)
+        Me.Btn_editarAnimal.TabIndex = 4
+        Me.Btn_editarAnimal.Text = "Editar"
+        Me.Btn_editarAnimal.UseVisualStyleBackColor = False
         '
         'DGV_listaAnimales
         '

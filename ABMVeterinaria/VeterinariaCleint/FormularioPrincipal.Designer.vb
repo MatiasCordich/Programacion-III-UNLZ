@@ -46,6 +46,9 @@ Partial Class FormularioPrincipal
         Me.AccionesClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReactivarClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BusquedaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BajaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AccionesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaDeEspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -64,9 +67,8 @@ Partial Class FormularioPrincipal
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.AltaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BajaDeAnimalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AccionesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportePrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteSecundarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
@@ -259,6 +261,27 @@ Partial Class FormularioPrincipal
         Me.BusquedaToolStripMenuItem.Size = New System.Drawing.Size(93, 25)
         Me.BusquedaToolStripMenuItem.Text = "Animales"
         '
+        'AltaDeAnimalToolStripMenuItem
+        '
+        Me.AltaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AltaDeAnimalToolStripMenuItem.Name = "AltaDeAnimalToolStripMenuItem"
+        Me.AltaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.AltaDeAnimalToolStripMenuItem.Text = "Alta de animal"
+        '
+        'BajaDeAnimalToolStripMenuItem
+        '
+        Me.BajaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.BajaDeAnimalToolStripMenuItem.Name = "BajaDeAnimalToolStripMenuItem"
+        Me.BajaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.BajaDeAnimalToolStripMenuItem.Text = "Baja de animal"
+        '
+        'AccionesToolStripMenuItem1
+        '
+        Me.AccionesToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.AccionesToolStripMenuItem1.Name = "AccionesToolStripMenuItem1"
+        Me.AccionesToolStripMenuItem1.Size = New System.Drawing.Size(196, 26)
+        Me.AccionesToolStripMenuItem1.Text = "Acciones"
+        '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaDeEspecieToolStripMenuItem, Me.AccionesToolStripMenuItem})
@@ -282,6 +305,7 @@ Partial Class FormularioPrincipal
         '
         'InformesToolStripMenuItem
         '
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportePrincipalToolStripMenuItem, Me.ReporteSecundarioToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(88, 25)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -448,26 +472,19 @@ Partial Class FormularioPrincipal
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "a Patitas Veterinaria"
         '
-        'AltaDeAnimalToolStripMenuItem
+        'ReportePrincipalToolStripMenuItem
         '
-        Me.AltaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.AltaDeAnimalToolStripMenuItem.Name = "AltaDeAnimalToolStripMenuItem"
-        Me.AltaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
-        Me.AltaDeAnimalToolStripMenuItem.Text = "Alta de animal"
+        Me.ReportePrincipalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReportePrincipalToolStripMenuItem.Name = "ReportePrincipalToolStripMenuItem"
+        Me.ReportePrincipalToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReportePrincipalToolStripMenuItem.Text = "Reporte principal"
         '
-        'BajaDeAnimalToolStripMenuItem
+        'ReporteSecundarioToolStripMenuItem
         '
-        Me.BajaDeAnimalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.BajaDeAnimalToolStripMenuItem.Name = "BajaDeAnimalToolStripMenuItem"
-        Me.BajaDeAnimalToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
-        Me.BajaDeAnimalToolStripMenuItem.Text = "Baja de animal"
-        '
-        'AccionesToolStripMenuItem1
-        '
-        Me.AccionesToolStripMenuItem1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.AccionesToolStripMenuItem1.Name = "AccionesToolStripMenuItem1"
-        Me.AccionesToolStripMenuItem1.Size = New System.Drawing.Size(196, 26)
-        Me.AccionesToolStripMenuItem1.Text = "Acciones"
+        Me.ReporteSecundarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReporteSecundarioToolStripMenuItem.Name = "ReporteSecundarioToolStripMenuItem"
+        Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReporteSecundarioToolStripMenuItem.Text = "Reporte secundario"
         '
         'FormularioPrincipal
         '
@@ -548,4 +565,6 @@ Partial Class FormularioPrincipal
     Friend WithEvents AltaDeAnimalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BajaDeAnimalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AccionesToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ReportePrincipalToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteSecundarioToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -10,7 +10,7 @@ Public Class FormularioAccionesUsuario
         Txt_idUsuario.Text = ""
     End Sub
 
-    Private Sub LimpiarCamposEditarUsurios()
+    Private Sub LimpiarCamposEditarUsuario()
         Txt_editarID.Text = ""
         Txt_nombreEditar.Text = ""
         Txt_claveEditar.Text = ""
@@ -19,8 +19,11 @@ Public Class FormularioAccionesUsuario
 #End Region
 
 #Region "Eventos"
-    '---------------------------------- LISTAR ---------------------------------- '
+
+    '------------------- FUNCION - LISTAR USUARIOS ----------------------------'
     Private Sub Btn_listarUsuarios_Click(sender As Object, e As EventArgs) Handles Btn_listarUsuarios.Click
+
+        'Declaracion - Dao y conexion a dataGridView'
 
         Dim dao As New UsuariosDAO
 
@@ -29,19 +32,19 @@ Public Class FormularioAccionesUsuario
         DGV_listaUsuarios.DataSource = listaUsuarios
     End Sub
 
-    '---------------------------------- BUSCAR USUARIO POR ID ---------------------------------- '
+    '------------------- FUNCION - BUSCAR USUARIO POR ID ----------------------------'
     Private Sub Btn_busquedaUsuario_Click(sender As Object, e As EventArgs) Handles Btn_busquedaUsuario.Click
 
         'Tomamos el valor del TextBox'
         Dim idS = Txt_idUsuario.Text
 
-        'Validamos que no sea vacio'
+        'Validacion - NO TextBox vacio'
         If idS = "" Then
             MessageBox.Show("ERROR: El campo ID no puede estar vacio")
             Return
         End If
 
-        'Validamos que sea un numero'
+        'Validacion - TextBox numerico'
         Dim id As Integer
 
         If Not Integer.TryParse(idS, id) Then
@@ -49,39 +52,45 @@ Public Class FormularioAccionesUsuario
             Return
         End If
 
-        'Validamos que el id no sea negativo'
+        'Validacion - ID NO negativo'
         If id < 0 Then
             MessageBox.Show("ERROR: El numero de ID no puede ser negativo")
             Return
         End If
 
+        '----------- CREACION DAO CON TRY CATCH -----------'
 
         Try
 
             'Creamos el DAO'
             Dim dao As New UsuariosDAO
 
-            'Llamamos a la funcion GETBYID y le pasamos el ID obtenido del TextBox, el resultado lo guardamos en una variable'
+            'Funcion - GETBYID con ID obtenido de TextBox y guardamos el resultado en una variable'
             Dim usuario = dao.GetByID(id)
 
-            'Validamos lo que obtuvimos con GetByID Y guardamos en la variable PRODUCTO'
+            'Validacion - Lo obtenido por el GetBydID'
             If usuario IsNot Nothing Then
 
+                'Si el Usuario existe, entonces'
+                'Muestreo - Labels de resultado'
                 LBL_idDescripcion.Text = usuario.UsuarioID.ToString("#0")
                 LBL_nombreDescripcion.Text = usuario.NombreUsuario.ToString
                 LBL_descripcionEstado.Text = usuario.Estado.ToString.ToUpper
 
+                'Validacion - Estado del Usuario (cambio de color)'
                 If usuario.Estado = "Inactivo" Then
                     LBL_descripcionEstado.ForeColor = Color.Red
                 Else
                     LBL_descripcionEstado.ForeColor = Color.Green
                 End If
 
+                'Limpieza - Limpio el TextBox'
                 Me.LimpiarCamposBusquedaID()
 
             Else
-                'Caso contrario que se muestre un mensaje de error'
-                MessageBox.Show("El usuario no existe")
+
+                'Caso contrario- Muestro mensaje de de error'
+                MessageBox.Show("ERROR: El usuario no existe")
                 Return
             End If
 
@@ -90,21 +99,21 @@ Public Class FormularioAccionesUsuario
         End Try
     End Sub
 
-    '---------------------------------- EDITAR USUARIO ---------------------------------- '
+    '------------------- FUNCION - EDITAR USUARIO ----------------------------'
     Private Sub Btn_editarUsuario_Click(sender As Object, e As EventArgs) Handles Btn_editarUsuario.Click
 
-        'Tomamos el valor del TextBox'
+        'Tomamos los valores de los TextBox'
         Dim idS = Txt_editarID.Text
         Dim nombre = Txt_nombreEditar.Text
         Dim clave = Txt_claveEditar.Text
 
-        'Validamos que los campos ID, NOMBRE y CLAVE no sean nulos'
+        'Validacion - NO campos nulos'
         If idS = "" Or nombre = "" Or clave = "" Then
             MessageBox.Show("ERROR: Los campos ID, NOMBRE y CLAVE no pueden estar vacios")
             Return
         End If
 
-        'Validamos que ID sea un numero'
+        'Validacion - ID numerico'
         Dim id As Integer
 
         If Not Integer.TryParse(idS, id) Then
@@ -112,31 +121,37 @@ Public Class FormularioAccionesUsuario
             Return
         End If
 
-        'Validamos que el ID no sea negativo'
+        'Validacion - ID positivo'
         If id < 0 Then
             MessageBox.Show("ERROR: El numero de ID no puede ser negativo")
             Return
         End If
 
-        'Validamos la consulta'
+        'Validacion - consulta TRY CATCH'
         Try
 
             'Creamos el DAO'
             Dim dao As New UsuariosDAO
 
-            'Llamamos a la funcion GETBYID y le pasamos el ID obtenido del TextBox, el resultado lo guardamos en una variable'
+            'Funcion - GETBYID, le pasamos el ID del TextBox y lo guardamos en una variable'
             Dim usuario = dao.GetByID(id)
 
-            'Validamos la existencia del Usuario'
+            'Validacion - Existencia Usuario'
             If usuario IsNot Nothing Then
 
+                'Validacion - Estado del Usuario'
                 If usuario.Estado = "Inactivo" Then
-                    'Mostramos un mensaje de exito y vaciamos los TextBox'
                     MessageBox.Show("No se pueden modificar usuarios INACTIVOS")
                     Return
                 Else
+
+                    'Caso contrario - Proseguimos con el UPDATE'
                     dao.Update(id, nombre, clave)
-                    Me.LimpiarCamposEditarUsurios()
+
+                    'Limpieza - Limpiamos los campos de los TextBox'
+                    Me.LimpiarCamposEditarUsuario()
+
+                    'Mensaje - Mostramos un mensaje de exito'
                     MessageBox.Show($"El usuario {usuario.NombreUsuario} ha sido modifcado correctamente")
                     Return
                 End If

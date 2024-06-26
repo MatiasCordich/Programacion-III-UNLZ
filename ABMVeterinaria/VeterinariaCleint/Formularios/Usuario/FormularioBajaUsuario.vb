@@ -3,18 +3,20 @@ Imports VeterinariaService.DAO
 
 Public Class FormularioBajaUsuario
 #Region "Eventos"
-    '----------------------------------- EVENTO CLIC BAJA USUARIO -----------------------------------'
+
+    '-------------------------------------- Funcion - BAJA USUARIO -----------------------------------'
     Private Sub Btn_bajaUsuario_Click(sender As Object, e As EventArgs) Handles Btn_bajaUsuario.Click
+
         'Tomamos el valor del TextBox'
         Dim idS = Txt_idBaja.Text
 
-        'Valido que no haya campo vacios'
+        'Validacion - Campo vacio'
         If idS = "" Then
-            MessageBox.Show("ERROR: Por favor, ingrese un numero")
+            MessageBox.Show("ERROR: El campo no puede estar vacio, por favor ingrese un valor")
             Return
         End If
 
-        'Validamos que el valor del TextBox sea numerico'
+        'Validacion - TextBox numerico'
         Dim id As Integer
 
         If Not Integer.TryParse(idS, id) Then
@@ -22,18 +24,18 @@ Public Class FormularioBajaUsuario
             Return
         End If
 
-        'Validamos que el ID no sea negativo'
+        'Validacion - ID negativo'
         If id < 0 Then
             MessageBox.Show("ERROR: Por favor, ingrese un ID POSITIVO")
             Return
         End If
 
+        '--------TRY CATCH Y CREACION DE DAO --------'
         Try
 
-            'Creamos el DAO'
             Dim dao As New UsuariosDAO
 
-            'Validamos que exista el Usuario'
+            'Validacion - Estado del Usuario'
             Dim usuario = dao.GetByID(id)
 
             If usuario IsNot Nothing Then
@@ -46,23 +48,23 @@ Public Class FormularioBajaUsuario
                     Return
                 End If
 
-                'Realizo el Delete'
+                'Relacion - DAO DELETE'
                 dao.Delete(id)
 
-                'Muestros los componentes de carga'
+                'Muestreo - Componentes de carga'
                 T_Baja.Enabled = True
                 LBL_descripcionBaja.Text = "Cargando..."
                 LBL_descripcionBaja.Visible = True
                 PB_cargaBaja.Visible = True
 
-                'Mostramos un mensaje de exito y vaciamos el Textbox'
+                'Mensaje - Caso exitoso'
                 MessageBox.Show($"El usuario {usuario.NombreUsuario} fue dado de baja correctamente")
 
-                'Limpiamos el TextBox'
+                'Limpieza de campos'
                 Txt_idBaja.Text = ""
                 Return
             Else
-                'Caso contrario, mostramos un mensaje de error'
+                'Mensaje - Caso fallido'
                 MessageBox.Show("No se encontro al usuario para dar de baja")
                 Return
             End If
@@ -75,10 +77,10 @@ Public Class FormularioBajaUsuario
 
 #Region "Timers"
 
-    '----------------------------------- TICK TIMER BAJA USUARIO -----------------------------------'
+    '-------------------------------------- Funcion - TIMER BAJA CLIENTE -----------------------------------'
     Private Sub T_Baja_Tick(sender As Object, e As EventArgs) Handles T_Baja.Tick
 
-        'Valido el valor del componenete de barra de carga'
+        'Validacion- Valor PB'
         If PB_cargaBaja.Value = PB_cargaBaja.Maximum Then
             LBL_descripcionBaja.Visible = False
             PB_cargaBaja.Visible = False

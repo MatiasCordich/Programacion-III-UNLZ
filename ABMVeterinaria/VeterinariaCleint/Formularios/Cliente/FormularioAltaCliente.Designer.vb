@@ -146,7 +146,7 @@ Partial Class FormularioAltaCliente
         Me.MinimumSize = New System.Drawing.Size(816, 489)
         Me.Name = "FormularioAltaCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Alta - Animal"
+        Me.Text = "Alta - Cliente"
         Me.P_altaCliente.ResumeLayout(False)
         Me.P_altaCliente.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

@@ -29,6 +29,7 @@ Public Class FormularioAccionesAnimal
 
     '---------------------------------- BUSCAR POR ID ---------------------------------- '
     Private Sub Btn_busquedaAnimal_Click(sender As Object, e As EventArgs) Handles Btn_busquedaAnimal.Click
+
         'Tomamos el valor del TextBox'
         Dim idS = Txt_idAnimal.Text
 
@@ -52,23 +53,23 @@ Public Class FormularioAccionesAnimal
             Return
         End If
 
-
+        '----------- CREACION DAO CON TRY CATCH  -----------'
         Try
 
             'Creamos el DAO'
             Dim dao As New AnimalesDAO
 
-            'Llamamos a la funcion GETBYID y le pasamos el ID obtenido del TextBox, el resultado lo guardamos en una variable'
+            'Funcion - GETBYID con ID obtenido de txtbox y guardamos el resultado en una var'
             Dim animal = dao.GetByID(id)
 
-            'Validamos lo que obtuvimos con GetByID Y guardamos en la variable PRODUCTO'
+            'Validacion- Existencia de animal > muestreo labels'
             If animal IsNot Nothing Then
 
                 LBL_idAnimal.Text = animal.AnimalID.ToString("#0")
                 LBL_nombreAnimal.Text = animal.Nombre.ToString
+                LBL_pesoAnimal.Text = animal.Peso.ToString("#0.00")
                 LBL_edadAnimal.Text = animal.Edad.ToString("#0")
                 LBL_clienteID.Text = animal.ClienteID.ToString("#0")
-                LBL_pesoAnimal.Text = animal.Peso.ToString("#0.00")
                 LBL_estadoAnimal.Text = animal.Estado.ToString.ToUpper
 
                 If animal.EspecieID = 1 Then
@@ -92,7 +93,7 @@ Public Class FormularioAccionesAnimal
             End If
 
         Catch ex As Exception
-            MessageBox.Show($"ERROR: {ex.Message}")
+            MessageBox.Show($"ERROR: No se pudo buscar el animal")
         End Try
     End Sub
 
@@ -120,7 +121,11 @@ Public Class FormularioAccionesAnimal
         Dim especieID As Integer
 
 
-        If Not Integer.TryParse(idS, id) Or Not Decimal.TryParse(pesoS, peso) Or Not Integer.TryParse(edadS, edad) Or Not Integer.TryParse(clienteIDs, clienteID) Or Not Integer.TryParse(especieIDs, especieID) Then
+        If Not Integer.TryParse(idS, id) Or
+            Not Decimal.TryParse(pesoS, peso) Or
+            Not Integer.TryParse(edadS, edad) Or
+            Not Integer.TryParse(clienteIDs, clienteID) Or
+            Not Integer.TryParse(especieIDs, especieID) Then
             MessageBox.Show("ERROR: Ingrese un valor numerico")
             Return
         End If
@@ -131,13 +136,13 @@ Public Class FormularioAccionesAnimal
             Return
         End If
 
-        'Validamos la consulta'
+        '----------- CREACION DAO CON TRY CATCH  -----------'
         Try
 
             'Creamos el DAO'
             Dim dao As New AnimalesDAO
 
-            'Llamamos a la funcion GETBYID y le pasamos el ID obtenido del TextBox, el resultado lo guardamos en una variable'
+            'Funcion - GETBYID con ID obtenido de txtbox y guardamos el resultado en una var'
             Dim animal = dao.GetByID(id)
 
             'Validamos la existencia del Animal'
@@ -161,6 +166,5 @@ Public Class FormularioAccionesAnimal
             MessageBox.Show("ERROR: No se pudo modificar la mascota")
         End Try
     End Sub
-
 
 End Class
