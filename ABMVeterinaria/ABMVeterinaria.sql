@@ -44,10 +44,6 @@ CREATE TABLE Animales (
 INSERT INTO Usuarios (NombreUsuario, Clave)
 VALUES ('pepe', '1234');
 
--- Cliente inicial
-INSERT INTO Clientes (Nombre, DNI)
-VALUES ('kali uchis', 38545676);
-
 -- Especie inicial
 INSERT INTO Especies(Nombre, EdadMadurez, PesoPromedio)
 VALUES ('Sin especificar', 0.00, 0)
