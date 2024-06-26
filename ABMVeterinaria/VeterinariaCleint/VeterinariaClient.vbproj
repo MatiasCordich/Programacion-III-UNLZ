@@ -135,6 +135,18 @@
     <Compile Include="Formularios\Especie\FormularioAltaEspecie.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReportePrincipal.Designer.vb">
+      <DependentUpon>FormularioReportePrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReportePrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReporteSecundario.Designer.vb">
+      <DependentUpon>FormularioReporteSecundario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Reportes\FormularioReporteSecundario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Usuario\FormularioAccionesUsuario.Designer.vb">
       <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>
     </Compile>
@@ -205,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Especie\FormularioAltaEspecie.resx">
       <DependentUpon>FormularioAltaEspecie.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormularioReportePrincipal.resx">
+      <DependentUpon>FormularioReportePrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Reportes\FormularioReporteSecundario.resx">
+      <DependentUpon>FormularioReporteSecundario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Usuario\FormularioAccionesUsuario.resx">
       <DependentUpon>FormularioAccionesUsuario.vb</DependentUpon>

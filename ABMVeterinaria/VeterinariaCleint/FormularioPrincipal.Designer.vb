@@ -53,6 +53,8 @@ Partial Class FormularioPrincipal
         Me.AltaDeEspecieToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AccionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportePrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteSecundarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LBL_nombreUsuario = New System.Windows.Forms.Label()
         Me.Btn_salirApp = New System.Windows.Forms.Button()
@@ -67,8 +69,6 @@ Partial Class FormularioPrincipal
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ReportePrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteSecundarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
@@ -310,6 +310,20 @@ Partial Class FormularioPrincipal
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(88, 25)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
+        'ReportePrincipalToolStripMenuItem
+        '
+        Me.ReportePrincipalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReportePrincipalToolStripMenuItem.Name = "ReportePrincipalToolStripMenuItem"
+        Me.ReportePrincipalToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReportePrincipalToolStripMenuItem.Text = "Reporte principal"
+        '
+        'ReporteSecundarioToolStripMenuItem
+        '
+        Me.ReporteSecundarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
+        Me.ReporteSecundarioToolStripMenuItem.Name = "ReporteSecundarioToolStripMenuItem"
+        Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ReporteSecundarioToolStripMenuItem.Text = "Reporte secundario"
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
@@ -471,20 +485,6 @@ Partial Class FormularioPrincipal
         Me.Label2.Size = New System.Drawing.Size(543, 63)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "a Patitas Veterinaria"
-        '
-        'ReportePrincipalToolStripMenuItem
-        '
-        Me.ReportePrincipalToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.ReportePrincipalToolStripMenuItem.Name = "ReportePrincipalToolStripMenuItem"
-        Me.ReportePrincipalToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
-        Me.ReportePrincipalToolStripMenuItem.Text = "Reporte principal"
-        '
-        'ReporteSecundarioToolStripMenuItem
-        '
-        Me.ReporteSecundarioToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
-        Me.ReporteSecundarioToolStripMenuItem.Name = "ReporteSecundarioToolStripMenuItem"
-        Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
-        Me.ReporteSecundarioToolStripMenuItem.Text = "Reporte secundario"
         '
         'FormularioPrincipal
         '

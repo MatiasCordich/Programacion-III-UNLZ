@@ -178,17 +178,85 @@ namespace VeterinariaService.DAO
             IDbConnection conexion = this.PrepararConexion();
 
             // Creamos el comando 
-            IDbCommand command = conexion.CreateCommand();
+            IDbCommand comando = conexion.CreateCommand();
 
             // Le agregamos el texto al comando
-            command.CommandText = query;
+            comando.CommandText = query;
 
-            int filasAfectadas = command.ExecuteNonQuery();
+            int filasAfectadas = comando.ExecuteNonQuery();
 
             //cierre de conexion y devuelve true si hay cambios//
             conexion.Close();
             return filasAfectadas > 0;
 
+        }
+
+        //--------------- REPORTE PRINCIPAL ---------------//
+        public DataTable GetReportePrincipal(int edadMin, int edadMax)
+        {
+            string query = "SELECT e.Nombre AS Especie, MIN(a.Peso) AS PesoMinimo, " +
+               "MAX(a.Peso) AS PesoMaximo, AVG(a.Peso) AS PesoPromedio " +
+               "FROM Animales a JOIN Especies e ON a.EspecieID = e.EspecieID " +
+               $"WHERE a.Edad BETWEEN {edadMin} AND {edadMax} " +
+               "GROUP BY e.Nombre;";
+
+            //Preparamos la conexion//
+            IDbConnection conexion = this.PrepararConexion();
+
+            //Creamos el comando//
+            var comando = conexion.CreateCommand();
+
+            // Le pasamos la query al comando//
+            comando.CommandText = query;
+
+            // Creamos el ADAPTADOR//
+            SqlDataAdapter adaptador = new SqlDataAdapter((SqlCommand)comando);
+
+            // Creamos la DataTable//
+            DataTable dt = new DataTable();
+
+            // Llenamos con los valores del ADAPTOR a la DataTable//
+            adaptador.Fill(dt);
+
+            // Devolvemos la DataTable
+            return dt;
+        }
+
+        //--------------- REPORTE SECUNDARIO ---------------//
+        public DataTable GetReporteSecundario()
+        {
+            string query = "SELECT " +
+                           "    c.Nombre AS Cliente, " +
+                           "    COUNT(a.AnimalID) AS CantidadAnimales " +
+                           "FROM " +
+                           "    Animales a " +
+                           "JOIN " +
+                           "    Clientes c ON a.ClienteID = c.ClienteID " +
+                           "GROUP BY " +
+                           "    c.Nombre " +
+                           "ORDER BY " +
+                           "    CantidadAnimales ASC;";
+
+            //Preparamos la conexion//
+            IDbConnection conexion = this.PrepararConexion();
+
+            //Creamos el comando//
+            var comando = conexion.CreateCommand();
+
+            // Le pasamos la query al comando//
+            comando.CommandText = query;
+
+            // Creamos el ADAPTADOR//
+            SqlDataAdapter adaptador = new SqlDataAdapter((SqlCommand)comando);
+
+            // Creamos la DataTable//
+            DataTable dt = new DataTable();
+
+            // Llenamos con los valores del ADAPTOR a la DataTable//
+            adaptador.Fill(dt);
+
+            // Devolvemos la DataTable
+            return dt;
         }
 
 

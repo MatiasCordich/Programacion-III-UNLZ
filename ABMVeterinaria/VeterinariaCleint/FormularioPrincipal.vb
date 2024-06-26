@@ -21,10 +21,13 @@ Public Class FormularioPrincipal
     Private ventanaBajaAnimal As FormularioBajaAnimal
     Private ventanaAccionesAnimal As FormularioAccionesAnimal
 
-
     '--------------- ESPECIE ---------------'
     Private ventanaAltaEspecies As FormularioAltaEspecie
     Private ventanaAccionesEspecie As FormularioAccionesEspecie
+
+    '--------------- REPORTES ---------------'
+    Private ventanaReportePrincipal As FormularioReportePrincipal
+    Private ventanaReporteSecundario As FormularioReporteSecundario
 #End Region
 
 #Region "Eventos"
@@ -352,7 +355,47 @@ Public Class FormularioPrincipal
         End If
     End Sub
 
+    '------------------------------ CLICK MOSTRAR FORMULARIO REPORTE PRINCIPAL ------------------------------'
+    Private Sub ReportePrincipalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePrincipalToolStripMenuItem.Click
 
+        'Validamos que exista la ventana'
+        If ventanaReportePrincipal Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaReportePrincipal = New FormularioReportePrincipal With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaReportePrincipal.FormClosed, AddressOf FormularioReportePrincipal_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaReportePrincipal.Show()
+
+        End If
+    End Sub
+
+    '------------------------------ CLICK MOSTRAR FORMULARIO REPORTE SECUNDARIO ------------------------------'
+    Private Sub ReporteSecundarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReporteSecundarioToolStripMenuItem.Click
+
+        'Validamos que exista la ventana'
+        If ventanaReporteSecundario Is Nothing Then
+
+            'Creamos la nueva ventana'
+            'Configuramos que la venta de alta sea hijo de del Form principal'
+            ventanaReporteSecundario = New FormularioReporteSecundario With {
+                .MdiParent = Me
+            }
+
+            'Manejamos el evento cuando se cierra el formulario de alta'
+            AddHandler ventanaReporteSecundario.FormClosed, AddressOf FormularioReporteSecundario_FormClosed
+
+            'Mostramos el formulario de alta de usuario'
+            ventanaReporteSecundario.Show()
+
+        End If
+    End Sub
 
 #End Region
 
@@ -431,6 +474,13 @@ Public Class FormularioPrincipal
         ventanaAccionesAnimal = Nothing
     End Sub
 
+    Private Sub FormularioReportePrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaReportePrincipal = Nothing
+    End Sub
+
+    Private Sub FormularioReporteSecundario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        ventanaReporteSecundario = Nothing
+    End Sub
 
 
 #End Region
