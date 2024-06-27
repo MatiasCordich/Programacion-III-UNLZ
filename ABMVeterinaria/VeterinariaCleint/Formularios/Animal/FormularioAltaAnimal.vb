@@ -12,12 +12,12 @@ Public Class FormularioAltaAnimal
         Dim nombre = Txt_nombreAltaAnimal.Text.ToLower
         Dim pesoS = Txt_pesoAltaAnimal.Text
         Dim edadS = Txt_edadAltaAnimal.Text
-        Dim clienteIDs = Txt_clienteIDAltaAnimal.Text
+        Dim clienteDNIs = Txt_clienteDNIAltaAnimal.Text
         Dim especieIDs = Txt_especieIDAltaAnimal.Text
 
         'Validamos que los campos ID, NOMBRE, PESO, EDAD, CLIENTE ID  no sean nulos'
         If nombre = "" Or pesoS = "" Or
-            edadS = "" Or clienteIDs = "" Or
+            edadS = "" Or clienteDNIs = "" Or
             especieIDs = "" Then
             MessageBox.Show("ERROR: Todos los campos son obligatorios.")
             Return
@@ -25,12 +25,12 @@ Public Class FormularioAltaAnimal
 
         'Validamos que ID, PESO, EDAD, CLIENTE ID sea numerico y positivo'
         Dim peso As Decimal
-        Dim edad, clienteID, especieID As Integer
+        Dim edad, clienteDNI, especieID As Integer
 
 
         If Not Decimal.TryParse(pesoS, peso) Or peso < 0 Or
             Not Integer.TryParse(edadS, edad) Or edad < 0 Or
-            Not Integer.TryParse(clienteIDs, clienteID) Or clienteID < 0 Or
+            Not Integer.TryParse(clienteDNIs, clienteDNI) Or clienteDNI < 0 Or
             Not Integer.TryParse(especieIDs, especieID) Or especieID < 0 Then
             MessageBox.Show("ERROR: Ingrese valores numericos positivos.")
             Return
@@ -42,7 +42,7 @@ Public Class FormularioAltaAnimal
 
         Dim clienteExiste As Boolean = False
         For Each cliente As Cliente In listaClientes
-            If cliente.ClienteID = clienteID Then
+            If cliente.DNI = clienteDNI Then
                 clienteExiste = True
                 Exit For
             End If
@@ -74,7 +74,7 @@ Public Class FormularioAltaAnimal
         Dim dao As New AnimalesDAO
 
         'Si paso la validacion prosigo con la inserccion'
-        Dim nuevoAnimal As New Animal(nombre, peso, edad, clienteID, especieID)
+        Dim nuevoAnimal As New Animal(nombre, peso, edad, clienteDNI, especieID)
 
         'Valido la accion'
         If dao.Insert(nuevoAnimal) Then
@@ -89,7 +89,7 @@ Public Class FormularioAltaAnimal
             Txt_nombreAltaAnimal.Text = ""
             Txt_pesoAltaAnimal.Text = ""
             Txt_edadAltaAnimal.Text = ""
-            Txt_clienteIDAltaAnimal.Text = ""
+            Txt_clienteDNIAltaAnimal.Text = ""
             Txt_especieIDAltaAnimal.Text = ""
 
 

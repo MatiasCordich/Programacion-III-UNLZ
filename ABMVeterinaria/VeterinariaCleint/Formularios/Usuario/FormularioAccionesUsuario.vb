@@ -30,6 +30,8 @@ Public Class FormularioAccionesUsuario
         Dim listaUsuarios = dao.GetAll
 
         DGV_listaUsuarios.DataSource = listaUsuarios
+
+        DGV_listaUsuarios.Columns(2).Visible = False
     End Sub
 
     '------------------- FUNCION - BUSCAR USUARIO POR ID ----------------------------'
@@ -87,6 +89,10 @@ Public Class FormularioAccionesUsuario
                 'Limpieza - Limpio el TextBox'
                 Me.LimpiarCamposBusquedaID()
 
+                'Inserccion - Los datos obtenidos lo implemento en los TextBox de EDITAR' 
+                Txt_editarID.Text = usuario.UsuarioID.ToString("#0")
+                Txt_nombreEditar.Text = usuario.NombreUsuario.ToString
+                Txt_claveEditar.Text = usuario.Clave.ToString
             Else
 
                 'Caso contrario- Muestro mensaje de de error'

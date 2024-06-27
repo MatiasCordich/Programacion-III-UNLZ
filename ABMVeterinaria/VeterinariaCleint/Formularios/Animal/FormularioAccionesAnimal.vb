@@ -1,4 +1,6 @@
-﻿Imports VeterinariaService.DAO
+﻿Imports System.Net
+Imports VeterinariaService.DAO
+Imports VeterinariaService.Modelos
 
 Public Class FormularioAccionesAnimal
 
@@ -12,7 +14,7 @@ Public Class FormularioAccionesAnimal
         Txt_nombreEditar.Text = ""
         Txt_edadEditar.Text = ""
         Txt_pesoEditar.Text = ""
-        Txt_clienteIDEditar.Text = ""
+        Txt_clienteDNIEditar.Text = ""
         Txt_especieIDEditar.Text = ""
     End Sub
 
@@ -69,7 +71,7 @@ Public Class FormularioAccionesAnimal
                 LBL_nombreAnimal.Text = animal.Nombre.ToString
                 LBL_pesoAnimal.Text = animal.Peso.ToString("#0.00")
                 LBL_edadAnimal.Text = animal.Edad.ToString("#0")
-                LBL_clienteID.Text = animal.ClienteID.ToString("#0")
+                LBL_clienteID.Text = animal.ClienteDNI.ToString()
                 LBL_estadoAnimal.Text = animal.Estado.ToString.ToUpper
 
                 If animal.EspecieID = 1 Then
@@ -85,6 +87,14 @@ Public Class FormularioAccionesAnimal
                 End If
 
                 Me.LimpiarCamposBusquedaID()
+
+                Txt_editarAnimalID.Text = animal.AnimalID.ToString("#0")
+                Txt_nombreEditar.Text = animal.Nombre.ToString
+                Txt_pesoEditar.Text = animal.Peso.ToString("#0.00")
+                Txt_edadEditar.Text = animal.Edad.ToString("#0")
+                Txt_clienteDNIEditar.Text = animal.ClienteDNI.ToString
+                Txt_especieIDEditar.Text = animal.EspecieID.ToString
+
 
             Else
                 'Caso contrario que se muestre un mensaje de error'
@@ -104,11 +114,11 @@ Public Class FormularioAccionesAnimal
         Dim nombre = Txt_nombreEditar.Text.ToLower
         Dim pesoS = Txt_pesoEditar.Text
         Dim edadS = Txt_edadEditar.Text
-        Dim clienteIDs = Txt_clienteIDEditar.Text
+        Dim clienteDNIs = Txt_clienteDNIEditar.Text
         Dim especieIDs = Txt_especieIDEditar.Text
 
         'Validamos que los campos ID, NOMBRE, PESO, EDAD, CLIENTE ID  no sean nulos'
-        If idS = "" Or nombre = "" Or pesoS = "" Or edadS = "" Or clienteIDs = "" Or especieIDs = "" Then
+        If idS = "" Or nombre = "" Or pesoS = "" Or edadS = "" Or clienteDNIs = "" Or especieIDs = "" Then
             MessageBox.Show("ERROR: Los campos ID, NOMBRE, PESO, EDAD, CLIENTE ID y ESPECIE ID no pueden estar vacios")
             Return
         End If
@@ -117,21 +127,21 @@ Public Class FormularioAccionesAnimal
         Dim id As Integer
         Dim peso As Decimal
         Dim edad As Integer
-        Dim clienteID As Integer
+        Dim clienteDNI As Integer
         Dim especieID As Integer
 
 
         If Not Integer.TryParse(idS, id) Or
             Not Decimal.TryParse(pesoS, peso) Or
             Not Integer.TryParse(edadS, edad) Or
-            Not Integer.TryParse(clienteIDs, clienteID) Or
+            Not Integer.TryParse(clienteDNIs, clienteDNI) Or
             Not Integer.TryParse(especieIDs, especieID) Then
             MessageBox.Show("ERROR: Ingrese un valor numerico")
             Return
         End If
 
         'Validamos que el ID, PESO, EDAD, CLIENTE ID y ESPECIE ID no sea negativo'
-        If id < 0 Or peso < 0 Or edad < 0 Or clienteID < 0 Or especieID < 0 Then
+        If id < 0 Or peso < 0 Or edad < 0 Or clienteDNI < 0 Or especieID < 0 Then
             MessageBox.Show("ERROR: Los campos ID, PESO, EDAD, CLIENTE ID y ESPECIE ID no pueden ser negativos")
             Return
         End If
@@ -153,7 +163,8 @@ Public Class FormularioAccionesAnimal
                     MessageBox.Show("No se pueden modificar animales DIFUNTOS")
                     Return
                 Else
-                    dao.Update(id, nombre, peso, edad, clienteID, especieID)
+
+                    dao.Update(id, nombre, peso, edad, clienteDNI, especieID)
                     MessageBox.Show($"La mascota {animal.Nombre} ha sido modifcado correctamente")
                     Me.LimpiarCamposEditarAnimal()
                     Return
@@ -163,7 +174,7 @@ Public Class FormularioAccionesAnimal
             End If
 
         Catch ex As Exception
-            MessageBox.Show("ERROR: No se pudo modificar la mascota")
+            MessageBox.Show($"ERROR: No se pudo modificar la mascota {ex.Message}")
         End Try
     End Sub
 

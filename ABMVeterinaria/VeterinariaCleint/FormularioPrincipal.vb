@@ -80,6 +80,15 @@ Public Class FormularioPrincipal
 
         LBL_nombreUsuario.Text = $"{usuario.NombreUsuario}"
 
+        GB_login.Visible = True
+
+        LBL_descripcionUsuarioLogin.Text = usuario.NombreUsuario.ToString.ToUpper
+
+        GB_integrantes.Visible = False
+
+        LBL_patitasText.Visible = False
+
+        PBox_logo.Visible = False
     End Sub
 
     '------------------------------ CLICK MOSTRAR FORMULARIO ALTA ------------------------------'
@@ -410,7 +419,6 @@ Public Class FormularioPrincipal
             MS_menuABM.Visible = True
             Btn_salirApp.Visible = True
             P_login.Visible = False
-            LBL_nombreUsuario.Visible = True
         Else
             'Caso contrario incremento el valor de la barra con los ticks del timer'
             Dim nuevoValor = PB_barraLogin.Value + 10
@@ -481,6 +489,7 @@ Public Class FormularioPrincipal
     Private Sub FormularioReporteSecundario_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         ventanaReporteSecundario = Nothing
     End Sub
+
 
 
 #End Region

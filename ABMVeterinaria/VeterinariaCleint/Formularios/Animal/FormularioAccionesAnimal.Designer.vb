@@ -28,7 +28,7 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Txt_especieIDEditar = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Txt_clienteIDEditar = New System.Windows.Forms.TextBox()
+        Me.Txt_clienteDNIEditar = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Txt_pesoEditar = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -115,7 +115,7 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.Controls.Add(Me.Txt_especieIDEditar)
         Me.GroupBox4.Controls.Add(Me.Label12)
-        Me.GroupBox4.Controls.Add(Me.Txt_clienteIDEditar)
+        Me.GroupBox4.Controls.Add(Me.Txt_clienteDNIEditar)
         Me.GroupBox4.Controls.Add(Me.Label10)
         Me.GroupBox4.Controls.Add(Me.Txt_pesoEditar)
         Me.GroupBox4.Controls.Add(Me.Label7)
@@ -126,7 +126,7 @@ Partial Class FormularioAccionesAnimal
         Me.GroupBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.GroupBox4.Location = New System.Drawing.Point(20, 77)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(483, 138)
+        Me.GroupBox4.Size = New System.Drawing.Size(480, 138)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Campos"
@@ -141,27 +141,27 @@ Partial Class FormularioAccionesAnimal
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(248, 73)
+        Me.Label12.Location = New System.Drawing.Point(243, 73)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(89, 18)
         Me.Label12.TabIndex = 13
         Me.Label12.Text = "Especie ID:"
         '
-        'Txt_clienteIDEditar
+        'Txt_clienteDNIEditar
         '
-        Me.Txt_clienteIDEditar.Location = New System.Drawing.Point(338, 39)
-        Me.Txt_clienteIDEditar.Name = "Txt_clienteIDEditar"
-        Me.Txt_clienteIDEditar.Size = New System.Drawing.Size(137, 26)
-        Me.Txt_clienteIDEditar.TabIndex = 12
+        Me.Txt_clienteDNIEditar.Location = New System.Drawing.Point(338, 38)
+        Me.Txt_clienteDNIEditar.Name = "Txt_clienteDNIEditar"
+        Me.Txt_clienteDNIEditar.Size = New System.Drawing.Size(137, 26)
+        Me.Txt_clienteDNIEditar.TabIndex = 12
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(248, 42)
+        Me.Label10.Location = New System.Drawing.Point(242, 42)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(84, 18)
+        Me.Label10.Size = New System.Drawing.Size(95, 18)
         Me.Label10.TabIndex = 11
-        Me.Label10.Text = "Cliente ID:"
+        Me.Label10.Text = "Cliente DNI:"
         '
         'Txt_pesoEditar
         '
@@ -321,7 +321,7 @@ Partial Class FormularioAccionesAnimal
         'LBL_clienteID
         '
         Me.LBL_clienteID.AutoSize = True
-        Me.LBL_clienteID.Location = New System.Drawing.Point(97, 141)
+        Me.LBL_clienteID.Location = New System.Drawing.Point(107, 142)
         Me.LBL_clienteID.Name = "LBL_clienteID"
         Me.LBL_clienteID.Size = New System.Drawing.Size(0, 18)
         Me.LBL_clienteID.TabIndex = 11
@@ -329,11 +329,11 @@ Partial Class FormularioAccionesAnimal
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(6, 141)
+        Me.Label13.Location = New System.Drawing.Point(6, 142)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(84, 18)
+        Me.Label13.Size = New System.Drawing.Size(95, 18)
         Me.Label13.TabIndex = 10
-        Me.Label13.Text = "Cliente ID:"
+        Me.Label13.Text = "Cliente DNI:"
         '
         'LBL_pesoAnimal
         '
@@ -513,7 +513,7 @@ Partial Class FormularioAccionesAnimal
     Friend WithEvents Label9 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents LBL_estadoAnimal As Label
-    Friend WithEvents Txt_clienteIDEditar As TextBox
+    Friend WithEvents Txt_clienteDNIEditar As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents Txt_pesoEditar As TextBox
     Friend WithEvents Label7 As Label

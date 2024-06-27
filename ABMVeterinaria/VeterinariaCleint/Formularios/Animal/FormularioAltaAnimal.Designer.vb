@@ -29,7 +29,7 @@ Partial Class FormularioAltaAnimal
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Txt_especieIDAltaAnimal = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Txt_clienteIDAltaAnimal = New System.Windows.Forms.TextBox()
+        Me.Txt_clienteDNIAltaAnimal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txt_edadAltaAnimal = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -80,7 +80,7 @@ Partial Class FormularioAltaAnimal
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.Txt_especieIDAltaAnimal)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Txt_clienteIDAltaAnimal)
+        Me.GroupBox1.Controls.Add(Me.Txt_clienteDNIAltaAnimal)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Txt_edadAltaAnimal)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -114,21 +114,21 @@ Partial Class FormularioAltaAnimal
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Especie ID"
         '
-        'Txt_clienteIDAltaAnimal
+        'Txt_clienteDNIAltaAnimal
         '
-        Me.Txt_clienteIDAltaAnimal.Location = New System.Drawing.Point(171, 155)
-        Me.Txt_clienteIDAltaAnimal.Name = "Txt_clienteIDAltaAnimal"
-        Me.Txt_clienteIDAltaAnimal.Size = New System.Drawing.Size(348, 31)
-        Me.Txt_clienteIDAltaAnimal.TabIndex = 8
+        Me.Txt_clienteDNIAltaAnimal.Location = New System.Drawing.Point(171, 155)
+        Me.Txt_clienteDNIAltaAnimal.Name = "Txt_clienteDNIAltaAnimal"
+        Me.Txt_clienteDNIAltaAnimal.Size = New System.Drawing.Size(348, 31)
+        Me.Txt_clienteDNIAltaAnimal.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(58, 158)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(99, 23)
+        Me.Label4.Size = New System.Drawing.Size(113, 23)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Cliente ID"
+        Me.Label4.Text = "Cliente DNI"
         '
         'Txt_edadAltaAnimal
         '
@@ -226,7 +226,7 @@ Partial Class FormularioAltaAnimal
     Friend WithEvents Label1 As Label
     Friend WithEvents Txt_especieIDAltaAnimal As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Txt_clienteIDAltaAnimal As TextBox
+    Friend WithEvents Txt_clienteDNIAltaAnimal As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_edadAltaAnimal As TextBox
     Friend WithEvents Label3 As Label

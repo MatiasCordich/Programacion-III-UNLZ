@@ -61,7 +61,7 @@ Partial Class FormularioAccionesUsuario
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.P_altaUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.P_altaUsuario.Controls.Add(Me.GroupBox1)
-        Me.P_altaUsuario.Location = New System.Drawing.Point(12, 12)
+        Me.P_altaUsuario.Location = New System.Drawing.Point(-4, 12)
         Me.P_altaUsuario.Name = "P_altaUsuario"
         Me.P_altaUsuario.Size = New System.Drawing.Size(549, 205)
         Me.P_altaUsuario.TabIndex = 1
@@ -194,7 +194,7 @@ Partial Class FormularioAccionesUsuario
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
         Me.Panel1.Controls.Add(Me.GroupBox3)
-        Me.Panel1.Location = New System.Drawing.Point(12, 223)
+        Me.Panel1.Location = New System.Drawing.Point(-4, 223)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(549, 248)
         Me.Panel1.TabIndex = 2
@@ -207,9 +207,9 @@ Partial Class FormularioAccionesUsuario
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 15)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 25)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(519, 211)
+        Me.GroupBox3.Size = New System.Drawing.Size(519, 191)
         Me.GroupBox3.TabIndex = 0
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Editar Usuario"
@@ -234,6 +234,7 @@ Partial Class FormularioAccionesUsuario
         '
         Me.Txt_claveEditar.Location = New System.Drawing.Point(84, 62)
         Me.Txt_claveEditar.Name = "Txt_claveEditar"
+        Me.Txt_claveEditar.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Txt_claveEditar.Size = New System.Drawing.Size(149, 26)
         Me.Txt_claveEditar.TabIndex = 8
         '
@@ -310,6 +311,7 @@ Partial Class FormularioAccionesUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(155, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1072, 488)
         Me.Controls.Add(Me.Btn_listarUsuarios)
@@ -317,6 +319,7 @@ Partial Class FormularioAccionesUsuario
         Me.Controls.Add(Me.DGV_listaUsuarios)
         Me.Controls.Add(Me.P_altaUsuario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Location = New System.Drawing.Point(50, 50)
         Me.MaximumSize = New System.Drawing.Size(1088, 527)
         Me.MinimumSize = New System.Drawing.Size(1088, 527)
         Me.Name = "FormularioAccionesUsuario"

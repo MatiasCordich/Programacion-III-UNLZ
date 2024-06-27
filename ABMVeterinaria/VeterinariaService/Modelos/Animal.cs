@@ -13,7 +13,7 @@ namespace VeterinariaService.Modelos
         public string Nombre { get; set; }
         public decimal Peso { get; set; }
         public int Edad { get; set; }
-        public long ClienteID { get; set; }
+        public long ClienteDNI { get; set; }
         public long EspecieID { get; set; }
         public string Estado { get; set; }
 
@@ -24,7 +24,7 @@ namespace VeterinariaService.Modelos
             Nombre = nombre;
             Peso = peso;
             Edad = edad;
-            ClienteID = clienteID;
+            ClienteDNI = clienteID;
             EspecieID = especieID;
         }
 

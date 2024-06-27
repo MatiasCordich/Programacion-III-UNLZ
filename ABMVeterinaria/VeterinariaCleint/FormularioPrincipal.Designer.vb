@@ -55,10 +55,10 @@ Partial Class FormularioPrincipal
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportePrincipalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteSecundarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PBox_logo = New System.Windows.Forms.PictureBox()
         Me.LBL_nombreUsuario = New System.Windows.Forms.Label()
         Me.Btn_salirApp = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GB_integrantes = New System.Windows.Forms.GroupBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -67,13 +67,18 @@ Partial Class FormularioPrincipal
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.LBL_patitasText = New System.Windows.Forms.Label()
+        Me.GB_login = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LBL_descripcionUsuarioLogin = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.P_login.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.MS_menuABM.SuspendLayout()
+        CType(Me.PBox_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GB_integrantes.SuspendLayout()
+        Me.GB_login.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'T_login
@@ -86,7 +91,7 @@ Partial Class FormularioPrincipal
         Me.P_login.Controls.Add(Me.LBL_cargaBarra)
         Me.P_login.Controls.Add(Me.PB_barraLogin)
         Me.P_login.Controls.Add(Me.GroupBox2)
-        Me.P_login.Location = New System.Drawing.Point(315, 198)
+        Me.P_login.Location = New System.Drawing.Point(326, 181)
         Me.P_login.MaximumSize = New System.Drawing.Size(512, 287)
         Me.P_login.MinimumSize = New System.Drawing.Size(512, 287)
         Me.P_login.Name = "P_login"
@@ -324,18 +329,19 @@ Partial Class FormularioPrincipal
         Me.ReporteSecundarioToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ReporteSecundarioToolStripMenuItem.Text = "Reporte secundario"
         '
-        'PictureBox1
+        'PBox_logo
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
-        Me.PictureBox1.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.patitas
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 60)
-        Me.PictureBox1.MaximumSize = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.MinimumSize = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(134, 126)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
+        Me.PBox_logo.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
+        Me.PBox_logo.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.patitas
+        Me.PBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PBox_logo.Location = New System.Drawing.Point(12, 60)
+        Me.PBox_logo.MaximumSize = New System.Drawing.Size(134, 126)
+        Me.PBox_logo.MinimumSize = New System.Drawing.Size(134, 126)
+        Me.PBox_logo.Name = "PBox_logo"
+        Me.PBox_logo.Size = New System.Drawing.Size(134, 126)
+        Me.PBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBox_logo.TabIndex = 10
+        Me.PBox_logo.TabStop = False
         '
         'LBL_nombreUsuario
         '
@@ -364,25 +370,25 @@ Partial Class FormularioPrincipal
         Me.Btn_salirApp.UseVisualStyleBackColor = False
         Me.Btn_salirApp.Visible = False
         '
-        'GroupBox1
+        'GB_integrantes
         '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 491)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(438, 100)
-        Me.GroupBox1.TabIndex = 13
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "ABM Veterinaria"
+        Me.GB_integrantes.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.GB_integrantes.Controls.Add(Me.Label12)
+        Me.GB_integrantes.Controls.Add(Me.Label11)
+        Me.GB_integrantes.Controls.Add(Me.Label8)
+        Me.GB_integrantes.Controls.Add(Me.Label7)
+        Me.GB_integrantes.Controls.Add(Me.Label6)
+        Me.GB_integrantes.Controls.Add(Me.Label5)
+        Me.GB_integrantes.Controls.Add(Me.Label4)
+        Me.GB_integrantes.Controls.Add(Me.Label3)
+        Me.GB_integrantes.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GB_integrantes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.GB_integrantes.Location = New System.Drawing.Point(12, 491)
+        Me.GB_integrantes.Name = "GB_integrantes"
+        Me.GB_integrantes.Size = New System.Drawing.Size(438, 100)
+        Me.GB_integrantes.TabIndex = 13
+        Me.GB_integrantes.TabStop = False
+        Me.GB_integrantes.Text = "ABM Veterinaria"
         '
         'Label12
         '
@@ -464,47 +470,82 @@ Partial Class FormularioPrincipal
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Buggenthin, Nicolas"
         '
+        'LBL_patitasText
+        '
+        Me.LBL_patitasText.AutoSize = True
+        Me.LBL_patitasText.Font = New System.Drawing.Font("Century Gothic", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_patitasText.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.LBL_patitasText.Location = New System.Drawing.Point(152, 83)
+        Me.LBL_patitasText.Name = "LBL_patitasText"
+        Me.LBL_patitasText.Size = New System.Drawing.Size(590, 77)
+        Me.LBL_patitasText.TabIndex = 15
+        Me.LBL_patitasText.Text = "Patitas Veterinaria"
+        '
+        'GB_login
+        '
+        Me.GB_login.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GB_login.Controls.Add(Me.PictureBox1)
+        Me.GB_login.Controls.Add(Me.LBL_descripcionUsuarioLogin)
+        Me.GB_login.Controls.Add(Me.Label1)
+        Me.GB_login.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GB_login.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
+        Me.GB_login.Location = New System.Drawing.Point(897, 60)
+        Me.GB_login.Name = "GB_login"
+        Me.GB_login.Size = New System.Drawing.Size(240, 100)
+        Me.GB_login.TabIndex = 17
+        Me.GB_login.TabStop = False
+        Me.GB_login.Text = "Usuario"
+        Me.GB_login.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.VeterinariaCleint.My.Resources.Resources.UserAdmin
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(155, 17)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(79, 77)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'LBL_descripcionUsuarioLogin
+        '
+        Me.LBL_descripcionUsuarioLogin.AutoSize = True
+        Me.LBL_descripcionUsuarioLogin.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL_descripcionUsuarioLogin.Location = New System.Drawing.Point(23, 54)
+        Me.LBL_descripcionUsuarioLogin.Name = "LBL_descripcionUsuarioLogin"
+        Me.LBL_descripcionUsuarioLogin.Size = New System.Drawing.Size(0, 28)
+        Me.LBL_descripcionUsuarioLogin.TabIndex = 1
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(152, 60)
+        Me.Label1.Location = New System.Drawing.Point(6, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(311, 63)
-        Me.Label1.TabIndex = 14
+        Me.Label1.Size = New System.Drawing.Size(95, 19)
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Bienvenidx"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(67, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(152, 123)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(543, 63)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "a Patitas Veterinaria"
         '
         'FormularioPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(210, Byte), Integer), CType(CType(179, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1149, 603)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GB_login)
+        Me.Controls.Add(Me.LBL_patitasText)
+        Me.Controls.Add(Me.GB_integrantes)
         Me.Controls.Add(Me.Btn_salirApp)
         Me.Controls.Add(Me.LBL_nombreUsuario)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.P_login)
         Me.Controls.Add(Me.MS_menuABM)
+        Me.Controls.Add(Me.PBox_logo)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.IsMdiContainer = True
+        Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1169, 646)
         Me.Name = "FormularioPrincipal"
         Me.Text = "ABM Veterinaria"
@@ -515,9 +556,12 @@ Partial Class FormularioPrincipal
         Me.GroupBox2.PerformLayout()
         Me.MS_menuABM.ResumeLayout(False)
         Me.MS_menuABM.PerformLayout()
+        CType(Me.PBox_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GB_integrantes.ResumeLayout(False)
+        Me.GB_integrantes.PerformLayout()
+        Me.GB_login.ResumeLayout(False)
+        Me.GB_login.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -538,12 +582,11 @@ Partial Class FormularioPrincipal
     Friend WithEvents BajasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BusquedaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PBox_logo As PictureBox
     Friend WithEvents LBL_nombreUsuario As Label
     Friend WithEvents Btn_salirApp As Button
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents GB_integrantes As GroupBox
+    Friend WithEvents LBL_patitasText As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
@@ -567,4 +610,8 @@ Partial Class FormularioPrincipal
     Friend WithEvents AccionesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ReportePrincipalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ReporteSecundarioToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GB_login As GroupBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LBL_descripcionUsuarioLogin As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

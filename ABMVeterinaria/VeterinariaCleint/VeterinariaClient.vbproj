@@ -258,6 +258,7 @@
   <ItemGroup>
     <Content Include="Assets\background.jpg" />
     <Content Include="Assets\patitas.png" />
+    <None Include="Assets\UserAdmin.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VeterinariaService\VeterinariaService.csproj">

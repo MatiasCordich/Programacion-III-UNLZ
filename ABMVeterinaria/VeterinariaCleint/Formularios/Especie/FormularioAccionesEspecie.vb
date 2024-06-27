@@ -75,6 +75,12 @@ Public Class FormularioAccionesEspecie
 
                 Me.LimpiarCamposBusquedaID()
 
+                'Llenamos los TextBox de EDITAR con los datos de la Especie'
+                Txt_editarID.Text = especie.EspecieID.ToString("#0")
+                Txt_nombreEspecie.Text = especie.NombreEspecie
+                Txt_edadEspecie.Text = especie.EdadMadurez.ToString("#0")
+                Txt_pesoEspecie.Text = especie.PesoPromedio.ToString("#0.00")
+
             Else
                 'Caso contrario que se muestre un mensaje de error'
                 MessageBox.Show("La especie no existe")

@@ -84,6 +84,11 @@ Public Class FormularioAccionesCliente
 
                 'Limpieza - Limpio el TextBox'
                 Me.LimpiarCamposBusquedaID()
+
+                'Llenamos los TextBox de EDITAR con los datos del CLIENTE'
+                Txt_editarIDCliente.Text = cliente.ClienteID.ToString("#0")
+                Txt_nombreEditarCliente.Text = cliente.Nombre.ToString
+                Txt_dniEditarCliente.Text = cliente.DNI.ToString
             Else
 
                 'Caso contrario- Muestro mensaje de de error'
