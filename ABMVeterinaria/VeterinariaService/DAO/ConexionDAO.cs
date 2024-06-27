@@ -10,7 +10,7 @@ namespace VeterinariaService.DAO
 {
     public class ConexionDAO
     {
-        private const string CONEXION_URL = "server=MATIAS\\SQLEXPRESS01;Database=veterinaria_db;Integrated Security=true";
+        private const string CONEXION_URL = "server=;Database=;Integrated Security=true";
 
         // Funcion - Inicializar conexion
         protected IDbConnection PrepararConexion()
