@@ -30,9 +30,9 @@ CREATE TABLE Animales (
     Nombre VARCHAR(100) NOT NULL,
     Peso DECIMAL(5,2) NOT NULL,
     Edad INT NOT NULL,
-    ClienteID INT NOT NULL, 
+    ClienteDNI INT NOT NULL, -- Cambiando ClienteID a ClienteDNI
     EspecieID INT NOT NULL,
-    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+    FOREIGN KEY (ClienteDNI) REFERENCES Clientes(DNI),
     FOREIGN KEY (EspecieID) REFERENCES Especies(EspecieID),
     Estado VARCHAR(10) NOT NULL DEFAULT 'Vivo',
     CHECK (Estado IN ('Vivo', 'Difunto'))
