@@ -142,11 +142,9 @@ namespace VeterinariaService.DAO
                 IDbCommand comando = conexion.CreateCommand();
 
                 comando.CommandText = query;
+
                 //ejecucion//
                 comando.ExecuteNonQuery();
-
-                //cierre de conexion//
-                conexion.Close();
             }
         }
 
