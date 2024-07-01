@@ -18,7 +18,7 @@ namespace ProductosService.DAO
             using (IDbConnection connection = PrepararConexion())
             {
                 // Query - Sentencia seleccionar todos los productos //
-                string query = "SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID FROM Productos";
+                string query = "SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID, Estado FROM Productos";
 
                 // Lista - Lista de productos //
                 List<Producto> listaProductos = new List<Producto>();
@@ -41,7 +41,8 @@ namespace ProductosService.DAO
                         Codigo = reader.GetString(1),
                         Descripcion = reader.GetString(2),
                         Valor = reader.GetDecimal(3),
-                        CategoriaID = reader.GetInt32(4)
+                        CategoriaID = reader.GetInt32(4),
+                        Estado = reader.GetString(5)
                     };
 
                     // Inserccion - Agregamos cada producto a la lista //
@@ -59,7 +60,7 @@ namespace ProductosService.DAO
             using (IDbConnection connection = PrepararConexion())
             {
                 // Query - Sentencia seleccionar todos los productos //
-                string query = $"SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID " +
+                string query = $"SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID, Estado " +
                $"FROM Productos WHERE ProductoID = {ID}";
 
                 // Comando - Creacion del comando SQL //
@@ -83,7 +84,8 @@ namespace ProductosService.DAO
                         Codigo = reader.GetString(1),
                         Descripcion = reader.GetString(2),
                         Valor = reader.GetDecimal(3),
-                        CategoriaID = reader.GetInt32(4)
+                        CategoriaID = reader.GetInt32(4),
+                        Estado = reader.GetString(5)
                     };
                 }
 
@@ -116,12 +118,12 @@ namespace ProductosService.DAO
             }
         }
         //------ Funcion - Update ------//
-        public void UpdateProducto(int ID, string codigo, string descripcion, decimal valor, int categoriaID)
+        public void UpdateProducto(int ID, string codigo, string descripcion, decimal valor, int categoriaID, string estado)
         {
             using (IDbConnection connection = PrepararConexion())
             {
                 // Query - Sentencia seleccionar todos los productos //
-                string query = $"UPDATE Productos SET Nombre = '{codigo}', Descripcion = {descripcion}, Valor = {valor}, CategoriaID = {categoriaID} " +
+                string query = $"UPDATE Productos SET Nombre = '{codigo}', Descripcion = {descripcion}, Valor = {valor}, CategoriaID = {categoriaID}, Estado = '{estado}' " +
                 $"WHERE ProductoID = {ID};";
 
                 // Comando - creamos  un comando de texto para la query //
@@ -140,7 +142,17 @@ namespace ProductosService.DAO
             using (IDbConnection connection = PrepararConexion())
             {
                 // Query - Sentencia seleccionar todos los productos //
-                string query = "SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID FROM Productos";
+                string query = $"UPDATE Productos SET Estado = 'Sin Stock' WHERE ProductoID = {ID}";
+
+                IDbCommand comando = connection.CreateCommand();
+
+                // Le agregamos el texto al comando
+                comando.CommandText = query;
+
+                // Ejecutamos la sentencias
+                int filasAfectadas = comando.ExecuteNonQuery();
+
+                return filasAfectadas > 0;
 
 
             }
