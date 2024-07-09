@@ -18,7 +18,7 @@ namespace ProductosService.DAO
             using (IDbConnection connection = PrepararConexion())
             {
                 // Query - Sentencia seleccionar todos los productos //
-                string query = "SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID, Estado FROM Productos";
+                string query = "SELECT ProductoID, Codigo, Descripcion, Valor, CategoriaID, Estado, Cantidad FROM Productos";
 
                 // Lista - Lista de productos //
                 List<Producto> listaProductos = new List<Producto>();
@@ -42,7 +42,8 @@ namespace ProductosService.DAO
                         Descripcion = reader.GetString(2),
                         Valor = reader.GetDecimal(3),
                         CategoriaID = reader.GetInt32(4),
-                        Estado = reader.GetString(5)
+                        Estado = reader.GetString(5),
+                        Cantidad = reader.GetInt32(6)
                     };
 
                     // Inserccion - Agregamos cada producto a la lista //

@@ -80,6 +80,18 @@
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\FormularioCategorias.Designer.vb">
+      <DependentUpon>FormularioCategorias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioCategorias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioProductos.Designer.vb">
+      <DependentUpon>FormularioProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +111,12 @@
   <ItemGroup>
     <EmbeddedResource Include="FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioCategorias.resx">
+      <DependentUpon>FormularioCategorias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioProductos.resx">
+      <DependentUpon>FormularioProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -136,6 +154,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\info_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProductosService\ProductosService.csproj">
+      <Project>{b900364b-b568-42ae-96b3-7fafe1f969ba}</Project>
+      <Name>ProductosService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

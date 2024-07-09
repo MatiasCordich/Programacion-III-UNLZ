@@ -11,7 +11,7 @@ namespace ProductosService.DAO
     public class ConexionDAO
     {
         //------ Constante - URL de la conexion ------//
-        private const string CONEXION_URL = "server=;Database=;Integrated Security=true";
+        private const string CONEXION_URL = "server=MATIAS\\SQLEXPRESS01;Database=productosdb;Integrated Security=true";
 
         //------ Funcion - Prepar la conexion con la DDBB ------//
         protected IDbConnection PrepararConexion()
