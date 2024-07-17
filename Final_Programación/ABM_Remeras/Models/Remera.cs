@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ABM_Remeras.Models
 {
-    internal class Remera
+    public class Remera
     {
         // ----- ATRIBUTOS ----- //
         public string Codigo { get; set; }
@@ -14,5 +14,14 @@ namespace ABM_Remeras.Models
         public double Precio { get; set; }
         public string Talle { get; set; }
 
+        public Remera(string codigo, string detalle, double precio, string talle)
+        {
+            Codigo = codigo;
+            Detalle = detalle;
+            Precio = precio;
+            Talle = talle;
+        }
     }
+
+
 }
