@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ABM_Remeras (VB)", "ABM_Remeras (VB)\ABM_Remeras (VB).vbproj", "{3E7A584C-20E4-4589-806C-A5C20B024132}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABM_Remera_Services", "ABM_Remera_Services\ABM_Remera_Services.csproj", "{AC13F3CB-E5E3-4C7D-8C32-30CD4038DA13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3E7A584C-20E4-4589-806C-A5C20B024132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E7A584C-20E4-4589-806C-A5C20B024132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E7A584C-20E4-4589-806C-A5C20B024132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC13F3CB-E5E3-4C7D-8C32-30CD4038DA13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC13F3CB-E5E3-4C7D-8C32-30CD4038DA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC13F3CB-E5E3-4C7D-8C32-30CD4038DA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC13F3CB-E5E3-4C7D-8C32-30CD4038DA13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
