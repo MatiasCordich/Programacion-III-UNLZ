@@ -27,17 +27,17 @@ Partial Class FormEditarRemera
         Me.Cb_talleEditar = New System.Windows.Forms.ComboBox()
         Me.Btn_editarRemera = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Dgv_listaRemeras = New System.Windows.Forms.DataGridView()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Txt_detalleEditar = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Txt_precioEditar = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Lbl_descripcionPromedio = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Txt_detalleEditar = New System.Windows.Forms.TextBox()
+        Me.Dgv_listaRemeras = New System.Windows.Forms.DataGridView()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Lbl_descripcionCantidad = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Lbl_descripcionPromedio = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Dgv_listaRemeras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -97,6 +97,47 @@ Partial Class FormEditarRemera
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Editar Remera"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(37, 226)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(47, 20)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Talle"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(37, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Precio"
+        '
+        'Txt_precioEditar
+        '
+        Me.Txt_precioEditar.Location = New System.Drawing.Point(118, 173)
+        Me.Txt_precioEditar.Name = "Txt_precioEditar"
+        Me.Txt_precioEditar.Size = New System.Drawing.Size(186, 26)
+        Me.Txt_precioEditar.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(37, 133)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(66, 20)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Detalle"
+        '
+        'Txt_detalleEditar
+        '
+        Me.Txt_detalleEditar.Location = New System.Drawing.Point(118, 127)
+        Me.Txt_detalleEditar.Name = "Txt_detalleEditar"
+        Me.Txt_detalleEditar.Size = New System.Drawing.Size(186, 26)
+        Me.Txt_detalleEditar.TabIndex = 3
+        '
         'Dgv_listaRemeras
         '
         Me.Dgv_listaRemeras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -119,66 +160,6 @@ Partial Class FormEditarRemera
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informacion"
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 133)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Detalle"
-        '
-        'Txt_detalleEditar
-        '
-        Me.Txt_detalleEditar.Location = New System.Drawing.Point(118, 127)
-        Me.Txt_detalleEditar.Name = "Txt_detalleEditar"
-        Me.Txt_detalleEditar.Size = New System.Drawing.Size(186, 26)
-        Me.Txt_detalleEditar.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 179)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 20)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Precio"
-        '
-        'Txt_precioEditar
-        '
-        Me.Txt_precioEditar.Location = New System.Drawing.Point(118, 173)
-        Me.Txt_precioEditar.Name = "Txt_precioEditar"
-        Me.Txt_precioEditar.Size = New System.Drawing.Size(186, 26)
-        Me.Txt_precioEditar.TabIndex = 5
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(37, 226)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(47, 20)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Talle"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 38)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(197, 20)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Precio promedio talle L:"
-        '
-        'Lbl_descripcionPromedio
-        '
-        Me.Lbl_descripcionPromedio.AutoSize = True
-        Me.Lbl_descripcionPromedio.ForeColor = System.Drawing.Color.ForestGreen
-        Me.Lbl_descripcionPromedio.Location = New System.Drawing.Point(209, 38)
-        Me.Lbl_descripcionPromedio.Name = "Lbl_descripcionPromedio"
-        Me.Lbl_descripcionPromedio.Size = New System.Drawing.Size(19, 20)
-        Me.Lbl_descripcionPromedio.TabIndex = 8
-        Me.Lbl_descripcionPromedio.Text = "0"
-        '
         'Lbl_descripcionCantidad
         '
         Me.Lbl_descripcionCantidad.AutoSize = True
@@ -197,6 +178,25 @@ Partial Class FormEditarRemera
         Me.Label8.Size = New System.Drawing.Size(152, 20)
         Me.Label8.TabIndex = 9
         Me.Label8.Text = "Cantidad talle XL:"
+        '
+        'Lbl_descripcionPromedio
+        '
+        Me.Lbl_descripcionPromedio.AutoSize = True
+        Me.Lbl_descripcionPromedio.ForeColor = System.Drawing.Color.ForestGreen
+        Me.Lbl_descripcionPromedio.Location = New System.Drawing.Point(209, 38)
+        Me.Lbl_descripcionPromedio.Name = "Lbl_descripcionPromedio"
+        Me.Lbl_descripcionPromedio.Size = New System.Drawing.Size(19, 20)
+        Me.Lbl_descripcionPromedio.TabIndex = 8
+        Me.Lbl_descripcionPromedio.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 38)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(197, 20)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "Precio promedio talle L:"
         '
         'FormEditarRemera
         '

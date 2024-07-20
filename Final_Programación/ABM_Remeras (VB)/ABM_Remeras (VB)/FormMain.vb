@@ -39,6 +39,44 @@ Public Class FormMain
         End If
     End Sub
 
+    Private Sub BajaDeRemeraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeRemeraToolStripMenuItem.Click
+
+        'Verifico si no hay un formulario de Baja
+        If formBaja Is Nothing Then
+
+            'Si no hay, lo instanciamos y le pasamos el formulario padre'
+            formBaja = New FormBajaRemera(Me.listaRemeras)
+
+            'Le definimos el MdiParent'
+            formBaja.MdiParent = Me
+
+            'Manejamos el cierro del formulario'
+            AddHandler formBaja.FormClosed, AddressOf FormBajaRemeras_FormClosed
+
+            ' Mostramos el formulario de alta
+            formBaja.Show()
+        End If
+    End Sub
+
+    Private Sub EditarRemeraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditarRemeraToolStripMenuItem.Click
+
+        'Verifico si no hay un formulario de Editar
+        If formEditar Is Nothing Then
+
+            'Si no hay, lo instanciamos y le pasamos el formulario padre'
+            formEditar = New FormEditarRemera(Me.listaRemeras)
+
+            'Le definimos el MdiParent'
+            formEditar.MdiParent = Me
+
+            'Manejamos el cierro del formulario'
+            AddHandler formEditar.FormClosed, AddressOf FormAltaRemeras_FormClosed
+
+            ' Mostramos el formulario de alta
+            formEditar.Show()
+        End If
+    End Sub
+
     ' ------------- HANDLERS ------------- 
     Private Sub FormAltaRemeras_FormClosed(sender As Object, e As FormClosedEventArgs)
         formAlta = Nothing
@@ -51,4 +89,6 @@ Public Class FormMain
     Private Sub FormBajaRemeras_FormClosed(sender As Object, e As FormClosedEventArgs)
         formBaja = Nothing
     End Sub
+
+
 End Class
