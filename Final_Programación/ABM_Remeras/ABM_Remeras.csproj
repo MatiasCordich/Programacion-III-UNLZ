@@ -74,7 +74,7 @@
     <Compile Include="Models\Remera.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\RemeraService.cs" />
+    <Compile Include="Services\RemeraService.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
