@@ -20,7 +20,7 @@ namespace ABM_Remeras.Formularios
             this.listaRemerasHijo = remeras;
 
             // Inicializamos la DataGrid con lo que haya de informacion en la lista del Padre 
-            Dgv_listaRemeras.DataSource = remeras;
+            Dgv_listaRemeras.DataSource = listaRemerasHijo;
         }
 
         // -------------------- METODOS -------------------- //
